@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/1248ffe135.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -38,18 +39,63 @@
                 <h1 class="sub-title">About Me</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta sunt quasi iusto amet consectetur dolorem totam, laudantium, porro explicabo nihil asperiores incidunt qui obcaecati, veritatis nemo praesentium illum voluptatibus sit.</p>
 
-                <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                <div class="tab-titles ">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Development</span><br>Building Interactive Web Pages</li>
+                        <li><span>Software Development</span><br>Developing Software</li>
+                        <li><span>App Development</span><br>Building iOS Apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2021-2023</span><br>Physiotherapist</li>
+                        <li><span>2014-2017</span><br>Basketball Coach</li>
+                        <li><span>2010-2017</span><br>Proffesional Athlete</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2021-Current</span><br>IU Computer Science | Berlin</li>
+                        <li><span>2018-2021</span><br>Physiotherapy Department | Thessaloniki</li>
+                        <li><span>2014-2018</span><br>Sports Science | Thessaloniki</li>
+                    </ul>
                 </div>
                 
             </div>
         </div>
     </div>
 </div>
-
-
+<!-- ------------------services----------------- -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid repellendus iusto aspernatur. Quia nihil reprehenderit fugiat nam vitae quas sint laboriosam. Pariatur nam exercitationem magnam sit dolor veniam qui officiis!</p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-uncharted"></i>
+                <h2>Software Engineering</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid repellendus iusto aspernatur. Quia nihil reprehenderit fugiat nam vitae quas sint laboriosam. Pariatur nam exercitationem magnam sit dolor veniam qui officiis!</p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store-ios"></i>
+                <h2>App Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid repellendus iusto aspernatur. Quia nihil reprehenderit fugiat nam vitae quas sint laboriosam. Pariatur nam exercitationem magnam sit dolor veniam qui officiis!</p>
+                <a href="#">learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
