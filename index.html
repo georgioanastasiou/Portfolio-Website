@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/1248ffe135.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div id="header">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+        <script src="script.js" defer></script>
+        <script src="https://kit.fontawesome.com/1248ffe135.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+    <header id="header">
         <div class="container">
             <nav>   
                 <img src="logo.jpg" class="logo">
@@ -24,22 +27,30 @@
             <div class="header-text">
                 <p>Software Engineer</p>
                 <h1>George Anastasiou</h1>
+                <a href="/Portfolio-Website/George Anastasiou CV.pdf" download class="btn btn2">Download CV</a>
+                <div class="controls">
+                    <div class="control-1"><i class="fa-solid fa-address-book"></i></div>
+                    <div class="control-2"><i class="fa-solid fa-address-book"></i></div>
+                    <div class="control-3"><i class="fa-solid fa-address-book"></i></div>
+                    <div class="control-4"><i class="fa-solid fa-address-book"></i></div>
+                    <div class="control-5"><i class="fa-solid fa-address-book"></i></div>
+                </div>
             </div>
         </div>
-    </div>     <!-- /* HEADER IS FINISHED HERE */ -->
+    </header>     <!-------------------  HEADER ------------>
     
     <!--------------- ABOUT --------------->
-<div id="about">
+<section id="about">
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="tsiou.jpg" alt="">
+                <img class="img-tsiou" src="tsiou.jpg">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta sunt quasi iusto amet consectetur dolorem totam, laudantium, porro explicabo nihil asperiores incidunt qui obcaecati, veritatis nemo praesentium illum voluptatibus sit.</p>
 
-                <div class="tab-titles ">
+                <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                     <p class="tab-links" onclick="opentab('experience')">Experience</p>
                     <p class="tab-links" onclick="opentab('education')">Education</p>
@@ -69,9 +80,9 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- ------------------services----------------- -->
-<div id="services">
+<section id="services">
     <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
@@ -95,9 +106,9 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- ------------------portfolio----------------- -->
-<div id="portfolio">
+<section id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
@@ -128,9 +139,9 @@
         </div>
         <a href="#" class="btn">See More</a>
     </div>
-</div>
+</section>
 <!----------------- Contact-------------- -->
-<div id="contact">
+<section id="contact">
     <div class="container">
         <div class="row">
             <div class="contact-left">
@@ -142,7 +153,6 @@
                     <a href=""><i class="fa-brands fa-instagram"></i></a>
                     <a href=""><i class="fa-brands fa-github"></i></a>
                 </div>
-                <a href="/George Anastasiou CV.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right">
                 <form action="">
@@ -154,6 +164,16 @@
             </div>
         </div>
     </div>
-</div>
+</section>
+<section>
+    <div class="container">
+        <div class="boxes">
+        <div class="box a">a</div>
+        <div class="box b">b</div>
+        <div class="box c">c</div>
+    </div>
+    </div>
+</section>
+
 </body>
 </html>
