@@ -23,9 +23,9 @@ function opentab(tabname){
 document.querySelector(".control-1").addEventListener("click", () => {
     gsap.to(window, { duration: 2, scrollTo: "#header" });
 });
-document.querySelector(".control-2").addEventListener("click", () => {
-    gsap.to(window, { duration: 2, scrollTo: "#about" });
-});
+// document.querySelector(".control-2").addEventListener("click", () => {
+//     gsap.to(window, { duration: 2, scrollTo: "#about" });
+// });
 document.querySelector(".control-3").addEventListener("click", () => {
     gsap.to(window, { duration: 2, scrollTo: "#services" });
 });
@@ -50,5 +50,33 @@ gsap.to(".c", {
     rotation: 360,
     x: 100,
 });
-
 // Toogle Actions
+
+function startLoader(){
+    let number = document.querySelector('.number');
+    let currentNumber = 0
+    
+    function updateCounter(){
+        if(currentNumber === 100){
+            return;
+        }
+    
+        currentNumber += Math.floor(Math.random() * 10) + 1;
+    
+        if(currentNumber > 100){
+            currentNumber = 100;
+        }
+
+        number.textContent = currentNumber;
+
+        let delay = Math.floor(Math.random() * 500) + 100;
+        setInterval(updateCounter, delay)
+        
+    }    
+    updateCounter()
+    
+}
+startLoader()
+
+gsap.to('.number', {duration: 2, opacity: 0, delay: 3});
+gsap.to('.bar', {duration:2, x:1000, delay:5, opacity: 0})
