@@ -3,6 +3,10 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 
 let tablinks = document.getElementsByClassName("tab-links");
 let tabcontents = document.getElementsByClassName("tab-contents");
+let control = document.getElementsByClassName("control");
+
+
+
 
 function opentab(tabname){
     // tablink is a collection of tab-links and iterates over all tabs
@@ -20,12 +24,14 @@ function opentab(tabname){
 }
 
 
+
+
 document.querySelector(".control-1").addEventListener("click", () => {
     gsap.to(window, { duration: 2, scrollTo: "#header" });
 });
-// document.querySelector(".control-2").addEventListener("click", () => {
-//     gsap.to(window, { duration: 2, scrollTo: "#about" });
-// });
+document.querySelector(".control-2").addEventListener("click", () => {
+    gsap.to(window, { duration: 2, scrollTo: "#about" });
+});
 document.querySelector(".control-3").addEventListener("click", () => {
     gsap.to(window, { duration: 2, scrollTo: "#services" });
 });
@@ -34,8 +40,8 @@ document.querySelector(".control-5").addEventListener('click', () =>{
 })
 
 // ScrollTriger Basics
-gsap.to(".about-col-1", {duration: 2.5, x: 900, scrollTrigger: ".about-col-1"})
-gsap.to(".about-col-2", {duration: 2, y: -50 ,x: -600, scrollTrigger: ".about-col-2"})
+gsap.from(".about-col-1, .about-col-2", {duration: 1, opacity: 0, y:"500px", scrollTrigger: ".about-col-1"})
+gsap.to(".about-col-1, .about-col-2", {duration: 3, opacity: 1, scrollTrigger: ".about-col-1"})
 gsap.to(".c", { 
     scrollTrigger: {
         trigger:".c",
@@ -78,5 +84,9 @@ function startLoader(){
 }
 startLoader()
 
-gsap.to('.number', {duration: 2, opacity: 0, delay: 3});
-gsap.to('.bar', {duration:2, x:1000, delay:5, opacity: 0})
+gsap.to('.number', {duration: 2, opacity: 0, delay: 2});
+gsap.to('.bar', {duration:1.5, x:2500, delay:4, opacity: 0})
+gsap.from('.control', {duration: 1, x:200, stagger: 0.2, ease: "power2.out", delay:5})
+
+let tl = gsap.timeline({duration:2});
+

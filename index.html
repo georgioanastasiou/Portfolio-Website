@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+
         <title>Document</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
@@ -16,30 +17,39 @@
     <header id="header">
         <div class="container">
             <nav>   
-                <img src="logo.jpg" class="logo">
-                <ul>
+                <img src="images/logo.jpg" class="logo">
+                <!-- <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Contact</a></li>
-                </ul>
+                </ul> -->
             </nav>
-            <div class="header-text">
+            <div class="row1">
+            <div class="header-text header-col1">
                 <p>Software Engineer</p>
-                <h1>George Anastasiou</h1>       
-                 <div class="number">100</div>
-                <a href="/Portfolio-Website/George Anastasiou CV.pdf" download class="btn btn2">Download CV</a>
-                <div class="controls">
-                    <div class="control-1"><i class="fa-solid fa-address-book"></i></div>
-                    <div class="control-2"><i class="fa-solid fa-address-book"></i></div>
-                    <div class="control-3"><i class="fa-solid fa-address-book"></i></div>
-                    <div class="control-4"><i class="fa-solid fa-address-book"></i></div>
-                    <div class="control-5"><i class="fa-solid fa-address-book"></i></div>
-                </div>
+                <h1>George Anastasiou</h1>
+                <a href="George Anastasiou CV.pdf" class="main-cv">
+                    <span class="cv">Download CV</span>
+                    <span class="cv-icon"><i class="fa-solid fa-download"></i></span>
+                    </a>
             </div>
+            <div class="header-col2 ">
+                <div ><img src="images/tsiou1.png" class="tsiou1"></div> 
+            </div>
+            
+
+                 <div class="number">100</div>
+                <div class="controls">
+                    <div class="control-1 control active-control"><i class="fa-solid fa-house"></i></i></div>
+                    <div class="control-2 control"><i  class="fa-solid fa-user"></i></i></div>
+                    <div class="control-3 control"><i class="fa-solid fa-address-book"></i></div>
+                    <div class="control-4 control"><i class="fa-solid fa-address-book"></i></div>
+                    <div class="control-5 control"><i class="fa-solid fa-message"></i></i></div>
+                </div>
+            
         </div>
-    </div>
     </div>
     </header>  
     <div class="bar"></div>   <!-------------------  HEADER ------------>
@@ -49,7 +59,7 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img class="img-tsiou" src="tsiou.jpg">
+                <img class="img-tsiou" src="images/tsiou.jpg">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
@@ -118,7 +128,7 @@
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
             <div class="work">
-                <img src="work1.png">
+                <img src="images/work1.png">
                 <div class="layer">
                     <h3>Social Media App</h3>
                     <p>Lorem ipsum dolor,  qui odit iste architecto iure.</p>
@@ -126,7 +136,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="work2.jpg">
+                <img src="images/work2.jpg">
                 <div class="layer">
                     <h3>Social Media App</h3>
                     <p>Lorem ipsum dolor,  qui odit iste architecto iure.</p>
@@ -134,7 +144,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="work3.jpg" id="work3">
+                <img src="images/work3.jpg" id="work3">
                 <div class="layer">
                     <h3>Social Media App</h3>
                     <p>Lorem ipsum dolor,  qui odit iste architecto iure.</p>

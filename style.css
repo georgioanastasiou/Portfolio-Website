@@ -4,6 +4,11 @@
     font-family: system-ui;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: 'Super Shiny'; 
+    src: url('./SuperShiny-0v0rG.ttf') format('truetype'); 
+  }
+  
 body{
     background-color: #080808;
     color: #fff;
@@ -12,14 +17,29 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(armenistis.JPG);
+    background-image: url(images/background2.png);
     background-size: cover;  
-    
+    background-position: center;
+}
+@media (max-width: 1300px) {
+    #header {
+        background-image: url(images/background.png);
+        background-size: cover;  
+        background-position: center;
+        height: 100vh; 
+    }
+    .header-col2 .tsiou1{
+        display: block;
+        width: 200px;
+    }
+}
+.tsiou1{
+    display: none;
 }
 .container{
      padding: 10px 10%;         /*10px = top+bot, 10% = left+right */
 }
-nav{
+/*nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,37 +54,82 @@ nav ul li a{
     text-decoration: none;
     font-size: 20px;
     color: #fff;
-    position: relative; /* the parent must be relative and child absolute*/
+    position: relative; /* the parent must be relative and child absolute/
 }
 nav ul li a::after{
     content: '';
-    width: 0%; /*to make it hidden */
+    width: 0%; /*to make it hidden/ 
     height: 3px;
     background: #ff004f;
     position: absolute;
     left: 0;
     bottom: -6px;
-    
 }
-nav ul li a:hover::after{
+*/
+/* nav ul li a:hover::after{
     width: 100%;
     transition: .5s ease;
 }
 nav ul li a:hover{
     color: blue;
     transition: .5s ease;
-}
+} */
 .logo{
     width: 60px;
+}
+.row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header-col1{
+    flex-basis: 60%;
+}
+.header-col2 {
+    flex-basis: 30%;
 }
 .header-text{
     margin-top: 20%;
     font-size: 30px;
+    color: #4831D4;
+}
+.main-cv{
+    display: block;
+}   
+.header-text p {
+    font-weight: 400;
 }
 .header-text h1{
-    margin-top: 20px;
+    margin-top: 10px;
 }
-.controls{
+.header-text .main-cv{
+    margin-top: 40px;
+    
+}
+.main-cv{
+    border-radius: 30px;
+    font-weight: 600;
+    width: 280px;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: #4831D4;
+    color: #fff;
+    padding: 5px;
+}
+.cv{
+    margin-left: 10px;
+}
+.cv-icon{
+    margin-left: 20px;
+    border-radius: 50%;
+}
+.main-cv:hover{
+    transform: scale(1.1);
+    transition: .5s ease-out;
+    background-color: hsl(248, 65%, 61%);
+}
+.controls {
     position: fixed;
     right: 1%;
     padding-right: 60px;
@@ -74,9 +139,39 @@ nav ul li a:hover{
     cursor: pointer;
 }
 .controls div:hover{
-    color: #5247c9;
-    transition: 3.s ease;
+    color: #FFD700;
+    transition: .3s ease;
 }
+.control.active-control::after{
+  content: " ";
+  color: #FFD700;
+  width: 0;
+  position: absolute;
+  left: 0;
+}
+/* .tab-links{
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 50px;
+    position: relative;
+}
+.tab-links::after{
+    content: "";
+    background: rebeccapurple;
+    width: 0; 
+    height: 3px; 
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+.tab-links:hover::after{
+    width: 100%;
+    transition: .5s ease;
+}
+.tab-links.active-link::after{
+    width: 100%;
+    font-weight: 500; */
+
 
 /*--------------- ABOUT ---------------*/
 #about{
@@ -110,7 +205,6 @@ nav ul li a:hover{
 .tab-links{
     cursor: pointer;
     font-size: 18px;
-    font-weight: 500;
     margin-right: 50px;
     position: relative;
 }
@@ -129,6 +223,7 @@ nav ul li a:hover{
 }
 .tab-links.active-link::after{
     width: 100%;
+    font-weight: 500;
 }
 .tab-contents ul li{
     list-style: none;
@@ -285,14 +380,6 @@ nav ul li a:hover{
     transform: translateY(-5px);
     transition: .5s ease;
 }
-.btn2{
-    display: inline-block;
-    background: #5247c9;
-}
-.btn2:hover{
-    background: hsl(245, 55%, 63%);  
-    transform: scale(1.1);
-}
 .contact-right form{
     width: 100%;
 }
@@ -307,7 +394,7 @@ form input, form textarea{
     outline: none;
     border-radius: 7px;
 }
-form .btn2{
+form{
     padding: 14px 60px;
     font-size: 18px;
     margin-top: 20px;
@@ -331,18 +418,17 @@ form .btn2{
     padding-left: 15px;
     font-size: 30px;
 }
-.number{
+ /*.number{
     font-size: 32vw;
     font-family: 'Carpenter';
-    padding: 0.2em 0.4em;
     color: #bcbcc4;
-    font-weight: 800;
+    font-weight: 600;
     position: fixed;
-    bottom: 45%;
-    left: 45%;
+    top: 35%;
+    left: 50%;
     z-index: 1000;
-    
-}
+    font-family: 'Super Shiny'; 
+}  
 .overlay{
     position: fixed;
     width: 100vw;
@@ -358,4 +444,4 @@ form .btn2{
     height: 100%;
     z-index: 0;
     background: #1a1a1a;
-}
+} */
