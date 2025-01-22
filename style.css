@@ -17,20 +17,21 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/background2.png);
+    background-image: url(images/background.png);
     background-size: cover;  
     background-position: center;
 }
 @media (max-width: 1300px) {
     #header {
-        background-image: url(images/background.png);
+        background-image: url(images/background2.png);
         background-size: cover;  
         background-position: center;
+        width: 100%;
         height: 100vh; 
     }
     .header-col2 .tsiou1{
         display: block;
-        width: 200px;
+        width: 100%;
     }
 }
 .tsiou1{
@@ -129,6 +130,7 @@ nav ul li a:hover{
     transition: .5s ease-out;
     background-color: hsl(248, 65%, 61%);
 }
+
 .controls {
     position: fixed;
     right: 1%;
@@ -138,41 +140,37 @@ nav ul li a:hover{
     font-size: 40px;
     cursor: pointer;
 }
-.controls div:hover{
+.active-control{
     color: #FFD700;
-    transition: .3s ease;
 }
-.control.active-control::after{
-  content: " ";
-  color: #FFD700;
-  width: 0;
-  position: absolute;
-  left: 0;
+.control:hover{
+    color: #FFD700;
 }
-/* .tab-links{
-    cursor: pointer;
-    font-size: 18px;
-    margin-right: 50px;
-    position: relative;
-}
-.tab-links::after{
-    content: "";
-    background: rebeccapurple;
-    width: 0; 
-    height: 3px; 
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-}
-.tab-links:hover::after{
-    width: 100%;
-    transition: .5s ease;
-}
-.tab-links.active-link::after{
-    width: 100%;
-    font-weight: 500; */
 
+/*--------------- JOURNEY ---------------*/    
+#journey{
+    padding: 80px 0;
 
+}
+.scroll-container, .scrollBtn-container{
+    padding: 40px 0px 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.scroll-title-color, .journey-title-color{
+    margin-left: 10px;
+    color: #4831D4;
+}
+.journey-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    padding: 300px 0;
+
+}
 /*--------------- ABOUT ---------------*/
 #about{
     padding: 80px 0;
