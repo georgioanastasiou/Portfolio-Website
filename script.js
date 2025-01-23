@@ -98,24 +98,32 @@ startLoader()
 
 // let tl = gsap.timeline({duration:2});
 
-window.addEventListener("DOMContentLoaded", () => {
-    const object = document.getElementById("snake");
+const path = document.getElementById("snakePath");
 
-    object.addEventListener("load", () => {
-      const svgDoc = object.contentDocument; // Access the SVG document
-      const path = svgDoc.querySelector("path");
+    // Get the total length of the path
+    const pathLength = path.getTotalLength();
 
-      const pathLength = path.getTotalLength();
+    // Set initial strokeDasharray and strokeDashoffset
+    path.style.strokeDasharray = pathLength;
+    path.style.strokeDashoffset = pathLength;
 
-      gsap.set(path, {
-        strokeDasharray: pathLength,
-        strokeDashoffset: pathLength,
-      });
-
-      gsap.to(path, {
-        strokeDashoffset: 0,
-        duration: 3,
-        ease: "power2.inOut",
-      });
+    // Animate the path on scroll
+    gsap.to(path, {
+      strokeDashoffset: 10,
+      duration:1,
+      delay:10,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: path,
+        start: "top center",
+        end: "bottom center",
+        scrub: true, // Sync animation with scrolling
+      },
     });
-  });
+
+  
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("."),
+    smooth: false
+  })
+

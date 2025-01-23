@@ -4,6 +4,9 @@
     font-family: system-ui;
     box-sizing: border-box;
 }
+body, html {
+    translate: "no";
+  }
 @font-face {
     font-family: 'Super Shiny'; 
     src: url('./SuperShiny-0v0rG.ttf') format('truetype'); 
@@ -443,3 +446,10 @@ form{
     z-index: 0;
     background: #1a1a1a;
 } */
+
+.svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

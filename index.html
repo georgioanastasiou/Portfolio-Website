@@ -9,10 +9,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
         <script src="script.js" defer></script>
         <script src="https://kit.fontawesome.com/1248ffe135.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body class="smooth-control">
         
     <header id="header">
         <div class="container">
@@ -68,10 +70,12 @@
                      <span class="journey-title-color myJourney">Journey</span>
                      
                 </div>
-                
-                <div>
-                    <object id="snake" data="images/snake.svg" type="image/svg+xml"></object>
-                </div>
+                <div class="svg">
+                    <svg width="670" height="620" viewBox="0 0 670 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="snakePath" d="M42.2928 3C72.6036 14.9764 69.5023 19.8898 193.847 62.8819C318.192 105.874 702.098 177.937 664.016 217.961C625.935 257.984 3.43896 212.492 3.43896 263C3.43896 313.508 660.116 399.8 664.016 470.5C667.916 541.2 151.154 587.3 22.939 616.5" 
+                        stroke="#FFEA00" stroke-width="6" stroke-dasharray="10 10"/>
+                      </svg>               
+                     </div>
     </section>
     
 
