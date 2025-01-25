@@ -244,11 +244,23 @@ startLoader()
 //       },
 //     });
 
-// const tl = gsap.timeline({duration: 2});
-// tl.from(".green",  {xPercent: -100})
-//   .from(".orange", {xPercent: 100})
-//   .from(".green", {yPercent: -100});
+const tl = gsap.timeline();
+tl.from(".orange",  {xPercent: -200, })
+    .from(".a1", {yPercent: 200, opacity: 0, duration: 5})
+    .from(".b1", {yPercent: 200, opacity: 0, duration: 3},)
+    .from(".c1", {yPercent: 200, opacity: 0, duration: 4}, )
+    .to(".a1", {xPercent: -200, opacity: 0, duration: 1})
+    .to(".b1", {xPercent: -200, opacity: 0, duration: 2}, '<')
+    .to(".c1", {xPercent: -200, opacity: 0, duration: 3}, '<')
+  .from(".purple", {xPercent: 200})
+  .from(".green", {xPercent: -200});
 
-gsap.to(".green", {duration: 2, x: "1000px", opacity: 0})
-
-
+  ScrollTrigger.create({
+    animation: tl,
+    trigger: ".color",
+    start: "top top",
+    end: "+=4000",
+    scrub: 2,
+    pin: true,
+    anticipatePin: 1,
+  })
