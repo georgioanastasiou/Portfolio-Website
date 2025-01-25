@@ -4,9 +4,7 @@
     font-family: system-ui;
     box-sizing: border-box;
 }
-body, html {
-    translate: "no";
-  }
+
 @font-face {
     font-family: 'Super Shiny'; 
     src: url('./SuperShiny-0v0rG.ttf') format('truetype'); 
@@ -142,6 +140,7 @@ nav ul li a:hover{
     list-style: none;
     font-size: 40px;
     cursor: pointer;
+    z-index: 1000;
 }
 .active-control{
     color: #FFD700;
@@ -405,20 +404,6 @@ form{
    width: 100%;
     height: 100vh;
 }
-.boxes{
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-}
-.boxes div{
-    width: 50px;
-    height: 50px;
-    border:#080808;
-    background: #5247c9;
-    margin-bottom: 20px;
-    padding-left: 15px;
-    font-size: 30px;
-}
  /*.number{
     font-size: 32vw;
     font-family: 'Carpenter';
@@ -451,5 +436,43 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-
+}
+.colors {
+    position: relative; /* Set relative for child positioning if needed */
+    height: 100%; /* Enough height to allow scrolling */
+  }
+.orange {
+    background-color: orange;
+    z-index: 1; 
+    top: 0;
+  }
+.purple {
+    background-color: purple;
+    z-index: 2;
+    top: 0;
+  }
+.green {
+    background-color: green;
+    z-index: 3;
+    top: 0;
+  }
+.box{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+  }
+.boxes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 20px;
+}
+.boxes div{
+    width: 50px;
+    height: 50px;
+    background: #5247c9;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    font-size: 30px;
 }
