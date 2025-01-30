@@ -161,17 +161,18 @@ nav ul li a:hover{
     align-items: center;
     font-size: 50px;
 }
-.scroll-title-color, .journey-title-color{
+.scroll-title-color, .journey-title-color, .skills-title-color{
     margin-left: 10px;
     color: #4831D4;
+    font-weight: 500;
 }
 .journey-container{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    padding: 300px 0;
-
+    padding-top: 300px;
+    padding-bottom: 600px;
 }
 /*--------------- ABOUT ---------------*/
 #about{
@@ -432,11 +433,7 @@ form{
     background: #1a1a1a;
 } */
 
-.svg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 /*  The container is ALWAYS relative and children absolute to overlap */
 
 .box{
@@ -448,12 +445,12 @@ form{
     align-items: center;
   }
 .orange {
-    background-color: orange;
+    background-color: hsl(39, 100%, 60%);
     position: absolute;
     z-index: 1; 
   }
 .purple {
-    background-color: purple;
+    background-color: hsl(265, 72%, 65%);
     position: absolute;
     z-index: 2;
   }
@@ -461,18 +458,58 @@ form{
     background-color: green;
     z-index: 3;
 }
+
 .boxes{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     align-items: center;
-    justify-content: space-around;
-    gap: 500px;
+    justify-content: center;
+    gap: 50px;
     padding-top: 20px;
-    
-}
-.boxes {
-    background: #5247c9;
     margin-bottom: 20px;
-    padding-left: 15px;
+    padding-left: 50px;
     font-size: 30px;
-    width: 100%;
+    width: 80%;
+}
+.a1, .b1, .c1{
+    border: 1px solid #4831D4;
+    border-radius: 5px;
+    padding: 30px;
+}
+.a1 h1, .b1 h1, .c1 h1{
+    color: hsl(248, 65%, 51%);
+    font-size: 30px;
+}
+
+.sports, .physio, .computer{
+    font-size: 20px;
+    padding-top: 15px;
+}
+.skills-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    padding-top: 300px;
+    padding-bottom: 600px;
+}
+.a2, .b2, .c2{
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    padding: 30px;
+}
+.bara1{
+    width: 50%;
+    height: .45rem;
+    position: relative;
+    background-color: #FFD700;
+}
+.bara1 .progress-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #47cf50;
+    transition: all .4s ease-in-out;
+    width: 50%;
+    height: 100%;
 }

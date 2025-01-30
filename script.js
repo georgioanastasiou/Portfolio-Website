@@ -186,8 +186,8 @@ ScrollTrigger.refresh();
 //     x: 100,
 // });
 // Toogle Actions
-gsap.from(".myJourney", {duration: 1, y:"200px", opacity: 0, scrollTrigger: ".myJourney" })
-gsap.to(".myJourney", {duration: 1, opacity: 1, scrollTrigger: ".myJourney"})
+// gsap.from(".myJourney", {duration: 1, y:"200px", opacity: 0, scrollTrigger: ".myJourney" })
+// gsap.to(".myJourney", {duration: 1, opacity: 1, scrollTrigger: ".myJourney"})
 
 function startLoader(){
     let number = document.querySelector('.number');
@@ -219,48 +219,71 @@ startLoader()
 // gsap.to('.bar', {duration:1.5, x:2500, delay:4, opacity: 0})
 // gsap.from('.control', {duration: 1, x:200, stagger: 0.2, ease: "power2.out", delay:5})
 
-// let tl = gsap.timeline({duration:2});
 
-// const path = document.getElementById("snakePath");
-
-//     // Get the total length of the path
-//     const pathLength = path.getTotalLength();
-
-//     // Set initial strokeDasharray and strokeDashoffset
-//     path.style.strokeDasharray = pathLength;
-//     path.style.strokeDashoffset = pathLength;
-
-//     // Animate the path on scroll
-//     gsap.to(path, {
-//       strokeDashoffset: 10,
-//       duration:2,
-//       delay:1,
-//       ease: "power1.inOut",
-//       scrollTrigger: {
-//         trigger: path,
-//         start: "top center",
-//         end: "bottom center",
-//         scrub: true, // Sync animation with scrolling
-//       },
-//     });
 
 const tl = gsap.timeline();
-tl.from(".orange",  {xPercent: -200, })
-    .from(".a1", {yPercent: 200, opacity: 0, duration: 5})
+tl.from(".orange",  {xPercent: -200, opacity: 0})
+    .from(".myJourney", {duration: 2, yPercent: 600, opacity: 0, })
+    .from(".a1", {yPercent: 600, opacity: 0, duration: 5})
     .from(".b1", {yPercent: 200, opacity: 0, duration: 3},)
     .from(".c1", {yPercent: 200, opacity: 0, duration: 4}, )
+    .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0, })
+
     .to(".a1", {xPercent: -200, opacity: 0, duration: 1})
     .to(".b1", {xPercent: -200, opacity: 0, duration: 2}, '<')
     .to(".c1", {xPercent: -200, opacity: 0, duration: 3}, '<')
-  .from(".purple", {xPercent: 200})
-  .from(".green", {xPercent: -200});
+
+    .from(".purple", {xPercent: -200, duration: 5})
+    .from(".a2", {yPercent: 200, opacity: 0, duration: 5})
+    .from(".b2", {yPercent: 200, opacity: 0, duration: 3},)
+    .from(".c2", {yPercent: 200, opacity: 0, duration: 4}, )
+    .to(".a2", {xPercent: -200, opacity: 0, duration: 1})
+    .to(".b2", {xPercent: -200, opacity: 0, duration: 2}, '<')
+    .to(".c2", {xPercent: -200, opacity: 0, duration: 3}, '<')
+
+    
+
+    .from(".green", {xPercent: -200, duration: 5})
+    .from(".a3", {yPercent: 200, opacity: 0, duration: 5})
+    .from(".b3", {yPercent: 200, opacity: 0, duration: 3},)
+    .from(".c3", {yPercent: 200, opacity: 0, duration: 4}, )
+    .to(".a3", {xPercent: -200, opacity: 0, duration: 1})
+    .to(".b3", {xPercent: -200, opacity: 0, duration: 2}, '<')
+    .to(".c3", {xPercent: -200, opacity: 0, duration: 3}, '<')
+    
+     
+  
 
   ScrollTrigger.create({
     animation: tl,
     trigger: ".color",
     start: "top top",
-    end: "+=4000",
-    scrub: 2,
+    end: "+=12000",
+    scrub: 1,
     pin: true,
-    anticipatePin: 1,
+    anticipatePin: 3,
   })
+
+// const getY = (e) => {
+//     const height = e.clientHeight;
+//     const maxScrollSpeed = -300;
+//     const minScrollSpeed = -30;
+//     const referenceHeight = 500;
+
+//     const speedfactor = 
+//      maxScrollSpeed + (height / referenceHeight) * (maxScrollSpeed - minScrollSpeed);
+//      return speedfactor;
+// }
+
+// let waterfall = document.querySelectorAll(".waterfall-images div img").forEach((image) => {
+//     gsap.to(image, {
+//         y: getY(image),
+//         scrollTriger: {
+//             start: "top bottom",
+//             end: "bottom top",
+//             scrub: 3,
+//             pin: true,
+//             trigger: image,
+//         }
+//     })
+// })
