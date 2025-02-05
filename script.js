@@ -172,7 +172,7 @@ startLoader()
 
 
 const tl = gsap.timeline();
-tl.from(".aristero",  {xPercent: -200, opacity: 0, duration: 2})
+tl.from(".journey-left",  {xPercent: -200, opacity: 0, duration: 2})
     .from(".education", {xPercent: -100, opacity:0, duration: 2})
     .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
     .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
