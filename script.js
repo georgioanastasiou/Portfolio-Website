@@ -204,7 +204,7 @@ tl.from(".aristero",  {xPercent: -200, opacity: 0, duration: 2})
 
 
   const tl2 = gsap.timeline();
-tl2.from(".skills-left",  {xPercent: -200, opacity: 0, duration: 2})
+tl2.from(".skills-left",  {xPercent: -100, opacity: 0, duration: 2})
     .from(".skills-right", {xPercent: 100, opacity:0, duration: 2})
 
 
@@ -212,7 +212,7 @@ tl2.from(".skills-left",  {xPercent: -200, opacity: 0, duration: 2})
     animation: tl2,
     trigger: ".color2",
     start: "top top",
-    end: "=+4000",
+    end: "=+3000",
     scrub: 2,
     pin: true,
     anticipatePin: true,

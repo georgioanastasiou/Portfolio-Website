@@ -9,12 +9,17 @@
     font-family: 'Super Shiny'; 
     src: url('./SuperShiny-0v0rG.ttf') format('truetype'); 
   }
-  
 body{
     background-color: #080808;
     color: #fff;
-
 }
+html, body {
+    overflow-x: hidden;
+  }
+  .color1, .color2 {
+    overflow: hidden;
+  }
+  
 /*---------- HEADER --------- */
 #header {
     display: flex;
