@@ -13,7 +13,7 @@ const headerControl = document.querySelector(".control-1");
 const aboutControl = document.querySelector(".control-2");
 const journeyControl = document.querySelector(".control-3")
 const servicesControl = document.querySelector(".control-4")
-const contactControl = document.querySelector(".control-5")
+// const contactControl = document.querySelector(".control-5")
 
 
 // Add click event for smooth scrolling to #header
@@ -33,10 +33,10 @@ servicesControl.addEventListener("click", () =>{
     servicesControl.classList.add("active-control");
     gsap.to(window, {duration: 1, scrollTo: sections[3]})
 })
-contactControl.addEventListener("click", () =>{
-    contactControl.classList.add("active-control");
-    gsap.to(window, {duration: 1, scrollTo: sections[4]})
-})
+// contactControl.addEventListener("click", () =>{
+//     contactControl.classList.add("active-control");
+//     gsap.to(window, {duration: 1, scrollTo: sections[4]})
+// })
 
 // Use ScrollTrigger to update the control dynamically on scroll
 ScrollTrigger.create({
@@ -110,23 +110,23 @@ ScrollTrigger.create({
     }
   });
 
-    ScrollTrigger.create({
-        trigger: sections[4],
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => {
-            contactControl.classList.add("active-control");
-        },
-        onLeave: () => {
-            contactControl.classList.remove("active-control");
-        },
-        onEnterBack: () =>{
-            contactControl.classList.add("active-control");
-        },
-        onLeaveBack: () => {
-            contactControl.classList.remove("active-control");
-        }
-    })
+    // ScrollTrigger.create({
+    //     trigger: sections[4],
+    //     start: "top center",
+    //     end: "bottom center",
+    //     onEnter: () => {
+    //         contactControl.classList.add("active-control");
+    //     },
+    //     onLeave: () => {
+    //         contactControl.classList.remove("active-control");
+    //     },
+    //     onEnterBack: () =>{
+    //         contactControl.classList.add("active-control");
+    //     },
+    //     onLeaveBack: () => {
+    //         contactControl.classList.remove("active-control");
+    //     }
+    // })
 ScrollTrigger.refresh();
 
 
