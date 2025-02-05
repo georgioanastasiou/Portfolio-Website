@@ -157,17 +157,17 @@ function startLoader(){
 }
 startLoader()
 
-gsap.to('.number', {duration: 2, opacity: 0, delay: 2});
-gsap.to('.bar', {duration:1.5, x:2500, delay:4, opacity: 0});
-gsap.to('.overlay', {
-    duration: 1,
-    opacity: 0,
-    delay: 5,
-    onComplete: () => {
-        document.querySelector('.overlay').style.display = 'none';
-        document.body.style.overflow = 'auto';  
-    }
-});
+// gsap.to('.number', {duration: 2, opacity: 0, delay: 2});
+// gsap.to('.bar', {duration:1.5, x:2500, delay:4, opacity: 0});
+// gsap.to('.overlay', {
+//     duration: 1,
+//     opacity: 0,
+//     delay: 5,
+//     onComplete: () => {
+//         document.querySelector('.overlay').style.display = 'none';
+//         document.body.style.overflow = 'auto';  
+//     }
+// });
 
 
 
@@ -187,12 +187,10 @@ tl.from(".aristero",  {xPercent: -200, opacity: 0, duration: 2})
     .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
     .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
     .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-    .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
     .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
+    .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
     .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
     .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
-
-
 
   ScrollTrigger.create({
     animation: tl,
@@ -204,23 +202,20 @@ tl.from(".aristero",  {xPercent: -200, opacity: 0, duration: 2})
     anticipatePin: true,
   })
 
-const tl2 = gsap.timeline();
 
- tl2.from(".purple", {xPercent: -200, duration: 5, opacity: 0})
-    .from(".skills-container", {yPercent: 200, opacity: 0, duration: 5})
-    .from(".languages > img", {yPercent: 200, opacity: 0, stagger: 1, duration: 5,})
-    .to(".skills-container", {yPercent: -200, opacity: 0, duration: 2})
-    .to(".languages > img", {yPercent: -200, opacity: 0, duration: 2})
-
+  const tl2 = gsap.timeline();
+tl2.from(".skills-left",  {xPercent: -200, opacity: 0, duration: 2})
+    .from(".skills-right", {xPercent: 100, opacity:0, duration: 2})
 
 
   ScrollTrigger.create({
     animation: tl2,
     trigger: ".color2",
     start: "top top",
-    end: "=+3000",
+    end: "=+4000",
     scrub: 2,
     pin: true,
     anticipatePin: true,
   })
-  const tl3 = gsap.timeline();
+
+
