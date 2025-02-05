@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Liter&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <title>Document</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
@@ -20,28 +22,19 @@
         <div class="container">
             <nav>   
                 <img src="images/logo.jpg" class="logo">
-                <!-- <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul> -->
             </nav>
             <div class="row1">
-            <div class="header-text header-col1">
-                <p>Software Engineer</p>
-                <h1>George Anastasiou</h1>
-                <a href="George Anastasiou CV.pdf" class="main-cv">
-                    <span class="cv">Download CV</span>
-                    <span class="cv-icon"><i class="fa-solid fa-download"></i></span>
-                    </a>
-            </div>
-            <div class="header-col2 ">
+                <div class="header-text header-col1">
+                    <p>Software Engineer</p>
+                    <h1>George Anastasiou</h1>
+                    <a href="George Anastasiou CV.pdf" class="main-cv">
+                        <span class="cv">Download CV</span>
+                        <span class="cv-icon"><i class="fa-solid fa-download"></i></span>
+                        </a>
+                </div>
+            <div class="header-col2">
                 <div ><img src="images/tsiou1.png" class="tsiou1"></div> 
             </div>
-            
-
                  <div class="number">100</div>
                 <div class="controls">
                     <div class="control-1 control active-control"><i class="fa-solid fa-house"></i></i></div>
@@ -50,217 +43,169 @@
                     <div class="control-4 control"><i class="fa-solid fa-address-book"></i></div>
                     <div class="control-5 control"><i class="fa-solid fa-message"></i></i></div>
                 </div>
-            
         </div>
     </div>
+    
+    <div class="scroll-container">
+        <span class="scroll-title-color">Scroll To See</span>
+        <div class="scrollBtn-container">
+            <img src="images/scroll.png" class="scroll-img">
+            </div>
+         </div>
+             
+                
     </header>  
-    <div class="bar"></div>   <!-------------------  HEADER ------------>
+    <div class="overlay">
+        <div class="number">100</div>
+        <div class="bar"></div>
+    </div>
+       <!-------------------  HEADER ------------>
     
     <!--------------- ABOUT --------------->
     <section id="journey">
-        <div class="scroll-container">
-             <span class="scroll-title">Scroll To</span>
-             <span class="scroll-title-color">See</span>
-        </div>
-            <div class="scrollBtn-container">
-                 <img src="images/scroll.png" class="scroll-img">
-            </div>
-            <div class="fidi">
+            <div class="color1">
                 <div class="journey-container">
                     <span class="journey-title myJourney">My</span>
-                     <span class="journey-title-color myJourney">Journey</span> 
-                </div>                
-                     </div>
-                     <div class="color">
-                        <div class="box orange">
-                            <div class="boxes">
-                                <div class="journey-container">
-                                    <span class="journey-title myJourney">My</span>
-                                     <span class="journey-title-color myJourney">Journey</span> 
-                                </div>                
+                            <span class="journey-title-color myJourney">Journey</span> 
+                            </div>
+                        <div class="boxes"> 
+                            <div class="aristero">
+                                <h1 class="education">Education</h1>
                                 <div class="a1">
                                     <h1>2014-2017</h1>
                                     <p>BSc - Sports Scientist</p>
-                                    <p class="sports">Studied human physiology and biomechanics, designing training programs and conducting research on performance and injury prevention.
-                                    </p>
-                                </div>
+                                    <p class="sports">Studied human physiology and biomechanics, designing training programs and conducting research on performance and injury prevention.</p>  
+                                </div>  
                                 <div class="b1">
                                     <h1>2018-2022</h1>
-                                    <p >BSc - Physiotherapist</p>
-                                    <p class="physio">Specialized in rehabilitation, treating musculoskeletal injuries, and developing personalized recovery plans for patients with diverse needs.</p>
+                                        <p>BSc - Physiotherapist</p>
+                                        <p class="physio">Specialized in rehabilitation, treating musculoskeletal injuries, and developing personalized recovery plans for patients with diverse needs.</p>
                                 </div>
                                 <div class="c1">
                                     <h1>2022-Now</h1>
-                                    <p>BSc - Computer Science</p>
-                                    <p class="computer">Focused on web development, software engineering principles, and gaining hands-on experience by completing various projects</p>
+                                        <p>BSc - Computer Science</p>
+                                            <p class="computer">Focused on web development, software engineering principles, and gaining hands-on experience by completing various projects</p>
                                 </div>
-                              </div>
-                        </div>
-                        <div class="box purple"> 
-                            <div class="boxes">
-                                <div class="skills-container">
-                                    <span class="skills-title mySkills">My</span>
-                                     <span class="skills-title-color mySkills">Skills</span> 
-                                </div>                
-                            <div class="a2">
-                                <h1>Front End</h1>
-                                <div>
-                                    <p>HTML</p>
-                                    <div class="bara1">
-                                        <span class="progress-bar"></span>
+                            </div>
+                                <div class="deksi"> 
+                                    <h1 class="work">Work Experience</h1>
+                                    <div class="a2">
+                                        <h1>2014-2017</h1>
+                                            <p>BSc - Sports Scientist</p>
+                                                <p class="sports">Studied human physiology and biomechanics, designing training programs and conducting research on performance and injury prevention.</p>
                                     </div>
-                                    <p>CSS</p>
-                                    <div class="bara"></div>
-                                    <p>JavaScript</p>
-                                    <div class="bara"></div>
-                                    <p>React</p>
-                                    <div class="bara"></div>
+                                    <div class="b2">
+                                            <h1>2018-2022</h1>
+                                                <p >BSc - Physiotherapist</p>
+                                                <p class="physio">Specialized in rehabilitation, treating musculoskeletal injuries, and developing personalized recovery plans for patients with diverse needs.</p>
+                                    </div>
+                                    <div class="c2">
+                                        <h1>2022-Now</h1>
+                                            <p>BSc - Computer Science</p>
+                                                <p class="computer">Focused on web development, software engineering principles, and gaining hands-on experience by completing various projects</p>
+                                    </div>
+                                </div>
+                        </div>
+            </div> 
+    </section>  
+
+                                <!------------ SKILLS ------------>
+    <section id="skills">
+            <div class="color2"> 
+                <div class="skills-container">
+                    <span class="skills-title mySkills">My</span>
+                        <span class="skills-title-color mySkills">Skills<span> 
+                            </div>
+                <div class="boxes">
+                    <div class="aristero">
+                        <h1 class="frontend">Frontend</h1>
+                            <div class="border">
+                        <div class="a3">
+                            <p class="html">HTML</p>
+                            <P>85%</P>
+                        </div>  
+                        <div class="progress-bar">
+                            <span class="bara1"></span>
+                        </div>
+                        <div class="a3">
+                            <p class="css">CSS</p>
+                            <P>80%</P>
+                        </div>  
+                        <div class="progress-bar">
+                            <span class="bara2"></span>
+                        </div>
+                        <div class="a3">
+                            <p class="javascript">Javascript</p>
+                            <P>60%</P>
+                        </div>  
+                        <div class="progress-bar">
+                            <span class="bara3"></span>
+                        </div>
+                        <div class="a3">
+                            <p class="react">React</p>
+                            <P>40%</P>
+                        </div>  
+                        <div class="progress-bar">
+                            <span class="bara4"></span>
+                        </div>
+                        </div>
+                    </div>
+                        <div class="deksi"> 
+                            <h1 class="backend">Backend</h1>
+                            <div class="border">
+                                <div class="a3">
+                                    <p class="html">MySQL</p>
+                                    <P>80%</P>
+                                </div>  
+                                <div class="progress-bar">
+                                    <span class="bara5"></span>
+                                </div>
+                                <div class="a3">
+                                    <p class="css">Python</p>
+                                    <P>60%</P>
+                                </div>  
+                                <div class="progress-bar">
+                                    <span class="bara6"></span>
+                                </div>
+                                <div class="a3">
+                                    <p class="javascript">Node</p>
+                                    <P>40%</P>
+                                </div>  
+                                <div class="progress-bar">
+                                    <span class="bara7"></span>
+                                </div>
+                                <div class="a3">
+                                    <p class="react">Express</p>
+                                    <P>40%</P>
+                                </div>  
+                                <div class="progress-bar">
+                                    <span class="bara8"></span>
+                                </div>
                                 </div>
                             </div>
-                            <div class="b2">
-                                <h1>Back End</h1>
-                            </div>
-                            <div class="c2">c</div>
-                          </div>
-                        </div>
-                        <div class="box green">
-                            <div class="boxes">
-                                <div class="a3">a</div>
-                                <div class="b3">b</div>
-                                <div class="c3">c</div>
-                              </div>
-                        </div>
-                    </div> 
-                    
+                </div>  
+       </section>             
     
-    <!------------------ ABOUT ----------->
-<section id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img class="img-tsiou" src="images/tsiou.jpg">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta sunt quasi iusto amet consectetur dolorem totam, laudantium, porro explicabo nihil asperiores incidunt qui obcaecati, veritatis nemo praesentium illum voluptatibus sit.</p>
-
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Web Development</span><br>Building Interactive Web Pages</li>
-                        <li><span>Software Development</span><br>Developing Software</li>
-                        <li><span>App Development</span><br>Building iOS Apps</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2021-2023</span><br>Physiotherapist</li>
-                        <li><span>2014-2017</span><br>Basketball Coach</li>
-                        <li><span>2010-2017</span><br>Proffesional Athlete</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2021-Current</span><br>IU Computer Science | Berlin</li>
-                        <li><span>2018-2021</span><br>Physiotherapy Department | Thessaloniki</li>
-                        <li><span>2014-2018</span><br>Sports Science | Thessaloniki</li>
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ------------------services----------------- -->
-<section id="services">
-    <div class="container">
-        <h1 class="sub-title">My Services</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web Development</h2>
-                <p>Lorem ipsum dolor sit vitae quas sint laboriosam. Pariatur nam exercitationem magnam sit dolor veniam qui officiis!</p>
-                <a href="#">learn more</a>
-            </div>
-            <div>
-                <i class="fa-brands fa-uncharted"></i>
-                <h2>Software Engineering</h2>
-                <p>Lorem ipsum dolor sitquas sint laboriosam. Pariatur nam exercitationem magnam sit dolor veniam qui officiis!</p>
-                <a href="#">learn more</a>
-            </div>
-            <div>
-                <i class="fa-brands fa-app-store-ios"></i>
-                <h2>App Development</h2>
-                <p>Lorem ipsum dolor sit amet  nam\ sint laboriosam. Pariatur nam exercitationem magnam sit dolor veniam qui officiis!</p>
-                <a href="#">learn more</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ------------------portfolio----------------- -->
-<section id="portfolio">
-    <div class="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/work1.png">
-                <div class="layer">
-                    <h3>Social Media App</h3>
-                    <p>Lorem ipsum dolor,  qui odit iste architecto iure.</p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/work2.jpg">
-                <div class="layer">
-                    <h3>Social Media App</h3>
-                    <p>Lorem ipsum dolor,  qui odit iste architecto iure.</p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/work3.jpg" id="work3">
-                <div class="layer">
-                    <h3>Social Media App</h3>
-                    <p>Lorem ipsum dolor,  qui odit iste architecto iure.</p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-        <a href="#" class="btn">See More</a>
-    </div>
-</section>
 <!----------------- Contact-------------- -->
 <section id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-envelope"></i>g-anastasiou@hotmail.com</p>
-                <p><i class="fa-solid fa-phone"></i>+4915731384994</p>
-                <div class="social-icons">
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                </div>
-            </div>
-            <div class="contact-right">
-                <form action="">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" id="" rows="6"  placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
+    
+        <div class="contact-container">
+            <span class="contact-title contact-h1">Contact</span>
+                <span class="contact-title-color contact-h1">Me!<span> 
+                    </div>
+                        <form action="">
+                            <input type="text" name="firstName" placeholder="First Name" required>
+                            <input type="text" name="lastName" placeholder="Last Name" required>
+                            <input type="tel" name="number" placeholder="Mobile Number">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" rows="10"  placeholder="Your Message" class="textarea"></textarea>
+                            <div class="btn2">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                    
 </section>
-<div>
-   
+
 
 </body>
 </html>

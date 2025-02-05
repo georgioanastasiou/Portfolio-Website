@@ -1,7 +1,7 @@
 *{
     margin: 0; 
     padding: 0;
-    font-family: system-ui;
+    font-family: "Poppins", serif;
     box-sizing: border-box;
 }
 
@@ -13,117 +13,107 @@
 body{
     background-color: #080808;
     color: #fff;
+
 }
 /*---------- HEADER --------- */
-#header{
-    width: 100%;
+#header {
+    display: flex;
+    align-items: center; /* Centers vertically */
+    justify-content: flex-start; /* Keeps it on the left */
     height: 100vh;
     background-image: url(images/background.png);
-    background-size: cover;  
+    background-size: cover;
     background-position: center;
+    position: relative;
 }
+nav{
+    position: absolute;
+    top: 2%;
+    left: 10%;
+}
+
+
 @media (max-width: 1300px) {
     #header {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-image: url(images/background2.png);
         background-size: cover;  
         background-position: center;
-        width: 100%;
-        height: 100vh; 
     }
     .header-col2 .tsiou1{
         display: block;
+        
+    }
+    .tsiou1{
         width: 100%;
     }
+    .row1{   
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+    .main-cv{
+        margin-left: 20px;
+
+    }
+    .header-text p {
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
 }
+
 .tsiou1{
     display: none;
 }
 .container{
-     padding: 10px 10%;         /*10px = top+bot, 10% = left+right */
+     padding: 10px 10%;  
 }
-/*nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-nav ul li{
-    display: inline-block;
-    margin: 10px 20px;
-    list-style: none;
-}
-nav ul li a{
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;
-    position: relative; /* the parent must be relative and child absolute/
-}
-nav ul li a::after{
-    content: '';
-    width: 0%; /*to make it hidden/ 
-    height: 3px;
-    background: #ff004f;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-}
-*/
-/* nav ul li a:hover::after{
-    width: 100%;
-    transition: .5s ease;
-}
-nav ul li a:hover{
-    color: blue;
-    transition: .5s ease;
-} */
 .logo{
     width: 60px;
 }
-.row1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.header-col1{
-    flex-basis: 60%;
-}
-.header-col2 {
-    flex-basis: 30%;
-}
 .header-text{
-    margin-top: 20%;
     font-size: 30px;
     color: #4831D4;
 }
-.main-cv{
-    display: block;
-}   
+
 .header-text p {
-    font-weight: 400;
+    font-weight: 500;
 }
 .header-text h1{
     margin-top: 10px;
 }
 .header-text .main-cv{
     margin-top: 40px;
-    
 }
 .main-cv{
+    display: block;
     border-radius: 30px;
     font-weight: 600;
-    width: 280px;
+    width: 250px;
     overflow: hidden;
     text-decoration: none;
     background-color: #4831D4;
     color: #fff;
-    padding: 5px;
+    padding-bottom: 7px;
 }
 .cv{
-    margin-left: 10px;
+    margin-right: 10px;
+    margin-left: 20px;
+    font-size: 20px;
 }
 .cv-icon{
-    margin-left: 20px;
+    margin-left: 10px;
     border-radius: 50%;
 }
 .main-cv:hover{
@@ -131,7 +121,6 @@ nav ul li a:hover{
     transition: .5s ease-out;
     background-color: hsl(248, 65%, 61%);
 }
-
 .controls {
     position: fixed;
     right: 1%;
@@ -148,368 +137,261 @@ nav ul li a:hover{
 .control:hover{
     color: #FFD700;
 }
+.scroll-container{
+    position: absolute;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+.scroll-title-color{
+    color: #4831D4;
+    font-weight: 500;
+    font-size: 20px;
+}
+.scrollBtn-container img {
+    width: 30px; 
+    position: relative;
+    left: 40%;
+    margin-top: 10px;
+}
 
 /*--------------- JOURNEY ---------------*/    
 #journey{
     padding: 80px 0;
+}
+.color1{
+    min-height: 100vh;
+}
+.color2{
+    min-height: 80vh;
 
 }
-.scroll-container, .scrollBtn-container{
-    padding: 40px 0px 10px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-}
-.scroll-title-color, .journey-title-color, .skills-title-color{
+.journey-title-color, .skills-title-color, .contact-title-color{
     margin-left: 10px;
     color: #4831D4;
     font-weight: 500;
-}
-.journey-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 50px;
-    padding-top: 300px;
-    padding-bottom: 600px;
 }
-/*--------------- ABOUT ---------------*/
-#about{
-    padding: 80px 0;
-    color: #ababab;
+/* -------------------CONTACT---------------- */
+#contact {
+    padding-bottom: 200px;
 }
-.row{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;  /* it pushes the elements to the next line if the site gets smaller */
-}
-.about-col-1{
-    flex-basis: 35%; /*The widht of the column will be 35% */
-}
-.about-col-1 img{
-    width: 100%;
-    border-radius: 15px;
-}
-.about-col-2{
-    flex-basis: 60%;   /* It pushes the column left and right */
-}
-.sub-title{
-    font-size: 60px;
+.contact-title, .contact-title-color {
+    font-size: 50px;
     font-weight: 600;
-    color: #fff;
+      
 }
-.tab-titles{
+.contact-container {
     display: flex;
-    margin: 20px 0 40px;
-}
-.tab-links{
-    cursor: pointer;
-    font-size: 18px;
-    margin-right: 50px;
-    position: relative;
-}
-.tab-links::after{
-    content: "";
-    background: rebeccapurple;
-    width: 0; /*to make it hidden*/
-    height: 3px; 
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-}
-.tab-links:hover::after{
-    width: 100%;
-    transition: .5s ease;
-}
-.tab-links.active-link::after{
-    width: 100%;
-    font-weight: 500;
-}
-.tab-contents ul li{
-    list-style: none;
-    margin: 10px 0; /* 10px =top-bot - 0 = left-zero*/
-}
-.tab-contents ul li span{
-    color: #47cf50;
-    font-size: 14px;
-}
-.tab-contents{
-    display: none;
-}
-.tab-contents.active-tab{
-    display: block;   
-}
-
-/* --------------------sevices--------------- */
-#services{
-    padding: 30px 0;
-}
-.services-list{
-    display: grid;
-    /* the grid will automatically adjust the number of coluns based on the available space 
-    250px is the minimum width of each column - the columns cannot shrink smaller than that
-    1fr is the maximum width of each column which means the column can grow to take up a portion of the available space
-    it distributes available space equally among all columns*/
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-.services-list div{
-    background-color: #262626;
-    padding: 40px;
-    font-size: 13px;
-    font-weight: 300;
-    border-radius: 10px;
-    transition: .5s ease;
-}
-.services-list i {
-    font-size: 50px;
-    margin-bottom: 30px;
-}
-.services-list  h2{
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-.services-list a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 400;
-    font-size: 12px;
-    margin-top: 20px;
-    display: inline-block;
-}
-.services-list div:hover{
-    background-color: #4e4d4d;
-    transform: scale(1.1);
-}
-.work img{
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-    transition: .5s ease;
-}
-.work{
-    position: relative;
-    overflow: hidden;
-}
-.work-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-.layer{
-    width: 100%;
-    height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), #5247c9);
-    border-radius: 10px;
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    transition:  .5s;
+    align-items: center;
+    max-width: 100%;
 }
-.layer h3{
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.layer a{
-    text-decoration: none;
-    margin-top: 20px;
-    background: #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     font-size: 18px;
-    text-align: center;
-    line-height: 40px;
+    margin-top: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 50%; 
 }
-/* that means when I hover the .work(parent) element, then the .layer element(child) is affected */
-.work:hover .layer{
-    height: 100%;
-}
-/* same as here, the img element is affected when I hover the work */
-.work:hover img{
-    transform: scale(1.1);
-}
-.btn{
-    text-decoration: none;
-    display: flex;
-    margin: 50px auto;
-    padding: 10px 30px;
-    border-radius: 10px;
-    width: fit-content;
-    border: 1px solid #5247c9;
-    color: #fff;
-    transition: .5s ease;
-}
-.btn:hover{
-    background: #5247c9;
-}
-
-/* -------------------contact---------------- */
-
-.contact-left{
-    flex-basis: 35%;
-}
-.contact-right{
-    flex-basis: 60%;
-}
-.contact-left p{
-    margin-top: 30px;
-}
-.contact-left p i{
-    margin-right: 15px;
-    color: #5247c9;
-    font-size: 25px;
-}
-.social-icons i{
-    margin-top: 30px;
-    font-size: 30px;
-    margin-right: 15px;
-    color: #fff;
-}
-.social-icons i:hover{
-    color: #5247c9;
-    transform: translateY(-5px);
-    transition: .5s ease;
-}
-.contact-right form{
-    width: 100%;
-}
-form input, form textarea{
-    width: 100%;
-    margin: 20px 0;
+form input, textarea {
     padding: 15px;
-    color: #fff;
-    background: #262626;
-    border: 0;
+    color: #000;
+    background: #fff;
+    border: 2px solid #4831D4;
     font-size: 15px;
     outline: none;
     border-radius: 7px;
 }
-form{
-    padding: 14px 60px;
+textarea {
+    grid-column: span 2; /* Makes it span the entire width */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+.btn2 {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+}
+button {
+    padding: 20px 40px;
     font-size: 18px;
-    margin-top: 20px;
+    background-color: #4831D4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    max-width: 40%; /* Make button full-width on small screens */
 }
-#about{
-   width: 100%;
-    height: 100vh;
+button:hover {
+    background-color: #3625a6;
+    transition: .5s ease;
 }
- /*.number{
-    font-size: 32vw;
-    font-family: 'Carpenter';
-    color: #bcbcc4;
-    font-weight: 600;
-    position: fixed;
-    top: 35%;
-    left: 50%;
-    z-index: 1000;
-    font-family: 'Super Shiny'; 
-}  
-.overlay{
+
+/* ✅ Responsive Fix */
+@media (max-width: 800px) {
+    form {
+        grid-template-columns: 2fr; 
+        max-width: 100%; 
+
+    }
+    .controls{
+        display: none;
+    }
+}
+body, html {
+    overflow: hidden; /* Prevent scrolling while loading */
+    height: 100%;
+}
+
+.overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
     display: flex;
-    z-index: 2;
+    z-index: 1000; /* Ensure it stays above all content */
+    background: #1a1a1a; /* Background color during loading */
+    align-items: center;
+    justify-content: center;
 }
-.bar{
+
+.number {
+    font-size: 32vw;
+    font-family: 'Super Shiny';
+    color: #bcbcc4;
+    font-weight: 600;
     position: absolute;
+    top: 20%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Above overlay */
+}
+
+.bar {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1000;
     background: #1a1a1a;
-} */
-
+}
 
 /*  The container is ALWAYS relative and children absolute to overlap */
 
-.box{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
 .orange {
-    background-color: hsl(39, 100%, 60%);
-    position: absolute;
-    z-index: 1; 
+    background-color: #080808;
   }
 .purple {
-    background-color: hsl(265, 72%, 65%);
-    position: absolute;
-    z-index: 2;
+    background-color: hsl(248, 65%, 61%);
   }
-.green {
-    background-color: green;
-    z-index: 3;
+.journey-container, .skills-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.myJourney, .mySkills{
+    font-size: 50px;
+    font-weight: 700;
+}
+.aristero, .deksi{
+    padding: 20px;
 
+}
+.aristero .education, .deksi .work{
+    padding-top: 20px;
+    margin-left: 30px;
+    font-size: 25px;
+}
 .boxes{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    padding-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0 auto;
     font-size: 30px;
-    width: 80%;
+    width: 70%;
 }
-.a1, .b1, .c1{
+.a1, .b1, .c1,.a2, .b2, .c2{
     border: 1px solid #4831D4;
-    border-radius: 5px;
-    padding: 30px;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px;
 }
-.a1 h1, .b1 h1, .c1 h1{
+.a1 h1, .b1 h1, .c1 h1, .a2 h1, .b2 h1, .c2 h1{
     color: hsl(248, 65%, 51%);
-    font-size: 30px;
-}
-
-.sports, .physio, .computer{
+    font-weight: 800;
     font-size: 20px;
+}
+.sports, .physio, .computer{
+    font-size: 16px;
     padding-top: 15px;
 }
-.skills-container{
+.languages{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+}
+.languages > img{
+    padding-bottom: 20px;
+}
+.a3{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-size: 50px;
-    padding-top: 300px;
-    padding-bottom: 600px;
+    font-size: 18px;
 }
-.a2, .b2, .c2{
-    border: 1px solid #FFD700;
-    border-radius: 5px;
-    padding: 30px;
+.frontend,.backend{
+    font-size: 30px;
+    margin-top: 20px;
 }
-.bara1{
-    width: 50%;
-    height: .45rem;
+.progress-bar{
+    width: 100%;
+    height: 5px;
     position: relative;
-    background-color: #FFD700;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    background: #262626;
+    margin-top: 10px;
 }
-.bara1 .progress-bar{
+.bara1, .bara2, .bara3, .bara4, .bara5, .bara6, .bara7, .bara8{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #47cf50;
-    transition: all .4s ease-in-out;
-    width: 50%;
-    height: 100%;
+    height: 5px;
+    background-color: #FFD700;
+    border-radius: 5px;
+}
+.bara1{
+    width: 85%;
+}
+.bara2{
+    width: 80%;
+}
+.bara3{
+    width: 60%;
+}
+.bara4{
+    width: 40%;
+}
+.bara5{
+    width: 80%;
+}
+.bara6{
+    width: 60%;
+}
+.bara7{
+    width: 40%;
+}
+.bara8{
+    width: 40%;
+}
+
+.border{
+    border: 3px solid #4831D4;
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 15px;
 }
