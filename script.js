@@ -200,6 +200,7 @@ tl.from(".aristero",  {xPercent: -200, opacity: 0, duration: 2})
     scrub: 2,
     pin: true,
     anticipatePin: true,
+
   })
 
 
