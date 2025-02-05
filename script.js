@@ -33,10 +33,10 @@ servicesControl.addEventListener("click", () =>{
     servicesControl.classList.add("active-control");
     gsap.to(window, {duration: 1, scrollTo: sections[3]})
 })
-// contactControl.addEventListener("click", () =>{
-//     contactControl.classList.add("active-control");
-//     gsap.to(window, {duration: 1, scrollTo: sections[4]})
-// })
+contactControl.addEventListener("click", () =>{
+    contactControl.classList.add("active-control");
+    gsap.to(window, {duration: 1, scrollTo: sections[4]})
+})
 
 // Use ScrollTrigger to update the control dynamically on scroll
 ScrollTrigger.create({
@@ -110,24 +110,23 @@ ScrollTrigger.create({
     }
   });
 
-    // ScrollTrigger.create({
-    //     trigger: sections[4],
-    //     start: "top center",
-    //     end: "bottom center",
-    //     onEnter: () => {
-    //         contactControl.classList.add("active-control");
-    //     },
-    //     onLeave: () => {
-    //         contactControl.classList.remove("active-control");
-    //     },
-    //     onEnterBack: () =>{
-    //         contactControl.classList.add("active-control");
-    //     },
-    //     onLeaveBack: () => {
-    //         contactControl.classList.remove("active-control");
-    //     }
-    // })
-// Refresh ScrollTrigger for proper alignment
+    ScrollTrigger.create({
+        trigger: sections[4],
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => {
+            contactControl.classList.add("active-control");
+        },
+        onLeave: () => {
+            contactControl.classList.remove("active-control");
+        },
+        onEnterBack: () =>{
+            contactControl.classList.add("active-control");
+        },
+        onLeaveBack: () => {
+            contactControl.classList.remove("active-control");
+        }
+    })
 ScrollTrigger.refresh();
 
 
@@ -160,73 +159,68 @@ startLoader()
 
 gsap.to('.number', {duration: 2, opacity: 0, delay: 2});
 gsap.to('.bar', {duration:1.5, x:2500, delay:4, opacity: 0});
-
-// Hide overlay and re-enable scrolling after animation
 gsap.to('.overlay', {
     duration: 1,
     opacity: 0,
     delay: 5,
     onComplete: () => {
         document.querySelector('.overlay').style.display = 'none';
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
+        document.body.style.overflow = 'auto';  
     }
 });
 
-// Animate menu controls after loading
-gsap.from('.control', {duration: 1, x:200, stagger: 0.2, ease: "power2.out", delay:5});
+
+
+const tl = gsap.timeline();
+tl.from(".aristero",  {xPercent: -200, opacity: 0, duration: 2})
+    .from(".education", {xPercent: -100, opacity:0, duration: 2})
+    .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
+    .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
+    .from(".c1", {yPercent: 100, opacity: 0, duration: 4},)
+    .from(".work", {xPercent: 100, opacity:0, duration: 2})
+    .from(".a2", {yPercent: 100, opacity: 0, duration: 5})
+    .from(".b2", {yPercent: 100, opacity: 0, duration: 3},)
+    .from(".c2", {yPercent: 100, opacity: 0, duration: 4}, )
+
+    .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0,})
+    .to(".education", {xPercent: -200, opacity: 0, duration: 4},'<')
+    .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
+    .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
+    .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
+    .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
+    .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
+    .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
+    .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
 
 
 
-// const tl = gsap.timeline();
-// tl.from(".aristero",  {xPercent: -200, opacity: 0, duration: 2})
-//     .from(".education", {xPercent: -100, opacity:0, duration: 2})
-//     .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
-//     .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
-//     .from(".c1", {yPercent: 100, opacity: 0, duration: 4},)
-//     .from(".work", {xPercent: 100, opacity:0, duration: 2})
-//     .from(".a2", {yPercent: 100, opacity: 0, duration: 5})
-//     .from(".b2", {yPercent: 100, opacity: 0, duration: 3},)
-//     .from(".c2", {yPercent: 100, opacity: 0, duration: 4}, )
+  ScrollTrigger.create({
+    animation: tl,
+    trigger: ".color1",
+    start: "top top",
+    end: "=+4200",
+    scrub: 2,
+    pin: true,
+    anticipatePin: true,
+  })
 
-//     .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0,})
-//     .to(".education", {xPercent: -200, opacity: 0, duration: 4},'<')
-//     .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
-//     .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-//     .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-//     .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
-//     .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
-//     .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
-//     .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
+const tl2 = gsap.timeline();
+
+ tl2.from(".purple", {xPercent: -200, duration: 5, opacity: 0})
+    .from(".skills-container", {yPercent: 200, opacity: 0, duration: 5})
+    .from(".languages > img", {yPercent: 200, opacity: 0, stagger: 1, duration: 5,})
+    .to(".skills-container", {yPercent: -200, opacity: 0, duration: 2})
+    .to(".languages > img", {yPercent: -200, opacity: 0, duration: 2})
 
 
 
-//   ScrollTrigger.create({
-//     animation: tl,
-//     trigger: ".color1",
-//     start: "top top",
-//     end: "=+4200",
-//     scrub: 2,
-//     pin: true,
-//     anticipatePin: true,
-//   })
-
-// const tl2 = gsap.timeline();
-
-//  tl2.from(".purple", {xPercent: -200, duration: 5, opacity: 0})
-//     .from(".skills-container", {yPercent: 200, opacity: 0, duration: 5})
-//     .from(".languages > img", {yPercent: 200, opacity: 0, stagger: 1, duration: 5,})
-//     .to(".skills-container", {yPercent: -200, opacity: 0, duration: 2})
-//     .to(".languages > img", {yPercent: -200, opacity: 0, duration: 2})
-
-
-
-//   ScrollTrigger.create({
-//     animation: tl2,
-//     trigger: ".color2",
-//     start: "top top",
-//     end: "=+3000",
-//     scrub: 2,
-//     pin: true,
-//     anticipatePin: true,
-//   })
-//   const tl3 = gsap.timeline();
+  ScrollTrigger.create({
+    animation: tl2,
+    trigger: ".color2",
+    start: "top top",
+    end: "=+3000",
+    scrub: 2,
+    pin: true,
+    anticipatePin: true,
+  })
+  const tl3 = gsap.timeline();

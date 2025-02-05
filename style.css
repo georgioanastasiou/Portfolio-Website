@@ -243,17 +243,17 @@ button:hover {
     }
 }
 body, html {
-    overflow: hidden; /* Prevent scrolling while loading */
+    overflow: hidden; 
     height: 100%;
 }
-
-.overlay {
+ 
+ .overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
     display: flex;
-    z-index: 1000; /* Ensure it stays above all content */
-    background: #1a1a1a; /* Background color during loading */
+    z-index: 1000; 
+    background: #1a1a1a; 
     align-items: center;
     justify-content: center;
 }
@@ -267,7 +267,7 @@ body, html {
     top: 20%;
     left: 80%;
     transform: translate(-50%, -50%);
-    z-index: 1001; /* Above overlay */
+    z-index: 1001; 
 }
 
 .bar {
