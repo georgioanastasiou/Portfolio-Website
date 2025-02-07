@@ -12,7 +12,7 @@ let sections = ['#header',  "#journey", '#skills', '#contact']
 const headerControl = document.querySelector(".control-1");
 const aboutControl = document.querySelector(".control-2");
 const journeyControl = document.querySelector(".control-3")
-const servicesControl = document.querySelector(".control-4")
+const contactControl = document.querySelector(".control-4")
 // const contactControl = document.querySelector(".control-5")
 
 
@@ -29,8 +29,8 @@ journeyControl.addEventListener("click", () =>{
     journeyControl.classList.add("active-control");
     gsap.to(window, {duration: 1, scrollTo: sections[2], ease: 'power2.in'})
 })
-servicesControl.addEventListener("click", () =>{
-    servicesControl.classList.add("active-control");
+contactControl.addEventListener("click", () =>{
+  contactControl.classList.add("active-control");
     gsap.to(window, {duration: 1, scrollTo: sections[3]})
 })
 // contactControl.addEventListener("click", () =>{
@@ -97,16 +97,16 @@ ScrollTrigger.create({
     start: "top center",
     end: "bottom center",
     onEnter: () => {
-        servicesControl.classList.add("active-control");
+      contactControl.classList.add("active-control");
     },
     onLeave: () => {
-        servicesControl.classList.remove("active-control");
+      contactControl.classList.remove("active-control");
     },
     onEnterBack: () => {
-        servicesControl.classList.add("active-control");
+      contactControl.classList.add("active-control");
     },
     onLeaveBack: () => {
-        servicesControl.classList.remove("active-control");
+      contactControl.classList.remove("active-control");
     }
   });
 
@@ -171,52 +171,50 @@ startLoader()
 
 
 
-const tl = gsap.timeline();
-tl.from(".journey-left",  {xPercent: -200, opacity: 0, duration: 2})
-    .from(".education", {xPercent: -100, opacity:0, duration: 2})
-    .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
-    .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
-    .from(".c1", {yPercent: 100, opacity: 0, duration: 4},)
-    .from(".work", {xPercent: 100, opacity:0, duration: 2})
-    .from(".a2", {yPercent: 100, opacity: 0, duration: 5})
-    .from(".b2", {yPercent: 100, opacity: 0, duration: 3},)
-    .from(".c2", {yPercent: 100, opacity: 0, duration: 4}, )
+// const tl = gsap.timeline();
+// tl.from(".journey-left",  {xPercent: -200, opacity: 0, duration: 2})
+//     .from(".education", {xPercent: -100, opacity:0, duration: 2})
+//     .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
+//     .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
+//     .from(".c1", {yPercent: 100, opacity: 0, duration: 4},)
+//     .from(".work", {xPercent: 100, opacity:0, duration: 2})
+//     .from(".a2", {yPercent: 100, opacity: 0, duration: 5})
+//     .from(".b2", {yPercent: 100, opacity: 0, duration: 3},)
+//     .from(".c2", {yPercent: 100, opacity: 0, duration: 4}, )
 
-    .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0,})
-    .to(".education", {xPercent: -200, opacity: 0, duration: 4},'<')
-    .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
-    .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-    .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-    .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
-    .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
-    .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
-    .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
+//     .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0,})
+//     .to(".education", {xPercent: -200, opacity: 0, duration: 4},'<')
+//     .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
+//     .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
+//     .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
+//     .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
+//     .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
+//     .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
+//     .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
 
-  ScrollTrigger.create({
-    animation: tl,
-    trigger: ".color1",
-    start: "top top",
-    end: "=+4200",
-    scrub: 2,
-    pin: true,
-    anticipatePin: true,
+//   ScrollTrigger.create({
+//     animation: tl,
+//     trigger: ".color1",
+//     start: "top top",
+//     end: "=+4200",
+//     scrub: 2,
+//     pin: true,
+//     anticipatePin: true,
 
-  })
-
-
-  const tl2 = gsap.timeline();
-tl2.from(".skills-left",  {xPercent: -100, opacity: 0, duration: 2})
-    .from(".skills-right", {xPercent: 100, opacity:0, duration: 2})
+//   })
 
 
-  ScrollTrigger.create({
-    animation: tl2,
-    trigger: ".color2",
-    start: "top top",
-    end: "=+3000",
-    scrub: 2,
-    pin: true,
-    anticipatePin: true,
-  })
+//   const tl2 = gsap.timeline();
+// tl2.from(".skills-left",  {xPercent: -100, opacity: 0, duration: 2})
+//     .from(".skills-right", {xPercent: 100, opacity:0, duration: 2})
 
 
+//   ScrollTrigger.create({
+//     animation: tl2,
+//     trigger: ".color2",
+//     start: "top top",
+//     end: "=+3000",
+//     scrub: 2,
+//     pin: true,
+//     anticipatePin: true,
+//   })
