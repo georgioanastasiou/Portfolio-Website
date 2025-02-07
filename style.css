@@ -23,8 +23,8 @@ html, body {
 /*---------- HEADER --------- */
 #header {
     display: flex;
-    align-items: center; /* Centers vertically */
-    justify-content: flex-start; /* Keeps it on the left */
+    align-items: center;
+    justify-content: flex-start; 
     height: 100vh;
     background-image: url(images/background.png);
     background-size: cover;
@@ -38,45 +38,6 @@ nav{
 }
 
 
-@media (max-width: 1300px) {
-    #header {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url(images/background2.png);
-        background-size: cover;  
-        background-position: center;
-    }
-    .header-col2 .tsiou1{
-        display: block;
-        
-    }
-    .tsiou1{
-        width: 100%;
-    }
-    .row1{   
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding-left: 20px;
-        margin-bottom: 20px;
-    }
-    .main-cv{
-        margin-left: 20px;
-
-    }
-    .header-text p {
-        font-weight: 400;
-        font-size: 20px;
-    }
-    .header-text h1{
-        font-size: 30px;
-    }
-}
 
 .tsiou1{
     display: none;
@@ -168,7 +129,7 @@ nav{
     min-height: 100vh;
 }
 .color2{
-    min-height: 100vh;
+    min-height: 80vh;
 
 }
 .journey-title-color, .skills-title-color, .contact-title-color{
@@ -178,35 +139,36 @@ nav{
     font-size: 50px;
 }
 /* -------------------CONTACT---------------- */
-#contact {
+.contact {
     padding-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .contact-title, .contact-title-color {
     font-size: 50px;
     font-weight: 600;
-      
 }
-.contact-container {
+.contact-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    text-align: center;
 }
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(1fr, 1fr);
     gap: 10px;
     font-size: 18px;
     margin-top: 20px;
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 50%; 
+    min-width: 60%;
 }
 form input, textarea {
     padding: 15px;
     color: #000;
-    background: #fff;
-    border: 2px solid #4831D4;
+    background: hsl(248, 64%, 10%);
+    border: 2px solid hsl(248, 64%, 50%);
     font-size: 15px;
     outline: none;
     border-radius: 7px;
@@ -237,16 +199,6 @@ button:hover {
 }
 
 /* ✅ Responsive Fix */
-@media (max-width: 800px) {
-    form {
-        grid-template-columns: 2fr; 
-        max-width: 100%; 
-
-    }
-    .controls{
-        display: none;
-    }
-}
 /* body, html {
     overflow: hidden; 
     height: 100%;
@@ -306,7 +258,7 @@ button:hover {
 }
 .boxes{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin: 0 auto;
     font-size: 30px;
     width: 70%;

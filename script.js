@@ -131,31 +131,31 @@ ScrollTrigger.refresh();
 
 
 
-function startLoader(){
-    let number = document.querySelector('.number');
-    let currentNumber = 0
+// function startLoader(){
+//     let number = document.querySelector('.number');
+//     let currentNumber = 0
     
-    function updateCounter(){
-        if(currentNumber === 100){
-            return;
-        }
+//     function updateCounter(){
+//         if(currentNumber === 100){
+//             return;
+//         }
     
-        currentNumber += Math.floor(Math.random() * 10) + 1;
+//         currentNumber += Math.floor(Math.random() * 10) + 1;
     
-        if(currentNumber > 100){
-            currentNumber = 100;
-        }
+//         if(currentNumber > 100){
+//             currentNumber = 100;
+//         }
 
-        number.textContent = currentNumber;
+//         number.textContent = currentNumber;
 
-        let delay = Math.floor(Math.random() * 500) + 100;
-        setInterval(updateCounter, delay)
+//         let delay = Math.floor(Math.random() * 500) + 100;
+//         setInterval(updateCounter, delay)
         
-    }    
-    updateCounter()
+//     }    
+//     updateCounter()
     
-}
-startLoader()
+// }
+// startLoader()
 
 // gsap.to('.number', {duration: 2, opacity: 0, delay: 2});
 // gsap.to('.bar', {duration:1.5, x:2500, delay:4, opacity: 0});
@@ -171,52 +171,52 @@ startLoader()
 
 
 
-const tl = gsap.timeline();
-tl.from(".journey-left",  {xPercent: -200, opacity: 0, duration: 2})
-    .from(".education", {xPercent: -100, opacity:0, duration: 2})
-    .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
-    .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
-    .from(".c1", {yPercent: 100, opacity: 0, duration: 4},)
-    .from(".work", {xPercent: 100, opacity:0, duration: 2})
-    .from(".a2", {yPercent: 100, opacity: 0, duration: 5})
-    .from(".b2", {yPercent: 100, opacity: 0, duration: 3},)
-    .from(".c2", {yPercent: 100, opacity: 0, duration: 4}, )
+// const tl = gsap.timeline();
+// tl.from(".journey-left",  {xPercent: -200, opacity: 0, duration: 2})
+//     .from(".education", {xPercent: -100, opacity:0, duration: 2})
+//     .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
+//     .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
+//     .from(".c1", {yPercent: 100, opacity: 0, duration: 4},)
+//     .from(".work", {xPercent: 100, opacity:0, duration: 2})
+//     .from(".a2", {yPercent: 100, opacity: 0, duration: 5})
+//     .from(".b2", {yPercent: 100, opacity: 0, duration: 3},)
+//     .from(".c2", {yPercent: 100, opacity: 0, duration: 4}, )
 
-    .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0,})
-    .to(".education", {xPercent: -200, opacity: 0, duration: 4},'<')
-    .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
-    .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-    .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-    .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
-    .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
-    .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
-    .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
+//     .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0,})
+//     .to(".education", {xPercent: -200, opacity: 0, duration: 4},'<')
+//     .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
+//     .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
+//     .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
+//     .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
+//     .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
+//     .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
+//     .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
 
-  ScrollTrigger.create({
-    animation: tl,
-    trigger: ".color1",
-    start: "top top",
-    end: "=+4200",
-    scrub: 2,
-    pin: true,
-    anticipatePin: true,
+//   ScrollTrigger.create({
+//     animation: tl,
+//     trigger: ".color1",
+//     start: "top top",
+//     end: "=+4200",
+//     scrub: 2,
+//     pin: true,
+//     anticipatePin: true,
 
-  })
-
-
-  const tl2 = gsap.timeline();
-tl2.from(".skills-left",  {xPercent: -100, opacity: 0, duration: 2})
-    .from(".skills-right", {xPercent: 100, opacity:0, duration: 2})
+//   })
 
 
-  ScrollTrigger.create({
-    animation: tl2,
-    trigger: ".color2",
-    start: "top top",
-    end: "=+3000",
-    scrub: 2,
-    pin: true,
-    anticipatePin: true,
-  })
+//   const tl2 = gsap.timeline();
+// tl2.from(".skills-left",  {xPercent: -100, opacity: 0, duration: 2})
+//     .from(".skills-right", {xPercent: 100, opacity:0, duration: 2})
+
+
+//   ScrollTrigger.create({
+//     animation: tl2,
+//     trigger: ".color2",
+//     start: "top top",
+//     end: "=+3000",
+//     scrub: 2,
+//     pin: true,
+//     anticipatePin: true,
+//   })
 
 
