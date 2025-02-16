@@ -36,14 +36,12 @@ nav{
     top: 2%;
     left: 10%;
 }
-
-
-
 .tsiou1{
     display: none;
 }
 .container{
      padding: 10px 10%;  
+
 }
 .logo{
     width: 60px;
@@ -136,7 +134,6 @@ nav{
     margin-left: 10px;
     color: #4831D4;
     font-weight: 500;
-    font-size: 50px;
 }
 /* -------------------CONTACT---------------- */
 .contact {
@@ -293,7 +290,7 @@ button:hover {
     font-size: 18px;
 }
 .frontend,.backend,.education, .work{
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 20px;
     padding-left:1%;
 
