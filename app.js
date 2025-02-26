@@ -7,8 +7,10 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
-// Enable CORS
-app.use(cors());
+app.use(cors({
+    origin: 'https://g-anastasiou.com'  // Or specify your domain, e.g., 'https://yourdomain.com'
+}));
+
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }));
