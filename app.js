@@ -1,11 +1,12 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
-const cors = require('cors');  // Import CORS
+const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
+const port = 3000;
 
-const port = 3000
 // Enable CORS
 app.use(cors());
 
@@ -25,25 +26,23 @@ app.get('/', (req, res) => {
 app.post('/submit', (req, res) => {
     const { firstName, email, message } = req.body;
 
-    // Create the transporter using your Gmail and App Password
+    // Create the transporter using Hostinger SMTP
     const transporter = nodemailer.createTransport({
-        service: 'smtp.hostinger.com',
+        host: 'smtp.hostinger.com',
         port: 465,
         secure: true,
         auth: {
-            user: 'test@g-anastasiou.com',  // Your Gmail address
-            pass: 'Gkousgkounis10@'  // Your App Password
+            user: "test@g-anastasiou.com",  // Access environment variables correctly
+            pass: "Gkousgkounis10@"
         }
     });
-    // user: 'anastatsiou@gmail.com',  // Your Gmail address
-    // pass: 'cuqq jdai ffnv bffs'  // Your App Password
 
     // Set up email data
     const mailOptions = {
-        from: 'test@g-anastasiou.com',  // Sender's email (user's input)
-        to: email,  // Your email address (where the message will be sent)
-        subject: `Message from ${firstName}`,  // Subject line
-        text: message  // The message body
+        from: "test@g-anastasiou.com",  // Sender's email
+        to: email,  // Receiver's email
+        subject: `Message from ${firstName}`,
+        text: message
     };
 
     // Send the email
