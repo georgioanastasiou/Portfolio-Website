@@ -27,16 +27,20 @@ app.post('/submit', (req, res) => {
 
     // Create the transporter using your Gmail and App Password
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: 'smtp.hostinger.com',
+        port: 465,
+        secure: true,
         auth: {
-            user: 'anastatsiou@gmail.com',  // Your Gmail address
-            pass: 'cuqq jdai ffnv bffs'  // Your App Password
+            user: 'test@g-anastasiou.com',  // Your Gmail address
+            pass: 'Gkousgkounis10@'  // Your App Password
         }
     });
+    // user: 'anastatsiou@gmail.com',  // Your Gmail address
+    // pass: 'cuqq jdai ffnv bffs'  // Your App Password
 
     // Set up email data
     const mailOptions = {
-        from: 'anastatsiou@gmail.com',  // Sender's email (user's input)
+        from: 'test@g-anastasiou.com',  // Sender's email (user's input)
         to: email,  // Your email address (where the message will be sent)
         subject: `Message from ${firstName}`,  // Subject line
         text: message  // The message body
