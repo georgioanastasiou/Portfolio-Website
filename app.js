@@ -25,31 +25,29 @@ app.get('/', (req, res) => {
 // Route to handle form submission (POST request)
 app.post('/submit', (req, res) => {
     const { firstName, email, message } = req.body;
+    console.log('Form submitted:', req.body);
 
-    // Create the transporter using Hostinger SMTP
     const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        service: 'gmail',
         auth: {
-            user: "anastatsiou@gmail.com",  // Access environment variables correctly
-            pass: "Gkousgkounis10@"
+            user: 'anastatsiou@gmail.com',
+            pass: 'cuqq jdai ffnv bffs'
         }
     });
 
-    // Set up email data
     const mailOptions = {
-        from: "anastatsiou@gmail.com",  // Sender's email
-        to: email,  // Receiver's email
+        from: 'anastatsiou@gmail.com',
+        to: email,
         subject: `Message from ${firstName}`,
         text: message
     };
 
-    // Send the email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+            console.log('Error sending email:', error);
             return res.status(500).send('Error sending email: ' + error.toString());
         }
+        console.log('Email sent:', info);
         res.send('Email sent successfully!');
     });
 });
