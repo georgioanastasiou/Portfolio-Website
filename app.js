@@ -28,18 +28,18 @@ app.post('/submit', (req, res) => {
 
     // Create the transporter using Hostinger SMTP
     const transporter = nodemailer.createTransport({
-        host: 'smtp.hostinger.com',
+        host: 'gmail',
         port: 465,
         secure: true,
         auth: {
-            user: "test@g-anastasiou.com",  // Access environment variables correctly
+            user: "anastatsiou@gmail.com",  // Access environment variables correctly
             pass: "Gkousgkounis10@"
         }
     });
 
     // Set up email data
     const mailOptions = {
-        from: "test@g-anastasiou.com",  // Sender's email
+        from: "anastatsiou@gmail.com",  // Sender's email
         to: email,  // Receiver's email
         subject: `Message from ${firstName}`,
         text: message
