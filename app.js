@@ -31,7 +31,7 @@ app.post('/submit', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'anastatsiou@gmail.com',
-            pass: 'cuqq jdai ffnv bffs'
+            pass: 'jsfx tyvr ktov dfjv'
         }
     });
 
