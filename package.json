@@ -12,6 +12,7 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "gsap": "^3.12.7",
-    "locomotive-scroll": "^4.1.4"
+    "locomotive-scroll": "^4.1.4",
+    "portfolio-website": "file:"
   }
 }
