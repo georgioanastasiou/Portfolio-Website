@@ -6,12 +6,9 @@
         background-size: cover;  
         background-position: center;
     }
-    .siou1{
+    .tsiou1{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 70%;
+        width: 100%;
     }
     .row1{   
         justify-content: center;
@@ -21,75 +18,24 @@
         margin-bottom: 20px;
     }
     .main-cv{
-        margin-left: 20px;
+        width: 100%;
     }
     .header-text p {
         font-weight: 400;
         font-size: 20px;
     }
     .header-text h1{
-        font-size: 30px;
+        font-size: 80%;
     }
 }
 
 @media (max-width: 800px) {
     .controls{
         display: none;
-    }
-    .boxes{
-        width: 100%;
-    }
-    form {
-        width: 90%;
     }    
 }
-@media (max-width: 500px) {
-    .header-text h1{
-        font-size: 20px;
-    }
-    .header-text p{
-        font-size: 14px;
-    }
-    .main-cv{
-        width: 90%;
-        margin-left: 0px;
-    }
-    .cv{
-        font-size: 10px;
-    }
-    .cv-icon{
-        width: 20px;
-        height: 10px;
-    }
-    .scroll-title-color{
-        font-size: 12px;
-    }
-    .scrollBtn-container img{
-        width: 20px;
-    }
-    /* TITLES */
-    .journey-title, .journey-title-color{
-        font-size: 30px;
-    }
-    .mySkills, .contact-h1{
-        font-size: 30px;
-    }
-    .education, .work, .frontend, .backend{
-        font-size: 20px;
-    }
-    .a1 h1, .b1 h1, .c1 h1{
-        font-size: 15px;
-    }   
-    .bsc{
-        font-size: 14px;
-    }
-    .sports, .physio, .computer{
-        font-size: 11px;
-    }
-    form  {
-        width: 100%;
-    }    
-    .boxes{
-        width: 100%;
+@media (max-width: 550px){
+    form{
+        
     }
 }
