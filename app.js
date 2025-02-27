@@ -8,7 +8,7 @@ const app = express();
 const port = 3000;
 
 // Enable CORS
-app.use(cors({origin: '*'}));
+app.use(cors({origin: 'https://g-anastasiou.com'}));
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }));
