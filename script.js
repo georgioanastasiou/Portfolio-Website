@@ -171,26 +171,26 @@ ScrollTrigger.refresh();
 
 
 
-// const tl = gsap.timeline();
-// tl.from(".journey-left",  {xPercent: -200, opacity: 0, duration: 2})
-//     .from(".education", {xPercent: -100, opacity:0, duration: 2})
-//     .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
-//     .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
-//     .from(".c1", {yPercent: 100, opacity: 0, duration: 4},)
-//     .from(".work", {xPercent: 100, opacity:0, duration: 2})
-//     .from(".a2", {yPercent: 100, opacity: 0, duration: 5})
-//     .from(".b2", {yPercent: 100, opacity: 0, duration: 3},)
-//     .from(".c2", {yPercent: 100, opacity: 0, duration: 4}, )
+const tl = gsap.timeline();
+tl.from(".journey-left",  {xPercent: -200, opacity: 0, duration: 2})
+    .from(".education", {xPercent: -100, opacity:0, duration: 2})
+    .from(".a1", {yPercent: 100, opacity: 0, duration: 5})
+    .from(".b1", {yPercent: 100, opacity: 0, duration: 3},)
+    .from(".c1", {yPercent: 100, opacity: 0, duration: 4},)
+    .from(".work", {xPercent: 100, opacity:0, duration: 2})
+    .from(".a2", {yPercent: 100, opacity: 0, duration: 5})
+    .from(".b2", {yPercent: 100, opacity: 0, duration: 3},)
+    .from(".c2", {yPercent: 100, opacity: 0, duration: 4}, )
 
-//     .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0,})
-//     .to(".education", {xPercent: -200, opacity: 0, duration: 4},'<')
-//     .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
-//     .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-//     .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
-//     .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
-//     .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
-//     .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
-//     .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
+    .to(".myJourney", {duration: 2, yPercent: -200, opacity: 0,})
+    .to(".education", {xPercent: -200, opacity: 0, duration: 4},'<')
+    .to(".a1", {xPercent: -200, opacity: 0, duration: 4},'<')
+    .to(".b1", {xPercent: -200, opacity: 0, duration: 4}, '<')
+    .to(".c1", {xPercent: -200, opacity: 0, duration: 4}, '<')
+    .to(".work", {xPercent: 200, opacity: 0, duration: 4},'<')
+    .to(".a2", {xPercent: 200, opacity: 0, duration: 4},'<')
+    .to(".b2", {xPercent: 200, opacity: 0, duration: 4},'<')
+    .to(".c2", {xPercent: 200, opacity: 0, duration: 4},'<')
 
 //   ScrollTrigger.create({
 //     animation: tl,
