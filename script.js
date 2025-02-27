@@ -5,14 +5,15 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 gsap.from(".scrollBtn-container", {duration: 1, y: -10, yoyo: true, repeat: -1, })
 
 let control = document.querySelectorAll(".control");
-let sections = ['#header',  "#journey", '#skills', '#contact']
+let sections = ['#header',  "#journey", '#skills',"#portfolio", '#contact']
 
 
 // Select the control for the #header section
 const headerControl = document.querySelector(".control-1");
 const aboutControl = document.querySelector(".control-2");
 const journeyControl = document.querySelector(".control-3")
-const servicesControl = document.querySelector(".control-4")
+const portfolioControl = document.querySelector(".control-4")
+const servicesControl = document.querySelector(".control-5")
 // const contactControl = document.querySelector(".control-5")
 
 
@@ -29,9 +30,13 @@ journeyControl.addEventListener("click", () =>{
     journeyControl.classList.add("active-control");
     gsap.to(window, {duration: 1, scrollTo: sections[2], ease: 'power2.in'})
 })
+portfolioControl.addEventListener("click", () =>{
+  portfolioControl.classList.add("active-control");
+    gsap.to(window, {duration: 1, scrollTo: sections[3], ease:"circ.inOut"})
+})
 servicesControl.addEventListener("click", () =>{
-    servicesControl.classList.add("active-control");
-    gsap.to(window, {duration: 1, scrollTo: sections[3]})
+  servicesControl.classList.add("active-control");
+  gsap.to(window, {duration: 1, scrollTo: sections[4], ease:"back.inOut"})
 })
 // contactControl.addEventListener("click", () =>{
 //     contactControl.classList.add("active-control");
@@ -94,6 +99,23 @@ ScrollTrigger.create({
 
   ScrollTrigger.create({
     trigger: sections[3],
+    start: "top center",
+    end: "bottom center",
+    onEnter: () => {
+       portfolioControl.classList.add("active-control");
+    },
+    onLeave: () => {
+       portfolioControl.classList.remove("active-control");
+    },
+    onEnterBack: () => {
+       portfolioControl.classList.add("active-control");
+    },
+    onLeaveBack: () => {
+       portfolioControl.classList.remove("active-control");
+    }
+  });
+  ScrollTrigger.create({
+    trigger: sections[4],
     start: "top center",
     end: "bottom center",
     onEnter: () => {
