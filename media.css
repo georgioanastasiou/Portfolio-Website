@@ -34,8 +34,12 @@
         display: none;
     }    
 }
-@media (max-width: 550px){
-    form{
-        
+@media (max-width: 550px) {
+    form {
+        display: block;
+        width: 100%;
+    }
+    
+    textarea {
     }
 }

@@ -41,7 +41,6 @@ nav{
 }
 .container{
      padding: 10px 10%;  
-
 }
 .logo{
     width: 20%;
@@ -120,25 +119,130 @@ nav{
 }
 
 /*--------------- JOURNEY ---------------*/    
-#journey{
+#journey, #portfolio, #skills, #contact{
     padding: 80px 0;
 }
 .color1{
-    min-height: 100vh;
-}
-.color2{
     min-height: 80vh;
-
 }
 .journey-title-color, .skills-title-color,.portfolio-title-color, .contact-title-color{
     margin-left: 10px;
     color: #4831D4;
     font-weight: 500;
 }
-/* -------------------PORTFOLIO---------------- */
-#portfolio{
-    padding: 180px 0;
+.journey-container, .skills-container,.portfolio-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.myJourney, .mySkills, .myPortfolio{
+    font-size: 50px;
+    font-weight: 700;
+}
+ .skills-right, .skills-left{
+    padding: 20px;
+}
+.journey-left, .journey-right, .skills-left, .skills-right{
+    padding-top: 20px;
+    margin-left: 3px;
+    font-size: 25px;
+}
+.boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 0 auto;
+    font-size: 30px;
+    width: 85%;
+}
+.a1, .b1, .c1,.a2, .b2, .c2{
+    border: 1px solid #4831D4;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px;
+}
+.a1 h1, .b1 h1, .c1 h1, .a2 h1, .b2 h1, .c2 h1{
+    color: hsl(248, 65%, 61%);
+    font-weight: 800;
+    font-size: 20px;
+}
+.sports, .physio, .computer{
+    font-size: 16px;
+    padding-top: 15px;
+}
+/* -------------------SKILLS---------------- */
+.languages{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+}
+.languages > img{
+    padding-bottom: 20px;
+}
+.a3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+.frontend,.backend,.education, .work{
+    font-size: 25px;
+    margin-top: 20px;
+    padding-left:1%;
+
+}
+.education, .work{
+    padding-left: 5%;
+}
+.progress-bar{
+    width: 100%;
+    height: 5px;
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    background: #262626;
+    margin-top: 10px;
+}
+.bara1, .bara2, .bara3, .bara4, .bara5, .bara6, .bara7, .bara8{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background-color: #FFD700;
+    border-radius: 5px;
+}
+.bara1{
+    width: 85%;
+}
+.bara2{
+    width: 80%;
+}
+.bara3{
+    width: 60%;
+}
+.bara4{
+    width: 40%;
+}
+.bara5{
+    width: 80%;
+}
+.bara6{
+    width: 60%;
+}
+.bara7{
+    width: 40%;
+}
+.bara8{
+    width: 40%;
+}
+
+.border{
+    border: 3px solid #4831D4;
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 15px;
+}
+/* -------------------PORTFOLIO---------------- */
+
 .work-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -149,7 +253,6 @@ nav{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-
 }
 .working img{
    width: 100%;
@@ -187,7 +290,7 @@ nav{
 .working:hover .layer{
     height: 100%;
 }
-.working:hover .layer {
+.working:hover img {
     transform: scale(1.1);
 }
 
@@ -211,7 +314,7 @@ nav{
 }
 form {
     display: grid;
-    grid-template-columns: repeat(1fr, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     font-size: 18px;
     margin-top: 20px;
@@ -293,114 +396,3 @@ button:hover {
 } */
 
 /*  The container is ALWAYS relative and children absolute to overlap */
-
-.journey-container, .skills-container,.portfolio-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.myJourney, .mySkills, .myPortfolio{
-    font-size: 50px;
-    font-weight: 700;
-}
- .skills-right, .skills-left{
-    padding: 20px;
-}
-.journey-left, .journey-right, .skills-left, .skills-right{
-    padding-top: 20px;
-    margin-left: 3px;
-    font-size: 25px;
-}
-.boxes{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin: 0 auto;
-    font-size: 30px;
-    width: 70%;
-}
-.a1, .b1, .c1,.a2, .b2, .c2{
-    border: 1px solid #4831D4;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 20px;
-}
-.a1 h1, .b1 h1, .c1 h1, .a2 h1, .b2 h1, .c2 h1{
-    color: hsl(248, 65%, 61%);
-    font-weight: 800;
-    font-size: 20px;
-}
-.sports, .physio, .computer{
-    font-size: 16px;
-    padding-top: 15px;
-}
-.languages{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5px;
-}
-.languages > img{
-    padding-bottom: 20px;
-}
-.a3{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 18px;
-}
-.frontend,.backend,.education, .work{
-    font-size: 25px;
-    margin-top: 20px;
-    padding-left:1%;
-
-}
-.education, .work{
-    padding-left: 5%;
-}
-.progress-bar{
-    width: 100%;
-    height: 5px;
-    position: relative;
-    margin-bottom: 40px;
-    border-radius: 5px;
-    background: #262626;
-    margin-top: 10px;
-}
-.bara1, .bara2, .bara3, .bara4, .bara5, .bara6, .bara7, .bara8{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 5px;
-    background-color: #FFD700;
-    border-radius: 5px;
-}
-.bara1{
-    width: 85%;
-}
-.bara2{
-    width: 80%;
-}
-.bara3{
-    width: 60%;
-}
-.bara4{
-    width: 40%;
-}
-.bara5{
-    width: 80%;
-}
-.bara6{
-    width: 60%;
-}
-.bara7{
-    width: 40%;
-}
-.bara8{
-    width: 40%;
-}
-
-.border{
-    border: 3px solid #4831D4;
-    border-radius: 7px;
-    margin-top: 20px;
-    padding: 15px;
-}
