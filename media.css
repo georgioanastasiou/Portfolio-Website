@@ -39,7 +39,24 @@
         display: block;
         width: 100%;
     }
-    
-    textarea {
+    form input, textarea{
+        margin: 5px;
+    }
+    textarea{
+        min-width: 70%;
+    }
+   
+
+    .work-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin-top: 50px;
+        gap: 40px;
+    }
+    .layer{
+       font-size: 12px;
+    }
+    .layer h3{
+        margin-bottom: 10px;
     }
 }

@@ -293,6 +293,13 @@ nav{
 .working:hover img {
     transform: scale(1.1);
 }
+.layer a i{
+    transition: transform .5s;
+}
+.layer a i:hover{
+    color: #FFD700;
+    transform: scale(1.1);
+}
 
 /* -------------------CONTACT---------------- */
 .contact {
