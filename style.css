@@ -119,32 +119,38 @@ nav{
 }
 
 /*--------------- JOURNEY ---------------*/    
-#journey, #portfolio, #skills, #contact{
-    padding: 80px 0;
+#journey, #portfolio,  #contact {
+    padding: 80px 0;  
 }
-.color1{
-    min-height: 80vh;
+#portfolio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .journey-title-color, .skills-title-color,.portfolio-title-color, .contact-title-color{
-    margin-left: 10px;
     color: #4831D4;
     font-weight: 500;
 }
-.journey-container, .skills-container,.portfolio-container{
+.journey-container, .skills-container,.portfolio-container, .color2, .color1{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .myJourney, .mySkills, .myPortfolio{
     font-size: 50px;
     font-weight: 700;
 }
- .skills-right, .skills-left{
+ .skills-right, .skills-left,.journey-left, .journey-right{
     padding: 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
 }
 .journey-left, .journey-right, .skills-left, .skills-right{
     padding-top: 20px;
-    margin-left: 3px;
+    width: 100%;
     font-size: 25px;
 }
 .boxes{
@@ -152,7 +158,7 @@ nav{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin: 0 auto;
     font-size: 30px;
-    width: 85%;
+    width: 80%;
 }
 .a1, .b1, .c1,.a2, .b2, .c2{
     border: 1px solid #4831D4;
@@ -188,7 +194,6 @@ nav{
     font-size: 25px;
     margin-top: 20px;
     padding-left:1%;
-
 }
 .education, .work{
     padding-left: 5%;
@@ -248,6 +253,7 @@ nav{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin-top: 50px;
     gap: 40px;
+    max-width: 1300px;
 }
 .working{
     border-radius: 10px;

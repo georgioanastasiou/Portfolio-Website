@@ -1,4 +1,4 @@
-@media (max-width: 1300px) {
+@media (max-width: 768px) {
     #header {
         justify-content: center;
         align-items: center;
@@ -28,8 +28,8 @@
         font-size: 80%;
     }
 }
-
-@media (max-width: 800px) {
+            /* --------------800px----------- */
+@media (max-width: 400px) {
     .controls{
         display: none;
     }    
@@ -45,8 +45,6 @@
     textarea{
         min-width: 70%;
     }
-   
-
     .work-list{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
