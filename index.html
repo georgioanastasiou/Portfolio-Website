@@ -1,264 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="media.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" href="images/logo.png" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Liter&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <title>G-Anastasiou</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-         <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet"> 
-        <script src="script.js" defer></script>
-        <script src="app.js"></script>
-        <script src="https://kit.fontawesome.com/1248ffe135.js" crossorigin="anonymous"></script>
-        <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    </head>
-    <body class="smooth-control">
-    <header id="header">
-        <div class="container container-header">
-            <nav>   
-                <img src="images/logo.png" class="logo">
-            </nav>
-            <div class="row1">
-                
-                    <img src="images/tsiou1.png" class="tsiou1">
 
-                <div class="header-text header-col1">
-                    <p>Software Engineer</p>
-                    <h1>George Anastasiou</h1>
-                    <a href="George Anastasiou CV.pdf" class="main-cv">
-                        <span class="cv">Download CV</span>
-                        <span class="cv-icon"><img src="images/download.png" class="download-icon"></span>
-                        </a>    
-                    </div>
-                </div>
-                 <!-- <div class="number">100</div> -->
-                <div class="controls">
-                    <div class="control-1 control active-control"><i class="fa-solid fa-house"></i></div>
-                    <div class="control-2 control"><i class="fa-solid fa-user"></i></div>
-                    <div class="control-3 control"><i class="fa-solid fa-square-binary"></i></div>
-                    <div class="control-4 control"><i class="fa-solid fa-briefcase"></i></div>
-                    <div class="control-5 control"><i class="fa-solid fa-message"></i></div>
-                </div>
-        </div>
-    </div>
-    
-    <div class="scroll-container">
-        <span class="scroll-title-color">Scroll To See</span>
-        <div class="scrollBtn-container">
-            <img src="images/scroll.png" class="scroll-img">
-            </div>
-         </div>
-             
-                
-    </header>  
-    <!-- <div class="overlay">
-        <div class="number">100</div>
-        <div class="bar"></div>
-    </div> -->
-       <!-------------------  HEADER ------------>
-    
-    <!--------------- ABOUT --------------->
-    <section id="journey">
-        <div class="journey-container">
-            <span class="journey-title myJourney">My</span>
-                    <span class="journey-title-color myJourney">Journey</span> 
-                      </div>
-            <div class="color1">
-               
-                            <div class="journey-left">
-                                <h1 class="education">Education</h1>
-                                <div class="a1">
-                                    <h1>2014-2017</h1>
-                                        <p class="bsc">BSc - Sports Scientist</p>
-                                            <p class="sports">Studied human physiology and biomechanics, designing training programs and conducting research on performance and injury prevention.</p>  
-                                                </div>  
-                                <div class="b1">
-                                    <h1>2018-2022</h1>
-                                        <p class="bsc">BSc - Physiotherapist</p>
-                                             <p class="physio">Specialized in rehabilitation, treating musculoskeletal injuries, and developing personalized recovery plans for patients with diverse needs.</p>
-                                                </div>
-                                <div class="c1">
-                                    <h1>2022-Now</h1>
-                                        <p class="bsc">BSc - Computer Science</p>
-                                            <p class="computer">Focused on web development, software engineering principles, and gaining hands-on experience by completing various projects</p>
-                                                  </div>
-                            </div>
-                                <div class="journey-right"> 
-                                    <h1 class="work">Work Experience</h1>
-                                         <div class="a2">
-                                             <h1>2015-2019</h1>
-                                                <p>Physical Instructor</p>
-                                                    <p class="sports">Developed tailored programs to enhance strength, improve athletic performance, and reduce the risk of injuries through targeted exercises.</p>
-                                                         </div>
-                                    <div class="b2">
-                                        <h1>2016-2018</h1>
-                                            <p>Basketball Coach</p>
-                                                <p class="sports">Trained players to enhance technique,physical ability, game strategy, and teamwork as well as improving overall court performance.</p>
-                                                    </div>
-                                    <div class="c2">
-                                        <h1>2020-2023</h1>
-                                            <p>Physiotherapist</p>
-                                                <p class="sports">Specialized in rehabilitation, helping patients recover from injuries and improve mobility through targeted therapies.</p>
-                                                      </div>
-                                </div>
-                </div> 
-    </section>  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Liter&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>G-Anastasiou</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js" defer></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/1248ffe135.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
 
-                                <!------------ SKILLS ------------>
-    <section id="skills">
-        <div class="skills-container">
-            <span class="skills-title mySkills">My</span>
-                <span class="skills-title-color mySkills">Skills<span> 
-                    </div>
-            <div class="color2"> 
-                    <div class="skills-left">
-                        <h1 class="frontend">Frontend</h1>
-                            <div class="border">
-                        <div class="a3">
-                            <p class="html">HTML</p>
-                            <P>85%</P>
-                        </div>  
-                        <div class="progress-bar">
-                            <span class="bara1"></span>
-                        </div>
-                        <div class="a3">
-                            <p class="css">CSS</p>
-                            <P>80%</P>
-                        </div>  
-                        <div class="progress-bar">
-                            <span class="bara2"></span>
-                        </div>
-                        <div class="a3">
-                            <p class="javascript">Javascript</p>
-                            <P>60%</P>
-                        </div>  
-                        <div class="progress-bar">
-                            <span class="bara3"></span>
-                        </div>
-                        <div class="a3">
-                            <p class="react">React</p>
-                            <P>40%</P>
-                        </div>  
-                        <div class="progress-bar">
-                            <span class="bara4"></span>
-                        </div>
-                        </div>
-                    </div>
-                        <div class="skills-right"> 
-                            <h1 class="backend">Backend</h1>
-                            <div class="border">
-                                <div class="a3">
-                                    <p class="html">MySQL</p>
-                                    <P>80%</P>
-                                </div>  
-                                <div class="progress-bar">
-                                    <span class="bara5"></span>
-                                </div>
-                                <div class="a3">
-                                    <p class="css">Python</p>
-                                    <P>60%</P>
-                                </div>  
-                                <div class="progress-bar">
-                                    <span class="bara6"></span>
-                                </div>
-                                <div class="a3">
-                                    <p class="javascript">Node</p>
-                                    <P>40%</P>
-                                </div>  
-                                <div class="progress-bar">
-                                    <span class="bara7"></span>
-                                </div>
-                                <div class="a3">
-                                    <p class="react">Express</p>
-                                    <P>40%</P>
-                                </div>  
-                                <div class="progress-bar">
-                                    <span class="bara8"></span>
-                                </div>
-                                </div>
-                            </div>
-                            
-                </div><!--  color2 -->
-       </section>    
-      <!-----------------Portfolio-------------- -->
-<section id="portfolio">
-    <div class="container">
-        <div class="portfolio-container">
-            <span class="portfolio myPortfolio">My</span>
-                <span class="portfolio-title-color myPortfolio">Work<span> 
-                    </div>
-                        <div class="work-list">
-                            <div class="working">
-                                <img src="images/work-1.png">
-                                <div class="layer">
-                                    <h3>Physio Web App</h3>
-                                        <p>The app allows the user to book an appointment, and upon confirmation, they receive an email 
-                                            while the details are simultaneously stored in the MySQL schema
-                                            </p>
-                                                 <a href="https://github.com/TsiouMiouPiou/physio-website"><i class="fa-brands fa-github"></i></a>
-                                </div>
-                            </div>
-                            <div class="working">
-                                <img src="images/work-2.png">
-                                    <div class="layer">
-                                        <h3>Habit Tracker</h3>
-                                            <p>The App is built with Python, containing 7 key functions
-                                                where the user can add, delete, check and manipulate their 
-                                                habits
-                                             </p>
-                                                 <a href="https://github.com/TsiouMiouPiou/oofpp_habits_project"><i class="fa-brands fa-github"></i></a>
-                                    </div>
-                            </div>
-                            <div class="working">
-                                <img src="images/work-3.png">
-                                     <div class="layer">
-                                         <h3>Order Information System</h3>
-                                            <p>The app allows the user to select different computer components 
-                                                and fill out a form. Upon submission, 
-                                                the results are displayed in the summary section
-                                                 </p>
-                                                     <a href="https://github.com/TsiouMiouPiou/OrderForm"><i class="fa-brands fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
+<body>
+
+
+
+    <!----------------------------------- JOURNEY ------------------->
+
+  
+<div class="container">
+  <div class="content">
+    <p class="text">
+      Ever since I can remember...
+    </p>
+    <div class="img-wrapper">
+      <img src="images/basketball/basket1.jpg" alt="">
     </div>
-    
-</section>
-    
-<!----------------- Contact-------------- -->
-<section id="contact">
-<div class="contact-container">
-    <span class="contact-title contact-h1">Contact</span>
-        <span class="contact-title-color contact-h1">Me!<span> 
-            </div>
-                <div class="contact">
-                    <form id="contact-form">
-                        <input type="text" id="name" name="firstName" placeholder="Name" required>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" id="message" rows="10" placeholder="Your Message" class="textarea"></textarea>
-                        <div class="btn2">
-                            <button type="button" onclick="sendMail()"> Submit</button>
-                        </div>
-                    </form>
-                    
-                </div>           
-</section>
-</body>
-<script type="text/javascript">
-    (function(){
-       emailjs.init({
-         publicKey: "9kwAogAxBTGkJke20",
-       });
-    })();
- </script>
- 
-</html>
+  </div>
+  <div class="content">
+    <p class="text">
+      A ball was always in my hands.
+    </p>
+    <div class="img-wrapper">
+      <img src="images/basketball/basket2.jpg" alt="">
+    </div>
+  </div>
+  <div class="content">
+    <p class="text">
+      Hours of practice, countless shots...
+    </p>
+    <div class="img-wrapper">
+      <img src="images/basketball/basket3.jpg" alt="">
+    </div>
+  </div>
+  <div class="content">
+    <p class="text">
+      Learning discipline.  
+      Building resilience.
+    </p>
+    <div class="img-wrapper">
+      <img src="images/basketball/basket4.jpg" alt="">
+    </div>
+  </div>
+  <div class="content">
+    <p class="text">
+      Basketball became more than a game.  
+      It became my identity.
+    </p>
+    <div class="img-wrapper">
+      <img src="images/basketball/basket5.jpg" alt="">
+    </div>
+  </div>
+  <div class="content">
+    <p class="text">
+      Through victories and defeats...
+    </p>
+    <div class="img-wrapper">
+      <img src="images/basketball/basket6.jpg" alt="">
+    </div>
+  </div>
+  <div class="content">
+    <p class="text">
+      It remained one thing:  
+      <strong>My Passion.</strong>
+    </p>
+    <div class="img-wrapper">
+      <img src="images/basketball/basket7.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+
+    </body>

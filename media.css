@@ -1,60 +1,48 @@
-@media (max-width: 768px) {
-    #header {
-        justify-content: center;
-        align-items: center;
-        background-image: url(images/background2.png);
-        background-size: cover;  
-        background-position: center;
+@media (max-width: 1400px) {
+    .content {
+        padding: 0 130px 0 80px;
     }
-    .tsiou1{
-        display: flex;
-        width: 100%;
+    .img-wrapper {
+        width: 300px;
     }
-    .row1{   
-        justify-content: center;
-        align-items: center;
+}
+@media (max-width: 1200px) {
+    .content {
+        padding: 0 80px;
+    }
+}
+@media (max-width: 900px) {
+    .content {
+        padding: 0 50px;
+    }
+    .img-wrapper {
+        width: 250px;
+    }
+}
+@media (max-width: 730px) {
+    .content {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+    .img-wrapper {
+        position: absolute;
+        top: 20%;
+    }
+    .text {
+        position: absolute;
+        bottom: 10%;
+        margin-right: 0;
+        padding: 0 80px;
         text-align: center;
-        padding-left: 20px;
-        margin-bottom: 20px;
-    }
-    .main-cv{
-        width: 100%;
-    }
-    .header-text p {
-        font-weight: 400;
-        font-size: 20px;
-    }
-    .header-text h1{
-        font-size: 80%;
     }
 }
-            /* --------------800px----------- */
-@media (max-width: 400px) {
-    .controls{
-        display: none;
-    }    
-}
-@media (max-width: 550px) {
-    form {
-        display: block;
-        width: 100%;
+@media (max-width: 500px) {
+    .img-wrapper {
+        padding: 10px;
+        width: 220px;
     }
-    form input, textarea{
-        margin: 5px;
-    }
-    textarea{
-        min-width: 70%;
-    }
-    .work-list{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        margin-top: 50px;
-        gap: 40px;
-    }
-    .layer{
-       font-size: 12px;
-    }
-    .layer h3{
-        margin-bottom: 10px;
+    .text {
+        padding: 0 40px;
+        bottom: 10%;
     }
 }

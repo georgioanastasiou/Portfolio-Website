@@ -10,365 +10,112 @@
     src: url('./SuperShiny-0v0rG.ttf') format('truetype'); 
   }
 body{
-    background-color: #080808;
-    color: #fff;
+    background-color: #fff;
+   
 }
-html, body {
-    overflow-x: hidden;
-  }
-  .color1, .color2 {
-    overflow: hidden;
-  }
-  
-/*---------- HEADER --------- */
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-    height: 100vh;
-    background-image: url(images/background.png);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-nav{
-    position: absolute;
-    top: 2%;
-    left: 10%;
-}
-.tsiou1{
-    display: none;
-}
-.container{
-     padding: 10px 10%;  
-}
-.logo{
-    width: 20%;
-}
-.header-text{
-    font-size: 30px;
-    color: #4831D4;
-}
-
-.header-text p {
-    font-weight: 500;
-}
-.header-text h1{
-    margin-top: 10px;
-}
-.header-text .main-cv{
-    margin-top: 40px;
-}
-.main-cv{
-    display: block;
-    font-weight: 600;
-    width: 50%;
-    overflow: hidden;
-    text-decoration: none;
-    background-color: #4831D4;
-    color: #fff;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.cv{
-    font-size: 24px;
-}
-.download-icon{
-    margin-top: 20px;
-    padding-left: 40px;
-}
-.main-cv:hover{
-    transform: scale(1.1);
-    transition: .5s ease-out;
-    background-color: hsl(248, 65%, 61%);
-}
-.controls{
-    position: fixed;
-    right: 1%;
-    padding-right: 60px;
-    bottom: 200px;
-    list-style: none;
-    font-size: 40px;
-    cursor: pointer;
-    z-index: 1000;
-}
-.active-control{
-    color: #FFD700;
-}
-.control:hover{
-    color: #FFD700;
-}
-.scroll-container{
-    position: absolute;
-    bottom: 10px; 
-    left: 50%;
-    transform: translateX(-50%);
-}
-.scroll-title-color{
-    color: #4831D4;
-    font-weight: 500;
-    font-size: 20px;
-}
-.scrollBtn-container img {
-    width: 30px; 
-    position: relative;
-    left: 40%;
-    margin-top: 10px;
-}
-
 /*--------------- JOURNEY ---------------*/    
-#journey, #portfolio,  #contact {
-    padding: 80px 0;  
-}
-#portfolio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.journey-title-color, .skills-title-color,.portfolio-title-color, .contact-title-color{
-    color: #4831D4;
-    font-weight: 500;
-}
-.journey-container, .skills-container,.portfolio-container, .color2, .color1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.myJourney, .mySkills, .myPortfolio{
-    font-size: 50px;
-    font-weight: 700;
-}
- .skills-right, .skills-left,.journey-left, .journey-right{
-    padding: 20px;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    max-width: 700px;
-}
-.journey-left, .journey-right, .skills-left, .skills-right{
-    padding-top: 20px;
-    width: 100%;
-    font-size: 25px;
-}
-.boxes{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin: 0 auto;
-    font-size: 30px;
-    width: 80%;
-}
-.a1, .b1, .c1,.a2, .b2, .c2{
-    border: 1px solid #4831D4;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 20px;
-}
-.a1 h1, .b1 h1, .c1 h1, .a2 h1, .b2 h1, .c2 h1{
-    color: hsl(248, 65%, 61%);
-    font-weight: 800;
-    font-size: 20px;
-}
-.sports, .physio, .computer{
-    font-size: 16px;
-    padding-top: 15px;
-}
-/* -------------------SKILLS---------------- */
-.languages{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5px;
-}
-.languages > img{
-    padding-bottom: 20px;
-}
-.a3{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 18px;
-}
-.frontend,.backend,.education, .work{
-    font-size: 25px;
-    margin-top: 20px;
-    padding-left:1%;
-}
-.education, .work{
-    padding-left: 5%;
-}
-.progress-bar{
-    width: 100%;
-    height: 5px;
+
+.container{
     position: relative;
-    margin-bottom: 40px;
-    border-radius: 5px;
-    background: #262626;
-    margin-top: 10px;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(at 40% 45%, #e2e9f7 0, transparent 50%),
+                radial-gradient(at 60% 50% #eaccff 0, transparent 50%);
 }
-.bara1, .bara2, .bara3, .bara4, .bara5, .bara6, .bara7, .bara8{
+.content{
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 5px;
-    background-color: #FFD700;
-    border-radius: 5px;
-}
-.bara1{
-    width: 85%;
-}
-.bara2{
-    width: 80%;
-}
-.bara3{
-    width: 60%;
-}
-.bara4{
-    width: 40%;
-}
-.bara5{
-    width: 80%;
-}
-.bara6{
-    width: 60%;
-}
-.bara7{
-    width: 40%;
-}
-.bara8{
-    width: 40%;
-}
-
-.border{
-    border: 3px solid #4831D4;
-    border-radius: 7px;
-    margin-top: 20px;
-    padding: 15px;
-}
-/* -------------------PORTFOLIO---------------- */
-
-.work-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin-top: 50px;
-    gap: 40px;
-    max-width: 1300px;
-}
-.working{
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-.working img{
-   width: 100%;
-   transition: transform 0.5s;
-}
-.layer{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   position: absolute;
-   width: 100%;
-   height: 0;
-   background: linear-gradient(rgba(0,0,0,0.6), #4831D4);
-   border-radius: 10px;
-   left: 0;
-   bottom: 0;
-   overflow: hidden;
-   padding: 0 40px;
-   text-align: center;
-   font-size: 14px;
-   transition: height 0.5s;
-}
-.layer h3{
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.layer a{
-    margin-top: 20px;
-    font-size: 50px;
-    color: #fff;
-    text-decoration: none;
-    line-height: 60px;
-}
-.working:hover .layer{
+    inset: 0;
+    width: 100%;
     height: 100%;
-}
-.working:hover img {
-    transform: scale(1.1);
-}
-.layer a i{
-    transition: transform .5s;
-}
-.layer a i:hover{
-    color: #FFD700;
-    transform: scale(1.1);
+    display: flex;
+    align-items: center;
+    padding: 0 150px 0 100px;
+    margin-top: -20px;
 }
 
-/* -------------------CONTACT---------------- */
-.contact {
-    padding-bottom: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.contact-title, .contact-title-color {
-    font-size: 50px;
-    font-weight: 600;
-}
-.contact-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    font-size: 18px;
-    margin-top: 20px;
-    min-width: 60%;
-}
-form input, textarea {
+.img-wrapper{
+    width: 400px;
+    aspect-ratio: 3/5;
     padding: 15px;
-    color: #000;
-    background: hsl(248, 64%, 10%);
-    border: 2px solid hsl(248, 64%, 50%);
-    font-size: 18px;
-    outline: none;
-    border-radius: 7px;
-    color: #fff;
-
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+                0 8px 16px -8px rgba(0, 0, 0, 0.3);
 }
-textarea {
-    grid-column: span 2; /* Makes it span the entire width */
-    padding: 10px 15px;
-    margin-bottom: 10px;
-}
-.btn2 {
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-}
-button {
-    padding: 20px 40px;
-    font-size: 18px;
-    background-color: #4831D4;
-    color: #fff;
-    border: none;
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     border-radius: 5px;
-    cursor: pointer;
-    max-width: 40%; /* Make button full-width on small screens */
+    filter: saturate(0.9) brightness(1.05);
 }
-button:hover {
-    background-color: #3625a6;
-    transition: .5s ease;
+.text{
+    flex: 1 0 0;
+    font-size: clamp(5rem, 2.6vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-right: 50px;
+}
+.content:not(:first-child) .text{
+    opacity: 0;
+}
+.content:not(:first-child) .img-wrapper {
+    transform: translateY(-200%);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------SKILLS---------------- */
 /* ✅ Responsive Fix */
 /* body, html {
     overflow: hidden; 

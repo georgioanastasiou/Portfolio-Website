@@ -1,0 +1,6 @@
+---QUESTIONS TO SEARCH---
+1. What is gsap.utils.toArray
+2. What is gsap.set()
+3. What is inset: 0; CSS
+4. flex: 1 0 0;
+    font-size: clamp(1.1rem, 2.6vw, 1.5rem);
