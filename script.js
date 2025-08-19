@@ -1,82 +1,96 @@
-// gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+import * as THREE from "three"
+import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 
-// let sections = ['#header', '#journey', '#skills', '#portfolio', '#contact'];
-// let control = document.querySelectorAll(".control");
-// let scroll = document.getElementsByClassName("scroll-img");
 
-// gsap.to(scroll, {duration: 1, y:10, yoyo: true, repeat: -1, ease:"power1.inOut"})
+// document.addEventListener("DOMContentLoaded", () => {
+//     gsap.registerPlugin(ScrollTrigger);
 
-// function removeActiveClass() {
-//     control.forEach(btn => btn.classList.remove("active-control"));
-// }
+//     const contents = gsap.utils.toArray(".content");
+//     const text = gsap.utils.toArray(".text");
+//     const imageWrappers = gsap.utils.toArray(".img-wrapper");
 
-// control.forEach((btn, index) => {
-//     btn.addEventListener("click", () => {
-//         removeActiveClass();
-//         btn.classList.add("active-control");
+//     // move first child text slightly upwards
+//     gsap.set(".content:first-child .text", { y: -50 }); 
 
-//         console.log("Scrolling to:", sections[index]); // Debugging
-
-//         gsap.to(window, { duration: 1, scrollTo: sections[index], ease: 'power2.out' });
+//     const tl = gsap.timeline({
+//         defaults: {ease: "power2.out"},
+//            scrollTrigger: {
+//             trigger: ".container",
+//             pin: true,
+//             start: "top top",
+//             end: `+=${contents.length * 100}%`, // the scroll lenght based on the number of content sections
+//             scrub: 3, // control animation speed: increasing the value -> slower animation 
+//         },
 //     });
-// });
 
-// // Ensure ScrollTrigger links to correct elements
-// sections.forEach((section, index) => {
-//     ScrollTrigger.create({
-//         trigger: section,
-//         start: "top center",
-//         end: "bottom center",
-//         onEnter: () => control[index].classList.add("active-control"),
-//         onLeave: () => control[index].classList.remove("active-control"),
-//         onEnterBack: () => control[index].classList.add("active-control"),
-//         onLeaveBack: () => control[index].classList.remove("active-control"),
-//     });
-// });
-
-// ScrollTrigger.refresh();
-
-document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const contents = gsap.utils.toArray(".content");
-    const text = gsap.utils.toArray(".text");
-    const imageWrappers = gsap.utils.toArray(".img-wrapper");
-
-    // move first child text slightly upwards
-    gsap.set(".content:first-child .text", { y: -50 }); 
-
-    const tl = gsap.timeline({
-        defaults: {ease: "power2.out"},
-           scrollTrigger: {
-            trigger: ".container",
-            pin: true,
-            start: "top top",
-            end: `+=${contents.length * 200}%`, // the scroll lenght based on the number of content sections
-            scrub: 3, // control animation speed: increasing the value -> slower animation 
-        },
-    });
-
-    tl.to(imageWrappers[0], { rotate: -3 }, 0);
+//     tl.to(imageWrappers[0], { rotate: -3 }, 0);
     
-    contents.forEach((_,i) => {
-        if(i === contents.length -1 ) return;
+//     contents.forEach((_,i) => {
+//         if(i === contents.length -1 ) return;
 
-        tl.to(text[i], { opacity: 0, duration: 2}, "+=0.5")
-          .to(
-            imageWrappers[i + 1],
-            {
-                scale: 1,
-                duration: 2,
-                y: (i + 1) * 5,
-                x: (i + 1) * -5,
-                opacity: 1,
-                rotate: (i + 1) * 2 * ( i % 2 === 0 ? 1 : -1), // if element from array is mona then rotate from the other side
-            },
-            "<"
-          )
-          .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
-    })
+//         tl.to(text[i], { opacity: 0, duration: 2}, "+=0.5")
+//           .to(
+//             imageWrappers[i + 1],
+//             {
+//                 scale: 1,
+//                 duration: 2,
+//                 y: (i + 1) * 5,
+//                 x: (i + 1) * -5,
+//                 opacity: 1,
+//                 rotate: (i + 1) * 2 * ( i % 2 === 0 ? 1 : -1), // if element from array is mona then rotate from the other side
+//             },
+//             "<"
+//           )
+//           .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
+//     })
+// });
+
+
+const w = window.innerWidth;
+const h = window.innerHeight;
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(w, h);
+document.body.appendChild(renderer.domElement);
+
+// Camera
+const fov = 40;
+const aspect = w / h;
+const near = 50;
+const far = 1;
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+camera.position.z = 2;
+
+// Scene
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xdddddd);
+
+// Light
+const light = new THREE.AmbientLight(0xffffff, 2);
+scene.add(light);
+
+// GLTF Loader
+const loader = new GLTFLoader();
+loader.load('oldpc/scene.gltf', (gltf) => {
+    scene.add(gltf.scene);
+    console.log("Model loaded");
+}, undefined, (error) => {
+    console.error("Error loading model:", error);
 });
 
+// Resize handling
+// window.addEventListener('resize', () => {
+//     const w = window.innerWidth;
+//     const h = window.innerHeight;
+//     renderer.setSize(w, h);
+//     camera.aspect = w / h;
+//     camera.updateProjectionMatrix();
+// });
 
+// Animation loop
+function animate(t) {
+    requestAnimationFrame(animate);
+    scene.rotation.y = t * 0.0001
+    renderer.render(scene, camera);
+}
+
+animate();
