@@ -1,7 +1,6 @@
 import * as THREE from "three"
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 
-
 // document.addEventListener("DOMContentLoaded", () => {
 //     gsap.registerPlugin(ScrollTrigger);
 
@@ -46,51 +45,89 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 // });
 
 
-const w = window.innerWidth;
-const h = window.innerHeight;
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(w, h);
-document.body.appendChild(renderer.domElement);
+// const container = document.getElementById("about-3d");
+// const w = container.clientWidth;
+// const h = container.clientHeight;
 
-// Camera
-const fov = 40;
-const aspect = w / h;
-const near = 50;
-const far = 1;
-const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.z = 2;
+// const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+// renderer.setSize(w, h);
+// container.appendChild(renderer.domElement);
 
-// Scene
-const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xdddddd);
+// // Camera
+// const fov = 60;
+// const aspect = w / h;
+// const near = 0.1;
+// const far = 100;
+// const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+// camera.position.z = 2;
 
-// Light
-const light = new THREE.AmbientLight(0xffffff, 2);
-scene.add(light);
+// // Scene
+// const scene = new THREE.Scene();
+// scene.background = null; // transparent background
 
-// GLTF Loader
-const loader = new GLTFLoader();
-loader.load('oldpc/scene.gltf', (gltf) => {
-    scene.add(gltf.scene);
-    console.log("Model loaded");
-}, undefined, (error) => {
-    console.error("Error loading model:", error);
-});
+// // Light
+// const light = new THREE.AmbientLight(0xffffff, 2);
+// scene.add(light);
 
-// Resize handling
+// // GLTF Loader
+// let model;
+// const loader = new GLTFLoader();
+// loader.load('oldpc/scene.gltf', (gltf) => {
+//     model = gltf.scene;
+
+//     // Scale down the model
+//    const box = new THREE.Box3().setFromObject(model);
+//     const center = box.getCenter(new THREE.Vector3());
+//     model.position.sub(center); 
+//     model.scale.set(2, 2, 2); 
+//     scene.add(model);
+   
+// });
+
+// // Resize handling
 // window.addEventListener('resize', () => {
-//     const w = window.innerWidth;
-//     const h = window.innerHeight;
+//     const w = container.clientWidth;
+//     const h = container.clientHeight;
 //     renderer.setSize(w, h);
 //     camera.aspect = w / h;
 //     camera.updateProjectionMatrix();
 // });
 
-// Animation loop
-function animate(t) {
-    requestAnimationFrame(animate);
-    scene.rotation.y = t * 0.0001
-    renderer.render(scene, camera);
-}
+// // Animation loop
+// function animate(t) {
+//     requestAnimationFrame(animate);
 
-animate();
+//     if(model){
+//         model.rotation.y = t * 0.0005; // slow rotation
+//     }
+
+//     renderer.render(scene, camera);
+// }
+
+// animate();
+
+
+
+
+// JAPAN TIMELINE
+gsap.registerPlugin(ScrollTrigger)
+const photography = document.querySelector("#photography");
+const gallery = document.querySelectorAll(".gallery img");
+const japan = document.querySelector(".japan");
+
+const tl = gsap.timeline({
+  defaults: {duration: .5, ease: "power2.out"},
+  scrollTrigger: {
+    trigger: photography,
+    start: "bottom bottom",
+    end: `${gallery.length * 100}%`,
+    scrub: 3, 
+    pin: true
+  }
+})
+
+gallery.forEach((_,i) => {
+  if(i === gallery.length -1) return
+  tl.to(gallery[i], { opacity: 1},
+  )
+})
