@@ -1,10 +1,11 @@
 import * as THREE from "three"
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+
     gsap.registerPlugin(ScrollTrigger);
 
-    const contents = gsap.utils.toArray(".content");
+  function basketball() {
+      const contents = gsap.utils.toArray(".content");
     const text = gsap.utils.toArray(".text");
     const imageWrappers = gsap.utils.toArray(".img-wrapper");
 
@@ -42,7 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
           )
           .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
     })
-});
+  };
+  basketball()
+
 
 
 const container = document.getElementById("about-3d");
