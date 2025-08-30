@@ -101,7 +101,7 @@ function animate(t) {
     requestAnimationFrame(animate);
 
     if(model){
-        model.rotation.y = t * 0.00001; // slow rotation
+        model.rotation.y = t * 0.001; // slow rotation
     }
 
     renderer.render(scene, camera);
