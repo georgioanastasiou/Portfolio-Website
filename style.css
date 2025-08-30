@@ -4,17 +4,11 @@
     font-family: "Poppins", serif;
     box-sizing: border-box;
 }
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 :root {
     --primary-color: #fff;
     --secondary-color: #0A013D;
-
+    
     /* font sizes */
     --font-small: 0.875rem; /* 14px */
     --font-base: 1rem;      /* 16px */
@@ -26,9 +20,7 @@
     font-family: 'Super Shiny'; 
     src: url('./SuperShiny-0v0rG.ttf') format('truetype'); 
   }
-body{
-    background-color: #e8e7e7;
-}
+
 /*--------------- JOURNEY ---------------*/    
 
 .container{
@@ -91,6 +83,8 @@ body{
 
 
 
+
+
 /* ------------------  ABOUT   ---------------  */
 
 .about-container {
@@ -140,60 +134,56 @@ body{
 
 
 
-/* Project Section */
+/* PROJECTS */
 #projects {
   padding: 80px 0;
+  background-color: #000000;
 }
 .projects-title {
   text-align: left;
   margin-bottom: 50px;
 }
 
-.projects-title p {
-  font-size: var(--font-base);
-  font-weight: 700;
-}
-
 .projects-title h1 {
   font-size: var(--font-title);
   letter-spacing: 3px;
+  color: var(--primary-color);
 }
-
+.projects-title p {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--primary-color);
+}
 .projects-container {
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
+  color: var(--primary-color);
 }
 .project-container {
     width: 100%;
 }
-
 .project {
   margin-bottom: 100px;
 }
-
-
 .project-subheader {
   display: flex;
-  align-items: center;       /* vertically center text + line */
+  align-items: center;     
   width: 100%;
-  margin-bottom: 30px;       /* space under the heading row */
+  margin-bottom: 30px;     
 }
-
 .project-subheader h2 {
   font-size: 1.8rem;
   font-weight: 700;
   margin: 0;
-  white-space: nowrap;       /* prevent title from breaking into 2 lines */
+  white-space: nowrap;      
 }
-
 .hr-line {
-  flex: 1;                   /* makes line take remaining space */
+  flex: 1;                  
   height: 2px;
   opacity: 0.3;
-  background: black;         /* line color */
-  margin-left: 1rem;         /* spacing between title and line */
-              
+  background: rgb(255, 255, 255);        
+  margin-left: 1rem;                      
 }
 
 
@@ -203,7 +193,7 @@ body{
   flex-wrap: wrap;
   gap: 30px;
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 150px;
 }
 
 .project-left {
@@ -229,7 +219,8 @@ body{
 
 .project-right p {
   font-size: var(--font-small);
-  color: #444;
+  color: var(--primary-color);
+  opacity: .5;
   line-height: 1.6;
   letter-spacing: 0.5px;
   word-spacing: 2px;
@@ -260,23 +251,24 @@ body{
 
 
 
-
-
+/* PHOTOGRAPHY */
 #photography {
     position: relative;
     width: 100%;
     height: 100dvh;
     overflow: hidden;
+    background-color: #0a0f3d;
 }
 #photography h1 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #2f4858;
-    font-size: var(--font-large);
+    color: var(--primary-color);
+    font-size: var(--font-title);
     text-align: center;
     user-select: none;
+    z-index: 1000;
 }
 
 .gallery img {
@@ -342,8 +334,31 @@ body{
 }
 
 
+/* SKILLS */
+#skills {
+  padding: 80px 0;
+  background-color: #dedbdb;
+}
+.skills-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.skills-title {
+  text-align: left;
+  margin-bottom: 50px;
+}
 
-
+.skills-title h1 {
+  font-size: var(--font-title);
+  letter-spacing: 3px;
+  color: var(--primary-color);
+}
+.skills-title p {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--primary-color);
+}
 
 
 
