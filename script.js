@@ -113,24 +113,56 @@ animate();
 
 
 // JAPAN TIMELINE
-gsap.registerPlugin(ScrollTrigger)
-const photography = document.querySelector("#photography");
-const gallery = document.querySelectorAll(".gallery img");
-const japan = document.querySelector(".japan");
+function japan(){
+    gsap.registerPlugin(ScrollTrigger)
+    const photography = document.querySelector("#photography");
+    const gallery = document.querySelectorAll(".gallery img");
 
-const tl = gsap.timeline({
-  defaults: {duration: .5, ease: "power2.out"},
-  scrollTrigger: {
-    trigger: photography,
-    start: "bottom bottom",
-    end: `${gallery.length * 100}%`,
-    scrub: 3, 
-    pin: true
-  }
-})
+    const tl = gsap.timeline({
+    defaults: {duration: .5, ease: "power2.out"},
+    scrollTrigger: {
+        trigger: photography,
+        start: "bottom bottom",
+        end: `${gallery.length * 100}%`,
+        scrub: 3, 
+        pin: true
+    }
+    })
 
-gallery.forEach((_,i) => {
-  if(i === gallery.length -1) return
-  tl.to(gallery[i], { opacity: 1},
-  )
+    gallery.forEach((_,i) => {
+    if(i === gallery.length -1) return
+    tl.to(gallery[i], { opacity: 1},
+    )
+    })
+}
+// japan()
+
+const fullStack = document.querySelector(".full");
+const arrow = document.querySelector(".arrow");
+const developer = document.querySelector(".developer");
+
+const tl = gsap.timeline({defaults: { ease: 'power4.out', duration: .7}})
+
+gsap.to("svg", {
+    scale: 1.2,
+    duration: 2,
+
 })
+gsap.to(developer, {
+    scale: 1.2,
+    duration: 2,
+    })
+
+tl.from('.dev p', {
+    yPercent: 200, 
+    stagger: .03,
+    skewX: 30,
+    skewY: 60,
+    opacity: 0,
+})
+ .from(fullStack, {
+    xPercent: 10,
+    ease: 'elastic.out',
+    duration: 1
+}, "-=.7")
+
