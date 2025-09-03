@@ -4,110 +4,110 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 
     gsap.registerPlugin(ScrollTrigger);
 
-  function basketball() {
-      const contents = gsap.utils.toArray(".content");
-    const text = gsap.utils.toArray(".text");
-    const imageWrappers = gsap.utils.toArray(".img-wrapper");
+//   function basketball() {
+//       const contents = gsap.utils.toArray(".content");
+//     const text = gsap.utils.toArray(".text");
+//     const imageWrappers = gsap.utils.toArray(".img-wrapper");
 
-    // move first child text slightly upwards
-    gsap.set(".content:first-child .text", { y: -50 }); 
+//     // move first child text slightly upwards
+//     gsap.set(".content:first-child .text", { y: -50 }); 
 
-    const tl = gsap.timeline({
-        defaults: {ease: "power2.out"},
-           scrollTrigger: {
-            trigger: ".container",
-            pin: true,
-            start: "top top",
-            end: `+=${contents.length * 100}%`, // the scroll lenght based on the number of content sections
-            scrub: 3, // control animation speed: increasing the value -> slower animation 
-        },
-    });
+//     const tl = gsap.timeline({
+//         defaults: {ease: "power2.out"},
+//            scrollTrigger: {
+//             trigger: ".container",
+//             pin: true,
+//             start: "top top",
+//             end: `+=${contents.length * 100}%`, // the scroll lenght based on the number of content sections
+//             scrub: 3, // control animation speed: increasing the value -> slower animation 
+//         },
+//     });
 
-    tl.to(imageWrappers[0], { rotate: -3 }, 0);
+//     tl.to(imageWrappers[0], { rotate: -3 }, 0);
     
-    contents.forEach((_,i) => {
-        if(i === contents.length -1 ) return;
+//     contents.forEach((_,i) => {
+//         if(i === contents.length -1 ) return;
 
-        tl.to(text[i], { opacity: 0, duration: 2}, "+=0.5")
-          .to(
-            imageWrappers[i + 1],
-            {
-                scale: 1,
-                duration: 2,
-                y: (i + 1) * 5,
-                x: (i + 1) * -5,
-                opacity: 1,
-                rotate: (i + 1) * 2 * ( i % 2 === 0 ? 1 : -1), // if element from array is mona then rotate from the other side
-            },
-            "<"
-          )
-          .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
-    })
-  };
-  basketball()
+//         tl.to(text[i], { opacity: 0, duration: 2}, "+=0.5")
+//           .to(
+//             imageWrappers[i + 1],
+//             {
+//                 scale: 1,
+//                 duration: 2,
+//                 y: (i + 1) * 5,
+//                 x: (i + 1) * -5,
+//                 opacity: 1,
+//                 rotate: (i + 1) * 2 * ( i % 2 === 0 ? 1 : -1), // if element from array is mona then rotate from the other side
+//             },
+//             "<"
+//           )
+//           .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
+//     })
+//   };
+//   basketball()
 
 
 
-const container = document.getElementById("about-3d");
-const w = container.clientWidth;
-const h = container.clientHeight;
+// const container = document.getElementById("about-3d");
+// const w = container.clientWidth;
+// const h = container.clientHeight;
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setSize(w, h);
-container.appendChild(renderer.domElement);
+// const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+// renderer.setSize(w, h);
+// container.appendChild(renderer.domElement);
 
-// Camera
-const fov = 60;
-const aspect = w / h;
-const near = 0.1;
-const far = 100;
-const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.z = 2;
+// // Camera
+// const fov = 60;
+// const aspect = w / h;
+// const near = 0.1;
+// const far = 100;
+// const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+// camera.position.z = 2;
 
-// Scene
-const scene = new THREE.Scene();
-scene.background = null; // transparent background
+// // Scene
+// const scene = new THREE.Scene();
+// scene.background = null; // transparent background
 
-// Light
-const light = new THREE.AmbientLight(0xffffff, 2);
-scene.add(light);
+// // Light
+// const light = new THREE.AmbientLight(0xffffff, 2);
+// scene.add(light);
 
-// GLTF Loader
-let model;
-const loader = new GLTFLoader();
-loader.load('oldpc/scene.gltf', (gltf) => {
-    model = gltf.scene;
+// // GLTF Loader
+// let model;
+// const loader = new GLTFLoader();
+// loader.load('oldpc/scene.gltf', (gltf) => {
+//     model = gltf.scene;
 
-    // Scale down the model
-   const box = new THREE.Box3().setFromObject(model);
-    const center = box.getCenter(new THREE.Vector3());
-    model.position.sub(center); 
-    model.scale.set(2, 2, 2); 
-    scene.add(model);
+//     // Scale down the model
+//    const box = new THREE.Box3().setFromObject(model);
+//     const center = box.getCenter(new THREE.Vector3());
+//     model.position.sub(center); 
+//     model.scale.set(2, 2, 2); 
+//     scene.add(model);
    
-});
+// });
 
-// Resize handling
-window.addEventListener('resize', () => {
-    const w = container.clientWidth;
-    const h = container.clientHeight;
-    renderer.setSize(w, h);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-});
+// // Resize handling
+// window.addEventListener('resize', () => {
+//     const w = container.clientWidth;
+//     const h = container.clientHeight;
+//     renderer.setSize(w, h);
+//     camera.aspect = w / h;
+//     camera.updateProjectionMatrix();
+// });
 
-// Animation loop
-function animate(t) {
-    requestAnimationFrame(animate);
+// // Animation loop
+// function animate(t) {
+//     requestAnimationFrame(animate);
 
-    if(model){
-        model.rotation.y = t * 0.001; // slow rotation
-    }
+//     if(model){
+//         model.rotation.y = t * 0.001; // slow rotation
+//     }
 
-    renderer.render(scene, camera);
-}
+//     renderer.render(scene, camera);
+// }
 
-animate();
+// animate();
 
 
 
@@ -143,26 +143,86 @@ const developer = document.querySelector(".developer");
 
 const tl = gsap.timeline({defaults: { ease: 'power4.out', duration: .7}})
 
-gsap.to("svg", {
+gsap.set(arrow, {
+    xPercent: 80
+})
+gsap.to("svg, .dev", {
     scale: 1.2,
     duration: 2,
 
 })
-gsap.to(developer, {
-    scale: 1.2,
-    duration: 2,
+
+tl
+    .from('.dev p', {
+        yPercent: 200, 
+        stagger: .03,
+        skewX: 30,
+        skewY: 60,
+       
     })
-
-tl.from('.dev p', {
-    yPercent: 200, 
-    stagger: .03,
-    skewX: 30,
-    skewY: 60,
-    opacity: 0,
-})
- .from(fullStack, {
-    xPercent: 10,
-    ease: 'elastic.out',
-    duration: 1
-}, "-=.7")
-
+    .to(fullStack, {
+        xPercent: 11,
+        ease: 'elastic.out(1, .5)'
+    }, "1.5")
+    .from(arrow, {
+        xPercent: -100,
+        opacity: 0,
+        ease: 'elastic.out'
+    }, "1.5")
+    .to('.dev', {
+        skewX: 30,
+        x: 30,
+        scaleX: 0,
+        stagger: .03,
+        opacity: 0,
+        duration: .2
+    }, "+=.5")
+    .to(fullStack, {
+        skewX: 30,
+        x: 30,
+        scaleX: 0,
+        stagger: .03,
+        opacity: 0,
+        duration: .2
+    }, "<")
+    .to(arrow, {
+        xPercent: 300,
+        opacity: 1,
+        duration:  1.3,
+        ease: 'elastic.out(1, .3)',
+    }, "<")
+    .to(arrow, {
+        rotateZ: -90,
+        transformOrigin: 'center'
+    }, "-=.1")
+    .to(arrow, {
+        yPercent: 2000,
+        duration: 1.3
+    }, "-=.5")
+    .to(arrow, {
+        yPercent: -10000,
+        ease: 'back.in(1)',
+        duration: .5
+    }, "-=.3")
+    .to('.reveal', {
+        scaleY: 0,
+        transformOrigin: 'top',
+        duration: 2,
+        ease: 'power4.inOut',
+        onComplete: () => {
+    document.querySelector(".reveal").style.display = "none";
+  }
+    }, "-=.6")
+    
+    .from("#about", {
+        opacity: 0,
+        duration: 1,
+    },"+=.6")
+    .to("#about", {
+        duration: 5,
+        opacity: 1,
+        ease: 'back.in'
+    },"+=.6")
+    
+    
+    
