@@ -4,47 +4,47 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 
     gsap.registerPlugin(ScrollTrigger);
 
-//   function basketball() {
-//       const contents = gsap.utils.toArray(".content");
-//     const text = gsap.utils.toArray(".text");
-//     const imageWrappers = gsap.utils.toArray(".img-wrapper");
+  function basketball() {
+      const contents = gsap.utils.toArray(".content");
+    const text = gsap.utils.toArray(".text");
+    const imageWrappers = gsap.utils.toArray(".img-wrapper");
 
-//     // move first child text slightly upwards
-//     gsap.set(".content:first-child .text", { y: -50 }); 
+    // move first child text slightly upwards
+    gsap.set(".content:first-child .text", { y: -50 }); 
 
-//     const tl = gsap.timeline({
-//         defaults: {ease: "power2.out"},
-//            scrollTrigger: {
-//             trigger: ".container",
-//             pin: true,
-//             start: "top top",
-//             end: `+=${contents.length * 100}%`, // the scroll lenght based on the number of content sections
-//             scrub: 3, // control animation speed: increasing the value -> slower animation 
-//         },
-//     });
+    const tl = gsap.timeline({
+        defaults: {ease: "power2.out"},
+           scrollTrigger: {
+            trigger: ".container",
+            pin: true,
+            start: "top top",
+            end: `+=${contents.length * 100}%`, // the scroll lenght based on the number of content sections
+            scrub: 3, // control animation speed: increasing the value -> slower animation 
+        },
+    });
 
-//     tl.to(imageWrappers[0], { rotate: -3 }, 0);
+    tl.to(imageWrappers[0], { rotate: -3 }, 0);
     
-//     contents.forEach((_,i) => {
-//         if(i === contents.length -1 ) return;
+    contents.forEach((_,i) => {
+        if(i === contents.length -1 ) return;
 
-//         tl.to(text[i], { opacity: 0, duration: 2}, "+=0.5")
-//           .to(
-//             imageWrappers[i + 1],
-//             {
-//                 scale: 1,
-//                 duration: 2,
-//                 y: (i + 1) * 5,
-//                 x: (i + 1) * -5,
-//                 opacity: 1,
-//                 rotate: (i + 1) * 2 * ( i % 2 === 0 ? 1 : -1), // if element from array is mona then rotate from the other side
-//             },
-//             "<"
-//           )
-//           .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
-//     })
-//   };
-//   basketball()
+        tl.to(text[i], { opacity: 0, duration: 2}, "+=0.5")
+          .to(
+            imageWrappers[i + 1],
+            {
+                scale: 1,
+                duration: 2,
+                y: (i + 1) * 5,
+                x: (i + 1) * -5,
+                opacity: 1,
+                rotate: (i + 1) * 2 * ( i % 2 === 0 ? 1 : -1), // if element from array is mona then rotate from the other side
+            },
+            "<"
+          )
+          .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
+    })
+  };
+  basketball()
 
 
 
@@ -135,7 +135,7 @@ function japan(){
     )
     })
 }
-// japan()
+japan()
 
 
 
