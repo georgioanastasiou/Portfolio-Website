@@ -137,92 +137,104 @@ function japan(){
 }
 // japan()
 
-const fullStack = document.querySelector(".full");
-const arrow = document.querySelector(".arrow");
-const developer = document.querySelector(".developer");
 
-const tl = gsap.timeline({defaults: { ease: 'power4.out', duration: .7}})
 
-gsap.set(arrow, {
-    xPercent: 80
-})
-gsap.to("svg, .dev", {
-    scale: 1.2,
-    duration: 2,
 
-})
+// OVERLAY
+  
+function overlay(){
 
-tl
-    .from('.dev p', {
-        yPercent: 200, 
-        stagger: .03,
-        skewX: 30,
-        skewY: 60,
-       
+
+
+    // Disable scrolling while animation runs
+
+    
+    // and later
+    const fullStack = document.querySelector(".full");
+    const arrow = document.querySelector(".arrow");
+
+    const tl = gsap.timeline({defaults: { ease: 'power4.out', duration: .7}})
+
+    gsap.set(arrow, {
+        xPercent: 80
     })
-    .to(fullStack, {
-        xPercent: 11,
-        ease: 'elastic.out(1, .5)'
-    }, "1.5")
-    .from(arrow, {
-        xPercent: -100,
-        opacity: 0,
-        ease: 'elastic.out'
-    }, "1.5")
-    .to('.dev', {
-        skewX: 30,
-        x: 30,
-        scaleX: 0,
-        stagger: .03,
-        opacity: 0,
-        duration: .2
-    }, "+=.5")
-    .to(fullStack, {
-        skewX: 30,
-        x: 30,
-        scaleX: 0,
-        stagger: .03,
-        opacity: 0,
-        duration: .2
-    }, "<")
-    .to(arrow, {
-        xPercent: 300,
-        opacity: 1,
-        duration:  1.3,
-        ease: 'elastic.out(1, .3)',
-    }, "<")
-    .to(arrow, {
-        rotateZ: -90,
-        transformOrigin: 'center'
-    }, "-=.1")
-    .to(arrow, {
-        yPercent: 2000,
-        duration: 1.3
-    }, "-=.5")
-    .to(arrow, {
-        yPercent: -10000,
-        ease: 'back.in(1)',
-        duration: .5
-    }, "-=.3")
-    .to('.reveal', {
-        scaleY: 0,
-        transformOrigin: 'top',
+    gsap.to("svg, .dev", {
+        scale: 1.2,
         duration: 2,
-        ease: 'power4.inOut',
-        onComplete: () => {
-    document.querySelector(".reveal").style.display = "none";
-  }
-    }, "-=.6")
-    
-    .from("#about", {
-        opacity: 0,
-        duration: 1,
-    },"+=.6")
-    .to("#about", {
-        duration: 5,
-        opacity: 1,
-        ease: 'back.in'
-    },"+=.6")
-    
-    
+
+    })
+
+    tl
+        .from('.dev p', {
+            yPercent: 200, 
+            stagger: .03,
+            skewX: 30,
+            skewY: 60,
+        
+        })
+        .to(fullStack, {
+            xPercent: 11,
+            ease: 'elastic.out(1, .5)'
+        }, "1.5")
+        .from(arrow, {
+            xPercent: -100,
+            opacity: 0,
+            ease: 'elastic.out'
+        }, "1.5")
+        .to('.dev', {
+            skewX: 30,
+            x: 30,
+            scaleX: 0,
+            stagger: .03,
+            opacity: 0,
+            duration: .2
+        }, "+=.5")
+        .to(fullStack, {
+            skewX: 30,
+            x: 30,
+            scaleX: 0,
+            stagger: .03,
+            opacity: 0,
+            duration: .2
+        }, "<")
+        .to(arrow, {
+            xPercent: 300,
+            opacity: 1,
+            duration:  1.3,
+            ease: 'elastic.out(1, .3)',
+        }, "<")
+        .to(arrow, {
+            rotateZ: -90,
+            transformOrigin: 'center'
+        }, "-=.1")
+        .to(arrow, {
+            yPercent: 2000,
+            duration: 1.3
+        }, "-=.5")
+        .to(arrow, {
+            yPercent: -10000,
+            ease: 'back.in(1)',
+            duration: .5
+        }, "-=.3")
+        .to('.overlay', {
+            scaleY: 0,
+            transformOrigin: 'top',
+            duration: 1,
+            ease: 'power4.inOut',
+            onComplete: () => {
+        document.body.classList.remove("no-scroll");
+        document.documentElement.classList.remove("no-scroll");
+    }
+        }, "-=.6")
+    }    
+    overlay()
+
+ // Disable automatic scroll restoration
+ window.onbeforeunload = function () {
+    window.scrollTo(0,0);
+};
+
+
+
+
     
