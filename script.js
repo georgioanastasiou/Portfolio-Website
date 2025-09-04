@@ -48,66 +48,66 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 
 
 
-// const container = document.getElementById("about-3d");
-// const w = container.clientWidth;
-// const h = container.clientHeight;
+const container = document.getElementById("about-3d");
+const w = container.clientWidth;
+const h = container.clientHeight;
 
-// const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-// renderer.setSize(w, h);
-// container.appendChild(renderer.domElement);
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(w, h);
+container.appendChild(renderer.domElement);
 
-// // Camera
-// const fov = 60;
-// const aspect = w / h;
-// const near = 0.1;
-// const far = 100;
-// const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-// camera.position.z = 2;
+// Camera
+const fov = 60;
+const aspect = w / h;
+const near = 0.1;
+const far = 100;
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+camera.position.z = 2;
 
-// // Scene
-// const scene = new THREE.Scene();
-// scene.background = null; // transparent background
+// Scene
+const scene = new THREE.Scene();
+scene.background = null; // transparent background
 
-// // Light
-// const light = new THREE.AmbientLight(0xffffff, 2);
-// scene.add(light);
+// Light
+const light = new THREE.AmbientLight(0xffffff, 2);
+scene.add(light);
 
-// // GLTF Loader
-// let model;
-// const loader = new GLTFLoader();
-// loader.load('oldpc/scene.gltf', (gltf) => {
-//     model = gltf.scene;
+// GLTF Loader
+let model;
+const loader = new GLTFLoader();
+loader.load('oldpc/scene.gltf', (gltf) => {
+    model = gltf.scene;
 
-//     // Scale down the model
-//    const box = new THREE.Box3().setFromObject(model);
-//     const center = box.getCenter(new THREE.Vector3());
-//     model.position.sub(center); 
-//     model.scale.set(2, 2, 2); 
-//     scene.add(model);
+    // Scale down the model
+   const box = new THREE.Box3().setFromObject(model);
+    const center = box.getCenter(new THREE.Vector3());
+    model.position.sub(center); 
+    model.scale.set(2, 2, 2); 
+    scene.add(model);
    
-// });
+});
 
-// // Resize handling
-// window.addEventListener('resize', () => {
-//     const w = container.clientWidth;
-//     const h = container.clientHeight;
-//     renderer.setSize(w, h);
-//     camera.aspect = w / h;
-//     camera.updateProjectionMatrix();
-// });
+// Resize handling
+window.addEventListener('resize', () => {
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+});
 
-// // Animation loop
-// function animate(t) {
-//     requestAnimationFrame(animate);
+// Animation loop
+function animate(t) {
+    requestAnimationFrame(animate);
 
-//     if(model){
-//         model.rotation.y = t * 0.001; // slow rotation
-//     }
+    if(model){
+        model.rotation.y = t * 0.001; // slow rotation
+    }
 
-//     renderer.render(scene, camera);
-// }
+    renderer.render(scene, camera);
+}
 
-// animate();
+animate();
 
 
 
