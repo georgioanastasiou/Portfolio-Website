@@ -4,6 +4,24 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 
     gsap.registerPlugin(ScrollTrigger);
 
+
+
+// Initialize a new Lenis instance for smooth scrolling
+const lenis = new Lenis();
+
+// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+lenis.on('scroll', ScrollTrigger.update);
+
+// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1200); // Convert time from seconds to milliseconds
+});
+
+// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+gsap.ticker.lagSmoothing(0);
+
+
   function basketball() {
       const contents = gsap.utils.toArray(".content");
     const text = gsap.utils.toArray(".text");
@@ -112,6 +130,95 @@ animate();
 
 
 
+// ABOUT DEVELOPING STUFF
+function aboutBar() {
+    const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.stuff',
+    start: 'bottom bottom',
+    end: '+=600',
+    scrub: 2,
+  }
+});
+
+// Animate the .stuff elements in
+tl.from('.stuff', {
+  xPercent: 50,
+  opacity: 0,
+  duration: 1,
+  ease: 'power3.out',
+  stagger: 0.1 
+});
+
+// Animate the h1 inside .stuff
+tl.to('.stuff-h1', {
+  opacity: 1,
+  duration: 0.7,
+  ease: 'elastic.out(1, 1.3)',
+}, "<0.3"); // start slightly before the previous animation ends
+
+// Animate .stuff out
+tl.to('.stuff', {
+  xPercent: -100,
+  opacity: 0,
+  duration: .5,
+  ease: 'power3.in',
+},); // small delay after h1 animation
+}
+aboutBar()
+
+
+
+function likeBar() {
+    const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.like',
+    start: 'bottom bottom',
+    end: '+=600',
+    scrub: 2,
+  }
+});
+
+// Animate the .like elements in
+tl.from('.like', {
+  xPercent: -50,
+  opacity: 0,
+  duration: 1,
+  ease: 'power3.out',
+  stagger: 0.1 
+});
+
+// Animate the h1 inside .like
+tl.to('.like-h1', {
+  opacity: 1,
+  duration: 0.7,
+  ease: 'elastic.out(1, 1.3)',
+}, "<0.3"); // start slightly before the previous animation ends
+
+// Animate .like out
+tl.to('.like', {
+  xPercent: 100,
+  opacity: 0,
+  duration: .5,
+  ease: 'power3.in',
+},); // small delay after h1 animation
+}
+likeBar()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // JAPAN TIMELINE
 function japan(){
     gsap.registerPlugin(ScrollTrigger)
@@ -135,21 +242,13 @@ function japan(){
     )
     })
 }
-japan()
+// japan()
 
 
 
 
 // OVERLAY
-  
 function overlay(){
-
-
-
-    // Disable scrolling while animation runs
-
-    
-    // and later
     const fullStack = document.querySelector(".full");
     const arrow = document.querySelector(".arrow");
 
@@ -227,7 +326,27 @@ function overlay(){
     }
         }, "-=.6")
     }    
-    overlay()
+    // overlay()
+
+
+function skills() {
+    const tl = gsap.timeline({
+        defaults: {duration: 1, ease: 'elastic.inOut'},
+        scrollTrigger: {
+            trigger: '.svg-skills',
+            start: 'top center',   
+            end: '+=200',
+        }
+    })
+   tl.to('.svg-skills, path, g', {
+    scale: 1.1,
+    opacity: 1,
+    duration: 1,
+    stagger: .01, // animate one after another
+  });
+}
+skills()
+
 
  // Disable automatic scroll restoration
  window.onbeforeunload = function () {
