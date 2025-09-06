@@ -28,7 +28,7 @@
     display: grid;
     place-content: center;
     height: 100vh; /* full viewport */
-    width: 100vw;
+    width: 100%;
     position: fixed; /* normal stacking */
     z-index: 10000;
   }
@@ -52,11 +52,11 @@ svg {
 
 /*--------------- HOME ---------------*/   
 #home {
-  max-width: 100%;
   margin: 0 auto;
   width: 100%;
   height: 90vh;
   background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 191, 218, 1) 48%, rgba(137, 133, 204, 1) 100%);                
+  
 }
 
 .nav {
@@ -83,6 +83,7 @@ svg {
   max-width: 100%;
   position: absolute;
   top: 50%;
+  overflow: hidden;
 
 }
 
@@ -97,8 +98,8 @@ svg {
     position: relative;
     width: 100%;
     height: 100vh;
-background: #c5d7de;
-background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 191, 218, 1) 48%, rgba(137, 133, 204, 1) 100%);                
+    background: #c5d7de;
+    overflow: hidden;
 }
 .content{
     position: absolute;
@@ -108,7 +109,7 @@ background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 191, 218
     display: flex;
     align-items: center;
     padding: 0 200px 0 200px;
-    margin-top: -20px;
+
 }
 .number01{
     position: absolute;
@@ -165,7 +166,7 @@ background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 191, 218
   z-index: 0;
 } */
 .about-container {
-  margin-top: 150px;
+    margin-top: 150px;
     padding: 80px 0 180px 0;
     height: 20%;
     display: flex;
@@ -240,7 +241,7 @@ background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 191, 218
 
 
 
-.stuff {
+.stuff, .like {
   font-size: var(--font-large);
   padding: 100px 0; 
   margin: 0 0 100px 0;
@@ -252,28 +253,11 @@ background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 191, 218
   width: 100%;
 
 }
-.stuff h1 {
+.stuff h1, .like h1 {
   color: rgb(0, 0, 0);
   opacity: 0;
 }
 
-.like {
-  font-size: var(--font-large);
-  background: rgb(0, 0, 0);
-  padding: 100px 0; 
-  text-align: left;
-  margin: 100px 0 300px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  width: 100%;
-
-}
-.like h1 {
-  color: white;
-  opacity: 0;
-}
 
 
 
@@ -312,9 +296,7 @@ background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 191, 218
   padding: 0 20px;
   color: var(--primary-color);
 }
-.project-container {
-    width: 100%;
-}
+
 .project {
   margin-bottom: 100px;
 }
