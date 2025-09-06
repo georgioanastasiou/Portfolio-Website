@@ -242,7 +242,7 @@ function japan(){
     )
     })
 }
-// japan()
+japan()
 
 
 
@@ -325,6 +325,13 @@ function overlay(){
         document.documentElement.classList.remove("no-scroll");
     }
         }, "-=.6")
+        .from('.tsiou', {
+          duration: 1,
+          yPercent: 100,
+          ease: 'elastic.inOut(1, 1.3)',
+          opacity: 1
+        }, "-=.5")
+       
     }    
     // overlay()
 
@@ -354,6 +361,15 @@ skills()
 };
 
 
+gsap.registerPlugin(MotionPathPlugin);
 
-
-    
+gsap.to(".planet", {
+  duration: 6,           // how long one full path traversal takes
+  repeat: -1,            // loop forever
+  ease: "none",          // constant speed
+  motionPath: {
+    path: ".line",       // path to follow
+    align: ".line",      // align rotation to the path
+    alignOrigin: [0.3, 0.4]
+  }
+});

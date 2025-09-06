@@ -13,7 +13,11 @@
     .text {
         font-size: clamp(2rem, 2.6vw, 1.5rem);
 }
+
 }
+
+
+
 @media (max-width: 900px) {
     .content {
         padding: 0 50px;
@@ -21,8 +25,19 @@
     .img-wrapper {
         width: 250px;
     }
+    .about-container .left{
+        width: 100%;
+    }
 }
-@media (max-width: 730px) {
+
+
+
+@media (max-width: 768px) {
+
+    .tsiou {
+        width: 70%;
+    }
+
     .content {
         flex-direction: column-reverse;
         padding: 20px;
@@ -38,7 +53,14 @@
         padding: 0 80px;
         text-align: center;
     }
+    .gallery img{
+        width: 230px;
+    }
+   
+
 }
+
+/* --------------MEDIA 500PX--------------- */
 @media (max-width: 500px) {
     .img-wrapper {
         padding: 10px;
@@ -50,37 +72,6 @@
     }
 }
 
-.about-container {
-    padding-top: 80px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap; /* allows stacking */
-}
-
-.container2 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    gap: 20px; 
-    padding: 20px;
-    flex-wrap: wrap; /* makes it wrap on small screens */
-}
-
-.left {
-    padding-top: 20px;
-    width: 50%; /* desktop */
-}
-
-.left h2 {
-    font-size: var(--font-title);
-    padding-bottom: 12px;
-}
-
-.left p {
-    width: 80%;
-}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
