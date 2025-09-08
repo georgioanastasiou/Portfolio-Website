@@ -16,6 +16,24 @@
     --font-title: clamp(1rem, 4vw, 5rem);
 }
 
+/* Scrollbar track (background) */
+::-webkit-scrollbar {
+  width: 15px;       /* width of vertical scrollbar */
+  height: 12px;      /* height of horizontal scrollbar */
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #004F90; /* color of the scroll thumb */
+  border-radius: 5px;        /* round edges */
+  border: 3px solid #002846; /* optional: padding effect */
+}
+
+/* Scrollbar track (background behind the thumb) */
+::-webkit-scrollbar-track {
+  background-color: #002846; /* color of the track */
+  border-radius: 6px;
+}
 
 @font-face {
     font-family: 'Super Shiny'; 
@@ -240,7 +258,7 @@
 
 .stuff, .like {
   font-size: var(--font-large);
-  padding: 100px 0; 
+  padding: 500px 0; 
   margin: 0 0 100px 0;
   text-align: left;
   display: flex;

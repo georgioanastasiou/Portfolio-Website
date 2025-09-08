@@ -16,7 +16,7 @@ gsap.ticker.add((time) => {
   lenis.raf(time * 1200); // Convert time from seconds to milliseconds
 });
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-gsap.ticker.lagSmoothing(50);
+gsap.ticker.lagSmoothing(500);
 // OVERLAY
 function overlay(){
     const fullStack = document.querySelector(".full");
@@ -100,7 +100,7 @@ function overlay(){
         }, "-=.5")
        
     }    
-    overlay()
+    // overlay()
 
 
 
@@ -147,7 +147,7 @@ function overlay(){
           .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
     })
   };
-  basketball()
+  // basketball()
 
 
 
@@ -221,8 +221,8 @@ function aboutBar() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.stuff',
-        start: 'bottom bottom',
-        end: '+=400',
+        start: 'top center',
+        end: '+=800',
         scrub: 2,
       }
     });
@@ -247,8 +247,8 @@ function likeBar() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.like',
-        start: 'bottom bottom',
-        end: '+=400',
+        start: 'top center',
+        end: '+=700',
         scrub: 2,
       }
     });
@@ -307,14 +307,7 @@ function japan(){
     )
     })
 }
-japan()
-
-
-
-
-
-
-
+// japan()
 
 
  // Disable automatic scroll restoration
@@ -323,13 +316,15 @@ japan()
 };
 
 
+
+// ----------------------PLANETS-------------------------
 gsap.registerPlugin(MotionPathPlugin);
 
 gsap.set('.planet2', {
   xPercent: 100
 })
 gsap.to(".planet1", {
-  duration: 6,           // how long one full path traversal takes
+  duration: 7,           // how long one full path traversal takes
   repeat: -1,            // loop forever
   ease: "none",          // constant speed
   motionPath: {
@@ -337,6 +332,17 @@ gsap.to(".planet1", {
     align: ".circle-outer",      // align rotation to the path
     alignOrigin: [0.5, 0.5],
     autoRotate: true
+  }
+});
+gsap.to(".ball-outer", {
+  duration: 5,           // how long one full path traversal takes
+  repeat: -1,            // loop forever
+  ease: "none",          // constant speed
+  motionPath: {
+    path: ".circle-outer",       // path to follow
+    align: ".circle-outer",      // align rotation to the path
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true,
   }
 });
 
@@ -353,7 +359,7 @@ gsap.to(".planet2", {
 });
 
 gsap.to(".ball-inner", {
-  duration: 6,           // how long one full path traversal takes
+  duration: 4,           // how long one full path traversal takes
   repeat: -1,            // loop forever
   ease: "none",          // constant speed
   motionPath: {
@@ -365,14 +371,3 @@ gsap.to(".ball-inner", {
 });
 
 
-gsap.to(".ball-outer", {
-  duration: 5,           // how long one full path traversal takes
-  repeat: -1,            // loop forever
-  ease: "none",          // constant speed
-  motionPath: {
-    path: ".circle-outer",       // path to follow
-    align: ".circle-outer",      // align rotation to the path
-    alignOrigin: [0.5, 0.5],
-    autoRotate: true,
-  }
-});

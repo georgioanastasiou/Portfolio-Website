@@ -13,12 +13,18 @@
     .text {
         font-size: clamp(2rem, 2.6vw, 1.5rem);
 }
-
+html,body {
+    overflow: hidden;
+}
 }
 
 
 
 @media (max-width: 900px) {
+
+    #planet svg{
+        width: 20%;
+    }
     .content {
         padding: 0 50px;
     }
@@ -33,11 +39,12 @@
 
 
 @media (max-width: 768px) {
-
-    .tsiou {
+    .tsiou  {
         width: 70%;
     }
-
+    #planet svg{
+        width: 15%;
+    }
     .content {
         flex-direction: column-reverse;
         padding: 20px;
@@ -56,8 +63,36 @@
     .gallery img{
         width: 230px;
     }
-   
-
+   .about-container {
+        flex-direction: column; /* stack vertically */
+        padding-top: 40px;
+    }
+    .container2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .left {
+        width: 100%; /* take full width */
+        padding-top: 10px;
+    }
+    .left p {
+        width: 100%; /* paragraphs expand */
+    }
+    .right {
+        margin-top: 20px;
+    }
+    .project-container {
+    flex-direction: column;
+    align-items: center;
+  }
+    .project-left, .project-right {
+        flex: 1 1 100%;
+        text-align: center; /* center text for mobile */
+    }
+    .project-right {
+        margin-top: 1rem;
+    }
 }
 
 /* --------------MEDIA 500PX--------------- */
@@ -72,45 +107,3 @@
     }
 }
 
-
-/* ---------- Responsive ---------- */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column; /* stack vertically */
-        padding-top: 40px;
-    }
-
-    .container2 {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .left {
-        width: 100%; /* take full width */
-        padding-top: 10px;
-    }
-
-    .left p {
-        width: 100%; /* paragraphs expand */
-    }
-
-    .right {
-        margin-top: 20px;
-    }
-
-    .project-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project-left,
-  .project-right {
-    flex: 1 1 100%;
-    text-align: center; /* center text for mobile */
-  }
-
-  .project-right {
-    margin-top: 1rem;
-  }
-}
