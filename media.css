@@ -13,9 +13,7 @@
     .text {
         font-size: clamp(2rem, 2.6vw, 1.5rem);
 }
-html,body {
-    overflow: hidden;
-}
+
 }
 
 
