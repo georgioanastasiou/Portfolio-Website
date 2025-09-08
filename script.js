@@ -16,7 +16,95 @@ gsap.ticker.add((time) => {
   lenis.raf(time * 1200); // Convert time from seconds to milliseconds
 });
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-gsap.ticker.lagSmoothing(5);
+gsap.ticker.lagSmoothing(50);
+// OVERLAY
+function overlay(){
+    const fullStack = document.querySelector(".full");
+    const arrow = document.querySelector(".arrow");
+
+    const tl = gsap.timeline({defaults: { ease: 'power4.out', duration: .7}})
+
+    gsap.set(arrow, {
+        xPercent: 80
+    })
+    gsap.to(".intro, .dev", {
+        scale: 1.2,
+        duration: 1.2,
+    })
+    tl
+        .from('.dev p', {
+            yPercent: 200, 
+            stagger: .03,
+            skewX: 30,
+            skewY: 60,
+        })
+        .to(fullStack, {
+            xPercent: 11,
+            ease: 'elastic.out(1, .5)'
+        }, "1.5")
+        .from(arrow, {
+            xPercent: -100,
+            opacity: 0,
+            ease: 'elastic.out'
+        }, "1.5")
+        .to('.dev', {
+            skewX: 30,
+            x: 30,
+            scaleX: 0,
+            stagger: .03,
+            opacity: 0,
+            duration: .2
+        }, "+=.5")
+        .to(fullStack, {
+            skewX: 30,
+            x: 30,
+            scaleX: 0,
+            stagger: .03,
+            opacity: 0,
+            duration: .2
+        }, "<")
+        .to(arrow, {
+            xPercent: 300,
+            opacity: 1,
+            duration:  1.3,
+            ease: 'elastic.out(1, .3)',
+        }, "<")
+        .to(arrow, {
+            rotateZ: -90,
+            transformOrigin: 'center'
+        }, "-=.1")
+        .to(arrow, {
+            yPercent: 2000,
+            duration: 1.3
+        }, "-=.5")
+        .to(arrow, {
+            yPercent: -10000,
+            ease: 'back.in(1)',
+            duration: .5
+        }, "-=.3")
+        .to('.overlay', {
+            scaleY: 0,
+            transformOrigin: 'top',
+            duration: 1,
+            ease: 'power4.inOut',
+            onComplete: () => {
+        document.body.classList.remove("no-scroll");
+        document.documentElement.classList.remove("no-scroll");
+    }
+        }, "-=.6")
+        .from('.tsiou', {
+          duration: 1,
+          yPercent: 100,
+          ease: 'elastic.inOut(1, 1.3)',
+          opacity: 1
+        }, "-=.5")
+       
+    }    
+    overlay()
+
+
+
+
 
 
   function basketball() {
@@ -63,6 +151,7 @@ gsap.ticker.lagSmoothing(5);
 
 
 
+  // 3d pc
 const container = document.getElementById("about-3d");
 const w = container.clientWidth;
 const h = container.clientHeight;
@@ -223,112 +312,9 @@ japan()
 
 
 
-// OVERLAY
-function overlay(){
-    const fullStack = document.querySelector(".full");
-    const arrow = document.querySelector(".arrow");
-
-    const tl = gsap.timeline({defaults: { ease: 'power4.out', duration: .7}})
-
-    gsap.set(arrow, {
-        xPercent: 80
-    })
-    gsap.to("svg, .dev", {
-        scale: 1.2,
-        duration: 2,
-
-    })
-
-    tl
-        .from('.dev p', {
-            yPercent: 200, 
-            stagger: .03,
-            skewX: 30,
-            skewY: 60,
-        
-        })
-        .to(fullStack, {
-            xPercent: 11,
-            ease: 'elastic.out(1, .5)'
-        }, "1.5")
-        .from(arrow, {
-            xPercent: -100,
-            opacity: 0,
-            ease: 'elastic.out'
-        }, "1.5")
-        .to('.dev', {
-            skewX: 30,
-            x: 30,
-            scaleX: 0,
-            stagger: .03,
-            opacity: 0,
-            duration: .2
-        }, "+=.5")
-        .to(fullStack, {
-            skewX: 30,
-            x: 30,
-            scaleX: 0,
-            stagger: .03,
-            opacity: 0,
-            duration: .2
-        }, "<")
-        .to(arrow, {
-            xPercent: 300,
-            opacity: 1,
-            duration:  1.3,
-            ease: 'elastic.out(1, .3)',
-        }, "<")
-        .to(arrow, {
-            rotateZ: -90,
-            transformOrigin: 'center'
-        }, "-=.1")
-        .to(arrow, {
-            yPercent: 2000,
-            duration: 1.3
-        }, "-=.5")
-        .to(arrow, {
-            yPercent: -10000,
-            ease: 'back.in(1)',
-            duration: .5
-        }, "-=.3")
-        .to('.overlay', {
-            scaleY: 0,
-            transformOrigin: 'top',
-            duration: 1,
-            ease: 'power4.inOut',
-            onComplete: () => {
-        document.body.classList.remove("no-scroll");
-        document.documentElement.classList.remove("no-scroll");
-    }
-        }, "-=.6")
-        .from('.tsiou', {
-          duration: 1,
-          yPercent: 100,
-          ease: 'elastic.inOut(1, 1.3)',
-          opacity: 1
-        }, "-=.5")
-       
-    }    
-    // overlay()
 
 
-function skills() {
-    const tl = gsap.timeline({
-        defaults: {duration: 1, ease: 'elastic.inOut'},
-        scrollTrigger: {
-            trigger: '.svg-skills',
-            start: 'top center',   
-            end: '+=200',
-        }
-    })
-   tl.to('.svg-skills, path, g', {
-    scale: 1.1,
-    opacity: 1,
-    duration: 1,
-    stagger: .01, // animate one after another
-  });
-}
-skills()
+
 
 
  // Disable automatic scroll restoration
@@ -339,13 +325,54 @@ skills()
 
 gsap.registerPlugin(MotionPathPlugin);
 
-gsap.to(".planet", {
+gsap.set('.planet2', {
+  xPercent: 100
+})
+gsap.to(".planet1", {
   duration: 6,           // how long one full path traversal takes
   repeat: -1,            // loop forever
   ease: "none",          // constant speed
   motionPath: {
-    path: ".line",       // path to follow
-    align: ".line",      // align rotation to the path
-    alignOrigin: [0.3, 0.4]
+    path: ".circle-outer",       // path to follow
+    align: ".circle-outer",      // align rotation to the path
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true
+  }
+});
+
+gsap.to(".planet2", {
+  duration: 5,           // how long one full path traversal takes
+  repeat: -1,            // loop forever
+  ease: "none",          // constant speed
+  motionPath: {
+    path: ".circle-inner",       // path to follow
+    align: ".circle-inner",      // align rotation to the path
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true
+  }
+});
+
+gsap.to(".ball-inner", {
+  duration: 6,           // how long one full path traversal takes
+  repeat: -1,            // loop forever
+  ease: "none",          // constant speed
+  motionPath: {
+    path: ".circle-inner",       // path to follow
+    align: ".circle-inner",      // align rotation to the path
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true
+  }
+});
+
+
+gsap.to(".ball-outer", {
+  duration: 5,           // how long one full path traversal takes
+  repeat: -1,            // loop forever
+  ease: "none",          // constant speed
+  motionPath: {
+    path: ".circle-outer",       // path to follow
+    align: ".circle-outer",      // align rotation to the path
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true,
   }
 });
