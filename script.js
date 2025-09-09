@@ -180,22 +180,20 @@ scene.add(light);
 let model;
 const loader = new GLTFLoader();
 loader.load('oldpc/scene.gltf', (gltf) => {
+    console.log("Model loaded", gltf);
     model = gltf.scene;
+    model.scale.set(1.5, 1.5, 1.5); 
 
-    // Scale down the model
-   const box = new THREE.Box3().setFromObject(model);
-    const center = box.getCenter(new THREE.Vector3());
-    model.position.sub(center); 
-    model.scale.set(2, 2, 2); 
     scene.add(model);
-   
+}, undefined, (error) => {
+    console.error("Error loading model:", error);
 });
-
 // Resize handling
 window.addEventListener('resize', () => {
     const w = container.clientWidth;
     const h = container.clientHeight;
     renderer.setSize(w, h);
+
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
 });
@@ -319,6 +317,14 @@ function japan(){
 
 // ----------------------PLANETS-------------------------
 gsap.registerPlugin(MotionPathPlugin);
+gsap.set(".tsiou", {
+  rotate: "-10px"
+})
+gsap.set(".circle-inner, .circle-outer", {
+    duration: 1,
+    skewX: 50,
+    xPercent: -50
+})
 
 gsap.set('.planet2', {
   xPercent: 100
@@ -369,5 +375,6 @@ gsap.to(".ball-inner", {
     autoRotate: true
   }
 });
+
 
 

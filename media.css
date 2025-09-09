@@ -1,27 +1,67 @@
+:root {
+    --primary-color: #fff;
+    --secondary-color: #0A013D;
+    
+    /* font sizes */
+    --font-small: 0.875rem; /* 14px */
+    --font-base: 1rem;      /* 16px */
+    --font-large: clamp(1.5rem, 2vw, 2.5rem);  /* (min, prefered, max) */
+    --font-title: clamp(1rem, 4vw, 5rem);
+}
+@media (max-width: 1600px) {
+    svg {
+         height: 500px;
+    }
+    .tsiou {
+        width: 40%;
+    }
+    
+}
 @media (max-width: 1400px) {
+    svg {
+         height: 400px;
+    }
+    .tsiou {
+        width: 40%;
+    }
+   
     .content {
         padding: 0 100px 0 80px;
     }
     .img-wrapper {
         width: 200px;
     }
+   
 }
+
 @media (max-width: 1200px) {
+    svg{
+        top: 100px;
+         height: 350px;
+         right: 20px;
+    }
+    .tsiou {
+        width: 50%;
+    }
     .content {
         padding: 0 80px;
     }
     .text {
         font-size: clamp(2rem, 2.6vw, 1.5rem);
 }
-
 }
 
 
 
 @media (max-width: 900px) {
 
-    #planet svg{
-        width: 20%;
+     svg{
+        top: 100px;
+         height: 350px;
+         right: 20px;
+    }
+    .tsiou {
+        width: 60%;
     }
     .content {
         padding: 0 50px;
@@ -37,12 +77,14 @@
 
 
 @media (max-width: 768px) {
-    .tsiou  {
-        width: 70%;
+    svg {
+        top: 100px;
+         right: 40px;
     }
-    #planet svg{
-        width: 15%;
+    .tsiou {
+        width: 60%;
     }
+  
     .content {
         flex-direction: column-reverse;
         padding: 20px;
@@ -106,14 +148,34 @@
 }
 
 @media (max-width: 375px) {
+    #home {
+        height: 100vh;
+    }
+    svg{
+        top: 100px;
+         height: 200px;
+         right: 20px;
+    }
+    .tsiou {
+        width: 80%;
+    }
+    .hr-line {
+        display: none;
+    }
+    .stuff h1, .like h1 {
+        font-size: var(--font-large);
+    }
+    .project-left img {
+        width: 100%;
+    }
     .container2 {
         width: 100%;
     }
     .about-container {
         width: 100%;
     }
-    #about-3d {
-  width: 300px;
-  height: 300px;
-}
+        #about-3d {
+    width: 300px;
+    height: 300px;
+    }
 }
