@@ -151,6 +151,9 @@
     #home {
         height: 100vh;
     }
+    .navigation {
+        display: none;
+    }
     svg{
         top: 100px;
          height: 200px;
