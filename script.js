@@ -324,7 +324,7 @@ gsap.set('.planet2', {
   xPercent: 100
 })
 gsap.to(".planet1", {
-  duration: 7,           // how long one full path traversal takes
+  duration: 10,           // how long one full path traversal takes
   repeat: -1,            // loop forever
   ease: "none",          // constant speed
   motionPath: {
@@ -335,7 +335,7 @@ gsap.to(".planet1", {
   }
 });
 gsap.to(".ball-outer", {
-  duration: 5,           // how long one full path traversal takes
+  duration: 9,           // how long one full path traversal takes
   repeat: -1,            // loop forever
   ease: "none",          // constant speed
   motionPath: {
@@ -347,7 +347,7 @@ gsap.to(".ball-outer", {
 });
 
 gsap.to(".planet2", {
-  duration: 5,           // how long one full path traversal takes
+  duration: 8,           // how long one full path traversal takes
   repeat: -1,            // loop forever
   ease: "none",          // constant speed
   motionPath: {
@@ -359,7 +359,7 @@ gsap.to(".planet2", {
 });
 
 gsap.to(".ball-inner", {
-  duration: 4,           // how long one full path traversal takes
+  duration: 6,           // how long one full path traversal takes
   repeat: -1,            // loop forever
   ease: "none",          // constant speed
   motionPath: {
