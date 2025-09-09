@@ -100,7 +100,7 @@ function overlay(){
         }, "-=.5")
        
     }    
-    overlay()
+    // overlay()
 
 
 

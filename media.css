@@ -181,4 +181,18 @@
     width: 300px;
     height: 300px;
     }
+
+
+    .left p {
+        width: 100%;
+        font-size: var(--font-base);
+    }
+    .about-container {
+    width: 100%;
+    }
+
+    .container2 {
+    align-items: flex-start; 
+    }
+
 }

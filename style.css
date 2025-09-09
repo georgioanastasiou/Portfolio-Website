@@ -236,20 +236,11 @@ svg {
   padding: 20px;
   flex-wrap: wrap; /* makes it wrap on small screens */
 }
-
-.left {
-  padding-top: 20px;
-  width: 50%; /* desktop */
-}
-
 .left h2 {
   font-size: var(--font-title);
   padding-bottom: 12px;
 }
 
-.left p {
-  width: 80%;
-}
 
 
 
