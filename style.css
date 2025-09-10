@@ -80,6 +80,7 @@
   display: flex;
   justify-content: space-between;
   padding: 50px;
+
 }
 .navigation ul{
   display: flex;
@@ -87,7 +88,9 @@
 }
 .navigation li {
   padding: 10px;
+  margin-left: 10px;
 }
+
 .name {
   font-size: var(--font-title);
   display: flex;
@@ -213,6 +216,24 @@ svg {
 .left {
     padding-top: 20px;
     width: 50%; /* desktop */
+}
+.about-info {
+  margin-top: 20px;
+  max-width: 80%;
+}
+.lang {
+  margin-top: 50px;
+}
+.languages {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+}
+.languages img {
+  width: 60%;
+
 }
 
 .left p {

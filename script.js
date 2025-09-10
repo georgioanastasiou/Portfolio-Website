@@ -102,8 +102,37 @@ function overlay(){
     }    
     // overlay()
 
+gsap.set('.about-table img', {
+  opacity: 0
+})
+gsap.to('.about-table img', {
+  duration: 0.2,
+  opacity: 1,
+  stagger: .1,
+  scrollTrigger: {
+    trigger: '.about-table img',
+    start: 'top center',
+    end: 'bottom bottom',
+    toggleActions: 'play none none reverse'
+  }
+})
 
-
+gsap.set('.languages img', {
+  opacity: 0
+})
+    gsap.to('.languages img', {
+      yPercent: 30,
+      opacity: 1,
+      duration: 0.2,
+      stagger: 0.03,
+      scrollTrigger: {
+        trigger: '.lang',
+        start: 'top 65%',
+        end: 'bottom bottom',
+        toggleActions: "play none none reverse"
+      }
+    });
+    
 
 
 
@@ -161,10 +190,10 @@ renderer.setSize(w, h);
 container.appendChild(renderer.domElement);
 
 // Camera
-const fov = 60;
+const fov = 120;
 const aspect = w / h;
 const near = 0.1;
-const far = 100;
+const far = 10;
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.z = 2;
 
@@ -173,21 +202,33 @@ const scene = new THREE.Scene();
 scene.background = null; // transparent background
 
 // Light
-const light = new THREE.AmbientLight(0xffffff, 2);
+const light = new THREE.AmbientLight(0xffffff, 1);
 scene.add(light);
 
 // GLTF Loader
-let model;
+let model, mixer;
+const clock = new THREE.Clock();
+
 const loader = new GLTFLoader();
-loader.load('oldpc/scene.gltf', (gltf) => {
+loader.load('programmer/scene.gltf', (gltf) => {
     console.log("Model loaded", gltf);
     model = gltf.scene;
-    model.scale.set(1.5, 1.5, 1.5); 
+    model.scale.set(1.5, 1.5, 1);
 
     scene.add(model);
+
+    // 🔑 Play animations if they exist
+    if (gltf.animations && gltf.animations.length > 0) {
+        mixer = new THREE.AnimationMixer(model);
+        gltf.animations.forEach((clip) => {
+            const action = mixer.clipAction(clip);
+            action.play();
+        });
+    }
 }, undefined, (error) => {
     console.error("Error loading model:", error);
 });
+
 // Resize handling
 window.addEventListener('resize', () => {
     const w = container.clientWidth;
@@ -199,12 +240,16 @@ window.addEventListener('resize', () => {
 });
 
 // Animation loop
-function animate(t) {
+function animate() {
     requestAnimationFrame(animate);
 
-    if(model){
-        model.rotation.y = t * 0.001; // slow rotation
-    }
+    const delta = clock.getDelta();
+
+    // 🔑 Update animations if mixer exists
+    if (mixer) mixer.update(delta);
+    if (model) {
+      model.rotation.y = -.3; // slow continuous spin
+  } 
 
     renderer.render(scene, camera);
 }
