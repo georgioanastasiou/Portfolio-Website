@@ -12,6 +12,7 @@
     /* font sizes */
     --font-small: 0.875rem; /* 14px */
     --font-base: 1rem;      /* 16px */
+    --font-medium: clamp(1rem, 1.1rem, 1.3rem);
     --font-large: clamp(1.5rem, 2vw, 2.5rem);  /* (min, prefered, max) */
     --font-title: clamp(1rem, 4vw, 5rem);
 }
@@ -140,19 +141,40 @@ svg {
     display: flex;
     align-items: center;
     padding: 0 200px 0 200px;
-
+    gap: 50px;
 }
 .number01{
+  position: absolute;
+  inset: 0;
+  font-size: var(--font-base);
+  font-weight: 700;
+  padding: 0 200px 0 200px;
+  margin-top: 200px;
+}
+.photography {
     position: absolute;
     inset: 0;
     font-size: var(--font-title);
     font-weight: 700;
     padding: 0 200px 0 200px;
-    margin-top: 200px;
+    margin-top: 220px;
+}
+.text-camera-wrapper {
+  flex: 1 0 0;
+}
+.camera {
+  width: 100px;
+  opacity: 0;
+}
+.text{
+  font-size: var(--font-medium);
+  line-height: 2;
+  padding: 50px 0 0 0;
+  width: 65%;
 }
 
 .img-wrapper{
-    width: 400px;
+    width: 25%;
     aspect-ratio: 3/5;
     padding: 15px;
     border-radius: 10px;
@@ -168,16 +190,14 @@ svg {
     border-radius: 5px;
     filter: saturate(0.9) brightness(1.05);
 }
-.text{
-    flex: 1 0 0;
-    font-size: var(--font-large);
-    font-weight: 400;
-    line-height: 1.5;
-    margin-right: 50px;
-}
+
 .content:not(:first-child) .text{
     opacity: 0;
 }
+.content:not(:first-child) .camera{
+  opacity: 0;
+}
+
 .content:not(:first-child) .img-wrapper {
     transform: translateY(-200%);
 }
@@ -221,6 +241,7 @@ svg {
   margin-top: 20px;
   max-width: 80%;
 }
+
 .lang {
   margin-top: 50px;
 }
@@ -421,7 +442,7 @@ svg {
 
 
 /* PHOTOGRAPHY */
-#photography {
+/* #photography {
     position: relative;
     width: 100%;
     height: 100dvh;
@@ -493,37 +514,9 @@ background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 218, 194
 .gallery img:nth-child(9){
     left: 2%;
     top: 2%;
-    z-index: 9;
+    z-index: 9; 
 }
-
-
-
-
-/* SKILLS */
-#skills {
-  padding: 80px 0;
-  background-color: #dedbdb;
-}
-.skills-container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.skills-title {
-  text-align: left;
-  margin-bottom: 50px;
-}
-
-.skills-title h1 {
-  font-size: var(--font-title);
-  letter-spacing: 3px;
-  color: var(--primary-color);
-}
-.skills-title p {
-  font-size: var(--font-base);
-  font-weight: 700;
-  color: var(--primary-color);
-}
+    */
 
 
 

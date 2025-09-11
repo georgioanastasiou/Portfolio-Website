@@ -136,48 +136,64 @@ gsap.set('.languages img', {
 
 
 
-  function basketball() {
+    function photography() {
       const contents = gsap.utils.toArray(".content");
-    const text = gsap.utils.toArray(".text");
-    const imageWrappers = gsap.utils.toArray(".img-wrapper");
-
-    // move first child text slightly upwards
-    gsap.set(".content:first-child .text", { y: -50 }); 
-
-    const tl = gsap.timeline({
-        defaults: {ease: "power2.out"},
-           scrollTrigger: {
-            trigger: ".container",
-            pin: true,
-            start: "top top",
-            end: `+=${contents.length * 100}%`, // the scroll lenght based on the number of content sections
-            scrub: 3, // control animation speed: increasing the value -> slower animation 
-        },
-    });
-
-    tl.to(imageWrappers[0], { rotate: -3 }, 0);
     
-    contents.forEach((_,i) => {
-        if(i === contents.length -1 ) return;
-
-        tl.to(text[i], { opacity: 0, duration: 2}, "+=0.5")
-          .to(
-            imageWrappers[i + 1],
+      // Move first text slightly upwards
+      gsap.set(contents[0].querySelector(".text"), { y: -100 });
+    
+      const tl = gsap.timeline({
+        defaults: { ease: "power2.out" },
+        scrollTrigger: {
+          trigger: ".container",
+          pin: true,
+          start: "top top",
+          end: `+=${contents.length * 100}%`, // scroll length based on number of contents
+          scrub: 3,
+        },
+      });
+    
+      // Animate first image rotation
+      const firstImage = contents[0].querySelector(".img-wrapper");
+      tl.to(firstImage, { rotate: -3 }, 0);
+    
+      // Loop through each content block except the last one
+      contents.forEach((content, i) => {
+        if (i === contents.length - 1) return;
+    
+        const text = content.querySelector(".text");
+        const camera = content.querySelector(".camera");
+        const nextContent = contents[i + 1];
+        const nextText = nextContent.querySelector(".text");
+        const nextCamera = nextContent.querySelector(".camera");
+        const nextImage = nextContent.querySelector(".img-wrapper");
+    
+        tl.to(text, { opacity: 0, duration: 2 }, "+=0.5");
+        tl.to(camera, { opacity: 0, duration: 1 }, "-=1.2");
+        
+    
+        if (nextImage) {
+          tl.to(
+            nextImage,
             {
-                scale: 1,
-                duration: 2,
-                y: (i + 1) * 5,
-                x: (i + 1) * -5,
-                opacity: 1,
-                rotate: (i + 1) * 2 * ( i % 2 === 0 ? 1 : -1), // if element from array is mona then rotate from the other side
+              scale: 1,
+              duration: 2,
+              y: (i + 1) * 5,
+              x: (i + 1) * -5,
+              opacity: 1,
+              rotate: (i + 1) * 2 * (i % 2 === 0 ? 1 : -1),
             },
             "<"
-          )
-          .to(text[i + 1], { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
-    })
-  };
-  // basketball()
-
+          );
+        }
+          tl.to(nextText, { opacity: 1, y: -50, duration: 2 }, "<+=0.5");
+          tl.to(nextCamera, { opacity: 1, y: -50, duration: 2 }, "<+=0.1");
+        
+      });
+    }
+    
+    photography();
+    
 
 
   // 3d pc
@@ -192,7 +208,7 @@ container.appendChild(renderer.domElement);
 // Camera
 const fov = 120;
 const aspect = w / h;
-const near = 0.1;
+const near = 0.2  ;
 const far = 10;
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.z = 2;
@@ -213,7 +229,7 @@ const loader = new GLTFLoader();
 loader.load('programmer/scene.gltf', (gltf) => {
     console.log("Model loaded", gltf);
     model = gltf.scene;
-    model.scale.set(1.5, 1.5, 1);
+    model.scale.set(1.7 , 1.5, 1);
 
     scene.add(model);
 
