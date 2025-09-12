@@ -46,9 +46,9 @@
     background: #080808;
     display: grid;
     place-content: center;
-    height: 100vh; /* full viewport */
+    height: 100vh; 
     width: 100%;
-    position: fixed; /* normal stacking */
+    position: fixed; 
     z-index: 10000;
   }
  svg {
@@ -91,7 +91,6 @@
   padding: 10px;
   margin-left: 10px;
 }
-
 .name {
   font-size: var(--font-title);
   display: flex;
@@ -111,7 +110,6 @@
   position: absolute;
   top: 40%;
   z-index: 1;
-  /* overflow: hidden; */
 }
 #planet {
   display: flex;
@@ -126,62 +124,73 @@ svg {
 
 /*--------------- JOURNEY ---------------*/    
 
-.container{
+.container {
     position: relative;
     width: 100%;
     height: 100vh;
     background: #c5d7de;
     overflow: hidden;
 }
-.content{
+
+/* -------- DESKTOP DEFAULT -------- */
+.content {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 200px 0 200px;
+    padding: 0 200px;
     gap: 50px;
 }
-.number01{
-  position: absolute;
-  inset: 0;
-  font-size: var(--font-base);
-  font-weight: 700;
-  padding: 0 200px 0 200px;
-  margin-top: 200px;
+.number01 {
+    position: absolute;
+    inset: 0;
+    font-size: var(--font-base);
+    font-weight: 700;
+    padding: 0 200px;
+    margin-top: 200px;
 }
+
 .photography {
     position: absolute;
     inset: 0;
     font-size: var(--font-title);
     font-weight: 700;
-    padding: 0 200px 0 200px;
+    padding: 0 200px;
     margin-top: 220px;
 }
+
 .text-camera-wrapper {
-  flex: 1 0 0;
-}
-.camera {
-  width: 100px;
-  opacity: 0;
-}
-.text{
-  font-size: var(--font-medium);
-  line-height: 2;
-  padding: 50px 0 0 0;
-  width: 65%;
+    flex: 1;
 }
 
-.img-wrapper{
+.camera {
+    padding-top: 10px;
+    width: 80px;
+    opacity: 0;
+    
+}
+
+.text {
+    font-size: var(--font-medium);
+    line-height: 2;
+    padding: 50px 0 0 0;
+    width: 60%;
+    font-style: italic;
+}
+
+.img-wrapper {
     width: 25%;
     aspect-ratio: 3/5;
     padding: 15px;
     border-radius: 10px;
     background-color: #fff;
-    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-                0 8px 16px -8px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+      0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3);
 }
+
 .img-wrapper img {
     width: 100%;
     height: 100%;
@@ -190,6 +199,8 @@ svg {
     border-radius: 5px;
     filter: saturate(0.9) brightness(1.05);
 }
+
+/* -------- TABLET (≤ 1024px) -------- */
 
 .content:not(:first-child) .text{
     opacity: 0;
@@ -206,11 +217,11 @@ svg {
 
 
 /* ------------------  ABOUT   ---------------  */
-/* #about {
+#about {
   position: relative;
   z-index: 0;
-} */
-.about-container {
+} 
+ .about-container {
     margin-top: 150px;
     padding: 80px 0 180px 0;
     height: 20%;
@@ -218,7 +229,7 @@ svg {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap; /* allows stacking */
+    flex-wrap: wrap; 
 }
 .number02{
     font-size: var(--font-title);
@@ -230,18 +241,24 @@ svg {
     align-items: flex-start; 
     gap: 20px; 
     padding: 20px;
-    flex-wrap: wrap; /* makes it wrap on small screens */
+    flex-wrap: wrap; 
 }
-
 .left {
     padding-top: 20px;
-    width: 50%; /* desktop */
+    width: 50%; 
+}
+.left h2 {
+  font-size: var(--font-title);
+  padding-bottom: 12px;
+}
+.left p {
+    width: 80%;
+    font-size: var(--font-base);
 }
 .about-info {
   margin-top: 20px;
   max-width: 80%;
 }
-
 .lang {
   margin-top: 50px;
 }
@@ -250,16 +267,9 @@ svg {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-
 }
 .languages img {
   width: 60%;
-
-}
-
-.left p {
-    width: 80%;
-    font-size: var(--font-base);
 }
 .about-container {
   padding-top: 80px;
@@ -267,21 +277,9 @@ svg {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  flex-wrap: wrap; /* allows stacking */
+  flex-wrap: wrap; 
 }
 
-.container2 {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; 
-  gap: 20px; 
-  padding: 20px;
-  flex-wrap: wrap; /* makes it wrap on small screens */
-}
-.left h2 {
-  font-size: var(--font-title);
-  padding-bottom: 12px;
-}
 
 
 
@@ -312,6 +310,7 @@ svg {
   color: rgb(0, 0, 0);
   opacity: 0;
 }
+ 
 
 
 
@@ -325,8 +324,7 @@ svg {
 
 
 
-/* PROJECTS */
-#projects {
+ #projects {
   padding: 80px 0;
   background: linear-gradient(90deg, #002846 0%, #004F90 100%);
 
@@ -378,7 +376,7 @@ svg {
 
 
 /* Layout */
-.project-container {
+ .project-container {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -425,6 +423,8 @@ svg {
     height: 10px;
     border: 1px solid black;
 }
+ 
+ 
 
 
 
@@ -437,86 +437,6 @@ svg {
 
 
 
-
-
-
-
-/* PHOTOGRAPHY */
-/* #photography {
-    position: relative;
-    width: 100%;
-    height: 100dvh;
-    overflow: hidden;
-background: #c5d7de;
-background: linear-gradient(90deg, rgba(197, 215, 222, 1) 1%, rgba(155, 218, 194, 1) 49%, rgba(161, 204, 133, 1) 100%);}
-#photography h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--primary-color);
-    font-size: var(--font-title);
-    text-align: center;
-    user-select: none;
-    z-index: 1000;
-}
-
-.gallery img {
-    position: absolute;
-    width: 300px;
-    height: auto;
-    border-radius: 14px;
-    object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.25);
-    user-select: none;
-    opacity: 0;
-} 
- .gallery img:nth-child(1){
-    right: 25%;
-    top: 10%;
-    z-index: 1;
-}
-.gallery img:nth-child(2){
-    right: 2%;
-    top: 6%;
-    z-index: 2;
-}
-.gallery img:nth-child(3){
-    left: 30%;
-    bottom: 30%;
-    z-index: 3;
-}
-.gallery img:nth-child(4){
-    left: 10%;
-    bottom: 105;
-    z-index: 4;
-}
-.gallery img:nth-child(5){
-    right: 30%;
-    top: 8%;
-    z-index: 5;
-}
-.gallery img:nth-child(6){
-    right: 18%;
-    top: 50%;
-    z-index: 6;
-}
-.gallery img:nth-child(7){
-    left: 25%;
-    bottom: 3%;
-    z-index: 7;
-}
-.gallery img:nth-child(8){
-    right: 5%;
-    bottom: 5%;
-    z-index: 8;
-}
-.gallery img:nth-child(9){
-    left: 2%;
-    top: 2%;
-    z-index: 9; 
-}
-    */
 
 
 

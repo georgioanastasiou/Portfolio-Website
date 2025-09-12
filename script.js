@@ -100,7 +100,7 @@ function overlay(){
         }, "-=.5")
        
     }    
-    // overlay()
+    overlay()
 
 gsap.set('.about-table img', {
   opacity: 0
@@ -155,7 +155,7 @@ gsap.set('.languages img', {
     
       // Animate first image rotation
       const firstImage = contents[0].querySelector(".img-wrapper");
-      tl.to(firstImage, { rotate: -3 }, 0);
+      tl.to(firstImage, { rotate: -3, scale: 1.1, delay: .2 } );
     
       // Loop through each content block except the last one
       contents.forEach((content, i) => {
