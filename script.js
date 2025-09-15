@@ -100,7 +100,7 @@ function overlay(){
         }, "-=.5")
        
     }    
-    overlay()
+    // overlay()
 
 gsap.set('.about-table img', {
   opacity: 0
@@ -148,7 +148,7 @@ gsap.set('.languages img', {
           trigger: ".container",
           pin: true,
           start: "top top",
-          end: `+=${contents.length * 100}%`, // scroll length based on number of contents
+          end: `+=${contents.length * 150}%`, // scroll length based on number of contents
           scrub: 3,
         },
       });
@@ -181,7 +181,7 @@ gsap.set('.languages img', {
               y: (i + 1) * 5,
               x: (i + 1) * -5,
               opacity: 1,
-              rotate: (i + 1) * 2 * (i % 2 === 0 ? 1 : -1),
+              rotate: (i + 1) * 1 * (i % 2 === 0 ? 1 : -1),
             },
             "<"
           );
@@ -439,3 +439,20 @@ gsap.to(".ball-inner", {
 
 
 
+
+
+      const inputs = document.querySelectorAll(".contact-input");
+
+      inputs.forEach((ipt) => {
+        ipt.addEventListener("focus", () => {
+          ipt.parentNode.classList.add("focus");
+          ipt.parentNode.classList.add("not-empty");
+        });
+         ipt.addEventListener("blur", () => {
+          if(ipt.value == '') {
+            ipt.parentNode.classList.remove("not-empty");
+          }
+          ipt.parentNode.classList.remove("focus");
+          
+        });
+      });
