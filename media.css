@@ -50,15 +50,15 @@
 }
 
 @media (max-width: 1024px) {
- 
-   .content {
+  .content {
     flex-direction: column;
     padding: 80px 20px 40px;
     gap: 20px;
     text-align: center;
   }
 
-  .number01, .photography {
+  .number01,
+  .photography {
     margin: 0px;
     text-align: center;
     padding: 50px;
@@ -75,7 +75,6 @@
     padding: 100px 10px 0 10px;
     line-height: 1.6;
     margin-top: 20px;
-    
   }
   .text1 {
     margin-top: 50px;
@@ -134,25 +133,37 @@
   .project-container {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding-bottom: 50px;
   }
   .project-left img {
     width: 100%;
+  }
+  .project-left {
+    width: 100%;
+    margin: 0;
   }
   .project-subheader h2 {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
-    white-space: nowrap;
+    justify-content: center;
   }
-  .project-left,
-  .project-right {
+  
+  .project-subheader {
+    justify-content: center;
+  }
+  .project-left, .project-right {
     flex: 1 1 100%;
     text-align: center;
   }
   .project-right {
-    margin-top: 1rem;
+    width: 100%;
   }
 
+.project-right p {
+  font-size: 1rem;
+}
   .content {
     flex-direction: column;
     padding: 80px 20px 40px;
@@ -160,8 +171,7 @@
     text-align: center;
   }
 
-  .number01,
-  .photography {
+  .number01, .photography {
     margin: 0px;
     text-align: center;
     padding: 50px;
@@ -204,6 +214,9 @@
     width: 100%;
     overflow: hidden;
   }
+  .project-right p {
+  font-size: .7rem;
+}
 }
 
 @media (max-width: 375px) {
@@ -251,9 +264,6 @@
   }
 }
 
-
-
-
 /* ----------------FORM------------- */
 @media (max-width: 1000px) {
   .logo {
@@ -266,7 +276,7 @@
   .logo h2 {
     font-size: 1.3rem;
   }
-  .nav-link{
+  .nav-link {
     margin-left: 3.5rem;
     padding: 0 0.8rem;
     font-size: 0.9rem;
@@ -310,7 +320,7 @@
   .input-wrap.not-empty label {
     font-size: 0.61rem;
   }
-  .contact-buttons{
+  .contact-buttons {
     column-gap: 0.8rem;
     margin-top: 0.45rem;
   }
@@ -318,12 +328,12 @@
     padding: 1rem 1.5rem;
     font-size: 0.87rem;
   }
-  .dashed-wave{
+  .dashed-wave {
     bottom: 55%;
     left: -10px;
   }
-  #dashed-wave{
-    stroke-width: .7px;
+  #dashed-wave {
+    stroke-width: 0.7px;
     stroke-dasharray: 6;
   }
   .wave-wrap {
@@ -362,14 +372,14 @@
   }
 }
 @media (max-width: 440px) {
-  .input-wrap {              
+  .input-wrap {
     grid-column: span 2;
   }
   .contact-buttons {
     grid-template-columns: 1fr;
     row-gap: 0.5rem;
   }
-   .contact-heading h1 {
+  .contact-heading h1 {
     font-size: 1.9rem;
     line-height: 1;
   }
