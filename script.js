@@ -11,12 +11,14 @@ gsap.ticker.add((time) => {
 });
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(500);
+window.history.scrollRestoration = "manual"; // disable browser's scroll restoration
 
+window.addEventListener("load", () => {
+  lenis.scrollTo(0, { immediate: true }); // jump to top instantly
+});
 
 // OVERLAY
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// };
+
 
 function overlay() {
 
@@ -502,3 +504,4 @@ function navClick() {
   });
 }
 navClick();
+
