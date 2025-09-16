@@ -13,6 +13,7 @@
   .svg-planet {
     height: 500px;
   }
+
   .tsiou {
     width: 30%;
   }
@@ -217,30 +218,35 @@
   }
   .project-container {
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     width: 100%;
     padding-bottom: 50px;
   }
   .project-left img {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    max-width: 100vw;
+  height: auto;   /* keeps original aspect ratio */
+  display: block;
   }
   .project-left {
     width: 100%;
+
     margin: 0;
   }
   .project-subheader h2 {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
-    justify-content: center;
+
   }
   
   .project-subheader {
-    justify-content: center;
+    justify-content: left;
   }
   .project-left, .project-right {
     flex: 1 1 100%;
-    text-align: center;
+    text-align: left;
   }
   .project-right {
     width: 100%;

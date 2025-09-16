@@ -141,6 +141,7 @@ function overlay() {
 }
 overlay()
 
+
 function about() {
     gsap.set(".about-table img", {
     opacity: 0,
@@ -188,7 +189,7 @@ function photography() {
       pin: true,
       start: "top top",
       end: `+=${contents.length * 150}%`, // scroll length based on number of contents
-      scrub: 3,
+      scrub: 1,
     },
   });
 
