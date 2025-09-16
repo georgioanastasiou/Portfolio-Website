@@ -137,7 +137,7 @@ function overlay() {
     );
     
 }
-// overlay()
+overlay()
 
 function about() {
     gsap.set(".about-table img", {

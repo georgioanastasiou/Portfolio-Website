@@ -14,7 +14,13 @@
     height: 500px;
   }
   .tsiou {
-    width: 35%;
+    width: 30%;
+  }
+  .name h1 {
+    font-size: 6rem;
+  }
+  .text-me-photo {
+    padding-top: 100px;
   }
 }
 @media (max-width: 1400px) {
