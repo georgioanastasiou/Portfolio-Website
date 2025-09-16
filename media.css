@@ -5,7 +5,7 @@
   /* font sizes */
   --font-small: 0.875rem;
   --font-base: 1rem;
-  --font-large: clamp(1.5rem, 2vw, 2.5rem); /* (min, prefered, max) */
+  --font-large: clamp(1.5rem, 2rem, 2rem); /* (min, prefered, max) */
   --font-title: clamp(1rem, 4vw, 5rem);
 }
 @media (max-width: 1800px) {
@@ -13,11 +13,10 @@
   .svg-planet {
     height: 500px;
   }
+  .name {
+  }
   .tsiou {
     width: 30%;
-  }
-  .name h1 {
-    font-size: 6rem;
   }
   .text-me-photo {
     padding-top: 100px;
@@ -97,9 +96,6 @@
 }
 
 @media (max-width: 1024px) {
-.tsiou-logo {
-    width: 100%;
-  }
   .svg-overlay {
      width: 50vw;
 }
@@ -478,9 +474,6 @@
 @media (max-width: 375px) {
   #home {
     height: 100vh;
-  }
-  .tsiou-logo {
-    width: 100%;
   }
   
   .svg-planet {
