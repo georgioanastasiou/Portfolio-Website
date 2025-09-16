@@ -15,7 +15,9 @@ gsap.ticker.lagSmoothing(500);
 
 // OVERLAY
 
+
 function overlay() {
+
   const fullStack = document.querySelector(".full");
   const arrow = document.querySelector(".arrow");
 
@@ -117,6 +119,7 @@ function overlay() {
         transformOrigin: "top",
         duration: 1,
         ease: "power4.inOut",
+       
       },
       "-=.6"
     )
