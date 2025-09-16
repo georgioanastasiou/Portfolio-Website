@@ -11,7 +11,10 @@ gsap.ticker.add((time) => {
 });
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(500);
+
+
 // OVERLAY
+
 function overlay() {
   const fullStack = document.querySelector(".full");
   const arrow = document.querySelector(".arrow");
@@ -114,10 +117,6 @@ function overlay() {
         transformOrigin: "top",
         duration: 1,
         ease: "power4.inOut",
-        onComplete: () => {
-          document.body.classList.remove("no-scroll");
-          document.documentElement.classList.remove("no-scroll");
-        },
       },
       "-=.6"
     )
@@ -131,39 +130,43 @@ function overlay() {
       },
       "-=.5"
     );
+    
 }
-// overlay()
+overlay()
 
-gsap.set(".about-table img", {
-  opacity: 0,
-});
-gsap.to(".about-table img", {
-  duration: 0.2,
-  opacity: 1,
-  stagger: 0.1,
-  scrollTrigger: {
-    trigger: ".about-table img",
-    start: "top center",
-    end: "bottom bottom",
-    toggleActions: "play none none reverse",
-  },
-});
+function about() {
+    gsap.set(".about-table img", {
+    opacity: 0,
+  });
+    gsap.to(".about-table img", {
+      duration: 0.1,
+      opacity: 1,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: ".about-table img",
+        start: "top center",
+        end: "bottom bottom",
+        toggleActions: "play none none reverse",
+      },
+    });
 
-gsap.set(".languages img", {
-  opacity: 0,
-});
-gsap.to(".languages img", {
-  yPercent: 30,
-  opacity: 1,
-  duration: 0.2,
-  stagger: 0.03,
-  scrollTrigger: {
-    trigger: ".lang",
-    start: "top 65%",
-    end: "bottom bottom",
-    toggleActions: "play none none reverse",
-  },
-});
+    gsap.set(".languages img", {
+      opacity: 0,
+    });
+    gsap.to(".languages img", {
+      yPercent: 30,
+      opacity: 1,
+      duration: 0.1,
+      stagger: 0.03,
+      scrollTrigger: {
+        trigger: ".lang",
+        start: "top 65%",
+        end: "bottom bottom",
+        toggleActions: "play none none reverse",
+      },
+    });
+}
+about()
 
 function photography() {
   const contents = gsap.utils.toArray(".content");
@@ -294,7 +297,7 @@ function animate() {
   // 🔑 Update animations if mixer exists
   if (mixer) mixer.update(delta);
   if (model) {
-    model.rotation.y = -0.3; // slow continuous spin
+    model.rotation.y = -0.3; 
   }
 
   renderer.render(scene, camera);
@@ -308,11 +311,10 @@ function aboutBar() {
     scrollTrigger: {
       trigger: ".stuff",
       start: "top center",
-      end: "+=800",
+      end: "+=150",
       scrub: 2,
     },
   });
-  // Animate the h1 inside .stuff
   tl.to(
     ".stuff-h1",
     {
@@ -321,15 +323,14 @@ function aboutBar() {
       ease: "elastic.out(1, 1.3)",
     },
     "<0.3"
-  ); // start slightly before the previous animation ends
+  );
 
-  // Animate .stuff out
   tl.to(".stuff", {
     xPercent: -100,
     opacity: 0,
     duration: 0.5,
     ease: "power3.in",
-  }); // small delay after h1 animation
+  }); 
 }
 aboutBar();
 
@@ -342,8 +343,6 @@ function likeBar() {
       scrub: 2,
     },
   });
-
-  // Animate the h1 inside .like
   tl.to(
     ".like-h1",
     {
@@ -352,40 +351,39 @@ function likeBar() {
       ease: "elastic.out(1, 1.3)",
     },
     "<0.3"
-  ); // start slightly before the previous animation ends
+  ); 
 
-  // Animate .like out
   tl.to(".like", {
     xPercent: -100,
     opacity: 0,
     duration: 0.5,
     ease: "power3.in",
-  }); // small delay after h1 animation
+  }); 
 }
 likeBar();
 
 // JAPAN TIMELINE
-function japan() {
-  gsap.registerPlugin(ScrollTrigger);
-  const photography = document.querySelector("#photography");
-  const gallery = document.querySelectorAll(".gallery img");
+// function japan() {
+//   gsap.registerPlugin(ScrollTrigger);
+//   const photography = document.querySelector("#photography");
+//   const gallery = document.querySelectorAll(".gallery img");
 
-  const tl = gsap.timeline({
-    defaults: { duration: 0.5, ease: "power2.out" },
-    scrollTrigger: {
-      trigger: photography,
-      start: "bottom bottom",
-      end: `${gallery.length * 100}%`,
-      scrub: 1,
-      pin: true,
-    },
-  });
+//   const tl = gsap.timeline({
+//     defaults: { duration: 0.5, ease: "power2.out" },
+//     scrollTrigger: {
+//       trigger: photography,
+//       start: "bottom bottom",
+//       end: `${gallery.length * 100}%`,
+//       scrub: 1,
+//       pin: true,
+//     },
+//   });
 
-  gallery.forEach((_, i) => {
-    if (i === gallery.length - 1) return;
-    tl.to(gallery[i], { opacity: 1 });
-  });
-}
+//   gallery.forEach((_, i) => {
+//     if (i === gallery.length - 1) return;
+//     tl.to(gallery[i], { opacity: 1 });
+//   });
+// }
 // japan()
 
 // Disable automatic scroll restoration

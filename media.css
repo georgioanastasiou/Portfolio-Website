@@ -9,7 +9,8 @@
   --font-title: clamp(1rem, 4vw, 5rem);
 }
 @media (max-width: 1800px) {
-  svg {
+  
+  .svg-planet {
     height: 500px;
   }
   .tsiou {
@@ -17,7 +18,7 @@
   }
 }
 @media (max-width: 1400px) {
-  svg {
+  .svg-planet {
     height: 400px;
   }
   .tsiou {
@@ -29,7 +30,8 @@
 }
 
 @media (max-width: 1200px) {
-  svg {
+  
+  .svg-planet {
     top: 100px;
     height: 350px;
     right: 20px;
@@ -50,6 +52,16 @@
 }
 
 @media (max-width: 1024px) {
+.tsiou-logo {
+    width: 100%;
+  }
+  .svg-overlay {
+     width: 50vw;
+}
+  .dev {
+    font-size: 8vw;
+    bottom: 200px;
+  }
   .content {
     flex-direction: column;
     padding: 80px 20px 40px;
@@ -57,8 +69,7 @@
     text-align: center;
   }
 
-  .number01,
-  .photography {
+  .number01,.photography {
     margin: 0px;
     text-align: center;
     padding: 50px;
@@ -86,32 +97,62 @@
 }
 
 @media (max-width: 900px) {
-  svg {
+  /* svg {
     top: 100px;
     height: 350px;
     right: 20px;
-  }
+  } */
   .tsiou {
     width: 60%;
   }
-  .about-container .left {
+  /* .about-container .left {
     width: 100%;
+  } */
+   .number01,.photography {
+    margin: 0px;
+    text-align: center;
+    padding: 50px;
+    right: 100%;
+  }
+  .number01 {
+    right: 100%;
+  }
+  .photography {
+    top: 20px;
+  }
+  .text {
+    width: 100%;
+    padding: 100px 10px 0 10px;
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+  .text1 {
+    margin-top: 50px;
+  }
+  .img-wrapper {
+    width: 30%;
+    aspect-ratio: auto;
   }
 }
 
 @media (max-width: 768px) {
-  svg {
-    top: 100px;
-    right: 40px;
-  }
+  
   .tsiou {
     width: 60%;
   }
-
-  .about-container {
-    flex-direction: column;
-    padding-top: 40px;
-  }
+.languages {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.languages img {
+  width: 70%;
+  margin: 0 auto;
+}
   .container2 {
     flex-direction: column;
     align-items: center;
@@ -193,76 +234,14 @@
     margin-top: 50px;
   }
   .img-wrapper {
-    width: 80%;
+    width: 60%;
     aspect-ratio: auto;
     overflow: hidden;
   }
 }
 
-/* -------- SMALL MOBILE (≤ 480px) -------- */
-@media (max-width: 480px) {
-  .content {
-    padding: 60px 15px;
-    gap: 15px;
-  }
-  .text {
-    line-height: 1.6;
-    margin-top: 20px;
-  }
 
-  .img-wrapper {
-    width: 100%;
-    overflow: hidden;
-  }
-  .project-right p {
-  font-size: .7rem;
-}
-}
 
-@media (max-width: 375px) {
-  #home {
-    height: 100vh;
-  }
-  .navigation {
-    display: none;
-  }
-  svg {
-    top: 100px;
-    height: 200px;
-    right: 20px;
-  }
-  .tsiou {
-    width: 80%;
-  }
-  .hr-line {
-    display: none;
-  }
-  .stuff h1,
-  .like h1 {
-    font-size: var(--font-large);
-  }
-  .project-left img {
-    width: 100%;
-  }
-  .container2 {
-    width: 100%;
-    align-items: self-start;
-  }
-  .about-container {
-    width: 100%;
-  }
-  #about-3d {
-    width: 300px;
-    height: 300px;
-  }
-  .left p {
-    width: 100%;
-    font-size: var(--font-base);
-  }
-  .about-container {
-    width: 100%;
-  }
-}
 
 /* ----------------FORM------------- */
 @media (max-width: 1000px) {
@@ -345,6 +324,12 @@
   }
 }
 @media (max-width: 650px) {
+   .svg-planet {
+      height: 300px;
+  }
+  .navigation {
+    display: none;
+  }
   .contact-header .contact-container-header {
     height: 50px;
   }
@@ -383,11 +368,107 @@
     font-size: 1.9rem;
     line-height: 1;
   }
-  .logo img {
-    height: 25px;
-    margin-right: 0.7rem;
+
+}
+
+
+
+
+
+/* -------- SMALL MOBILE (≤ 480px) -------- */
+@media (max-width: 480px) {
+  .tsiou-logo {
+    width: 100%;
   }
-  .logo h2 {
-    font-size: 1.15rem;
+  .svg-planet {
+    top: 100px;
+    height: 200px;
+    right: 20px;
+  }
+  .content {
+    padding: 60px 15px;
+    gap: 15px;
+  }
+  .text {
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+
+  .img-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  .project-right p {
+  font-size: .7rem;
+}
+.languages {
+  grid-template-columns: repeat(2, 1fr);
+}
+.left h2 {
+  font-size: 3rem;
+}
+.about-info {
+  width: 100%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 375px) {
+  #home {
+    height: 100vh;
+  }
+  .tsiou-logo {
+    width: 100%;
+  }
+  
+  .svg-planet {
+    top: 100px;
+    height: 200px;
+    right: 20px;
+  }
+  .tsiou {
+    width: 80%;
+  }
+  .hr-line {
+    display: none;
+  }
+  .stuff h1,.like h1 {
+    font-size: var(--font-large);
+    width: 100%;
+    text-align: center;
+  }
+  .stuff h1 {
+    padding-bottom: 40%;
+  }
+  .project-left img {
+    width: 100%;
+  }
+  .container2 {
+    width: 100%;
+    align-items: self-start;
+  }
+
+  #about-3d {
+    width: 100px;
+    height: 100px;
+  }
+  .left p {
+    width: 100%;
+    font-size: var(--font-base);
+  }
+  .pc {
+    width: 100px;
   }
 }
