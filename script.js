@@ -14,7 +14,9 @@ gsap.ticker.lagSmoothing(500);
 
 
 // OVERLAY
-
+// window.onbeforeunload = function () {
+//   window.scrollTo(0, 0);
+// };
 
 function overlay() {
 
@@ -135,7 +137,7 @@ function overlay() {
     );
     
 }
-overlay()
+// overlay()
 
 function about() {
     gsap.set(".about-table img", {
@@ -197,6 +199,7 @@ function photography() {
     if (i === contents.length - 1) return;
 
     const text = content.querySelector(".text");
+    
     const camera = content.querySelector(".camera");
     const nextContent = contents[i + 1];
     const nextText = nextContent.querySelector(".text");
@@ -389,10 +392,10 @@ likeBar();
 // }
 // japan()
 
-// Disable automatic scroll restoration
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
+// Disable automatic scroll restoration+
+
+
+
 
 // ----------------------PLANETS-------------------------
 gsap.registerPlugin(MotionPathPlugin);
