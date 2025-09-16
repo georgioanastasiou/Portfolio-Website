@@ -13,8 +13,6 @@
   .svg-planet {
     height: 500px;
   }
-  .name {
-  }
   .tsiou {
     width: 30%;
   }
@@ -423,8 +421,9 @@
 
 /* -------- SMALL MOBILE (≤ 480px) -------- */
 @media (max-width: 480px) {
+ 
   .tsiou-logo {
-    width: 100%;
+    width: 30px;
   }
   .svg-planet {
     top: 100px;
@@ -475,7 +474,6 @@
   #home {
     height: 100vh;
   }
-  
   .svg-planet {
     top: 100px;
     height: 200px;
