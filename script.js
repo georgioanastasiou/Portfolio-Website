@@ -11,11 +11,9 @@ gsap.ticker.add((time) => {
 });
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(500);
-window.history.scrollRestoration = "manual"; // disable browser's scroll restoration
 
-window.addEventListener("load", () => {
-  lenis.scrollTo(0, { immediate: true }); // jump to top instantly
-});
+
+
 
 // OVERLAY
 
@@ -315,33 +313,33 @@ function animate() {
 animate();
 
 // ABOUT DEVELOPING STUFF
-function aboutBar() {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".stuff",
-      start: "top center",
-      end: "+=150",
-      scrub: 2,
-    },
-  });
-  tl.to(
-    ".stuff-h1",
-    {
-      opacity: 1,
-      duration: 0.7,
-      ease: "elastic.out(1, 1.3)",
-    },
-    "<0.3"
-  );
+// function aboutBar() {
+//   const tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".stuff",
+//       start: "top center",
+//       end: "+=150",
+//       scrub: 2,
+//     },
+//   });
+//   tl.to(
+//     ".stuff-h1",
+//     {
+//       opacity: 1,
+//       duration: 0.7,
+//       ease: "elastic.out(1, 1.3)",
+//     },
+//     "<0.3"
+//   );
 
-  tl.to(".stuff", {
-    xPercent: -100,
-    opacity: 0,
-    duration: 0.5,
-    ease: "power3.in",
-  }); 
-}
-aboutBar();
+//   tl.to(".stuff", {
+//     xPercent: -100,
+//     opacity: 0,
+//     duration: 0.5,
+//     ease: "power3.in",
+//   }); 
+// }
+// aboutBar();
 
 function likeBar() {
   const tl = gsap.timeline({

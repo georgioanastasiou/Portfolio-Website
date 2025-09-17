@@ -106,13 +106,13 @@
   padding: 10px;
   margin-left: 10px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 500;
 }
 .navigation li:hover {
   scale: 1.1;
   transition: .3s ;
 }
-.name {
+.nameh1{
   font-size: var(--font-title);
   display: flex;
   justify-content: center;
@@ -120,7 +120,7 @@
   position: relative;
   top: 10%;
 }
-.name h1 {
+.nameh1 h1 {
   font-weight: 600;
   z-index: 1000;
   top: 20%;

@@ -34,6 +34,9 @@
   <!-- Other scripts -->
   <script src="https://kit.fontawesome.com/1248ffe135.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
 
   <script type="importmap">
       {
@@ -86,7 +89,7 @@
       </div>
 
     </div>
-    <div class="name">
+    <div class="nameh1">
       <h1>GEORGE ANASTASIOU</h1>
       <img class="tsiou" src="images/tsiou-hero.png" loading="lazy">
     </div>
@@ -172,11 +175,11 @@
 
 
 
-  <section id="stuff">
+  <!-- <section id="stuff">
     <div class="stuff">
       <h1 class="stuff-h1">About Developing Stuff...</h1>
     </div>
-  </section>
+  </section> -->
 
   <section id="projects">
     <div class="projects-container">
@@ -476,38 +479,36 @@
             <h1>Let's work together <span>.</span></h1>
             <p class="contact-heading-text">Or reach me via : <a href="mailto: ">g.anastasiou.dev@gmail.com</a></p>
           </div>
-          <form action="index.html" method="post" class="contact-form">
+          <form id="contact-form" class="contact-form">
             <div class="input-wrap">
-              <input class="contact-input" autocomplete="off" name="First Name" type="text" required>
+              <input class="contact-input fname" autocomplete="off" name="First Name" type="text" required>
               <label>First Name</label>
               <i class="icon fa-solid fa-address-card"></i>
             </div>
             <div class="input-wrap">
-              <input class="contact-input" autocomplete="off" name="Last Name" type="text" required>
+              <input class="contact-input lname" autocomplete="off" name="Last Name" type="text" required>
               <label>Last Name</label>
               <i class="icon fa-solid fa-address-card"></i>
             </div>
             <div class="input-wrap w-100">
-              <input class="contact-input" autocomplete="off" name="Email" type="email" required>
+              <input class="contact-input email" autocomplete="off" name="Email" type="email" required>
               <label>Email</label>
               <i class="icon fa-solid fa-envelope"></i>
             </div>
             <div class="input-wrap textarea w-100">
-              <textarea name="Message" autocomplete="off" class="contact-input" required></textarea>
+              <textarea name="Message" autocomplete="off" class="contact-input message" required></textarea>
               <label>Message</label>
               <i class="icon fa-solid fa-inbox"></i>
             </div>
             <div class="contact-buttons">
               <button class="btn upload">
-                <span>
-                  <i class="fa-solid fa-paperclip"></i>Add attachment
-                </span>
+                <span><i class="fa-solid fa-paperclip"></i>Add attachment</span>
                 <input type="file" name="Add attachment">
-              </button>
+              </button >
               <input type="submit" value="Send message" class="btn">
             </div>
           </form>
-        </div>
+                  </div>
       </div>
 
       <div class="right-contact">
@@ -527,8 +528,15 @@
       </div>
     </div>
   </section>
-
+  <script type="text/javascript">
+  (function(){
+  emailjs.init({
+    publicKey: "9kwAogAxBTGkJke20",
+  });
+  })();
+  </script>
   <script type="module" src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
