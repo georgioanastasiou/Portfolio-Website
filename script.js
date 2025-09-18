@@ -346,7 +346,7 @@ function likeBar() {
     scrollTrigger: {
       trigger: ".like",
       start: "top center",
-      end: "+=700",
+      end: "+=100",
       scrub: 2,
     },
   });
